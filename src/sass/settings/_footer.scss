@@ -1,0 +1,55 @@
+
+.footer-wrap{
+	
+	.footer-content{
+		p{
+			color:rgba($dark, 0.8);
+		}
+	}
+	nav li a {		
+		color: rgba($dark, 0.8);
+		&:hover{
+			color:$primary;			
+		}
+	}	
+	h5{
+		color:$dark;
+	}	
+	.contact-details{
+		ul li a {		     
+			i{
+               color:$primary;			   
+			}			
+		}
+	}
+	.social-nav ul li a {
+		i{
+		  color:$primary;
+		  &:hover{
+		   color:$dark;
+		  }
+		}
+	}
+}
+
+.social-wrap{	
+	.container{
+		border-top: 1px solid rgba($dark, 0.14);	
+		ul li {	
+			a {
+				color: #d45252;			
+				&:hover{
+					color: $primary;			
+				}
+			}
+		}	
+		.copyright-wrap {
+			color:rgba($dark, 0.8);
+		}
+	}
+}
+nav.contact-details ul li a{
+	&:hover {
+		color:$primary;		
+	}
+}

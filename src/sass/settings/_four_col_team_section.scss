@@ -1,0 +1,56 @@
+.four-col-team-section{   
+    .shape-color {
+        background-color:$light-gray;
+    }
+    .team-member-wrap{       
+        .member-details{
+        color:$dark;                       
+           h4{
+                color:$dark;
+                &:hover{
+                  color:$primary;  
+                }
+            }   
+            a{
+                color:$primary;
+                &:hover{
+                  color:$dark;
+                }
+            }                
+        }   
+    }
+}
+.pagination {    
+    li{
+        .page-link {            
+            background:$white;
+            color:$primary;         
+        }       
+    }
+}
+
+
+.blog-listing-section{
+    .filter-wrap {      
+        h4{
+            color:$primary;
+        } 
+        span{                     
+            background:$yellow;           
+            color:$white;                       
+        }
+        ul {
+            li {               
+                &:hover {
+                    background:$yellow;
+                    color:$white;
+                }
+                &.active{
+                    background:transparent; 
+                    color:$primary;                     
+                }
+            }
+        }        
+        
+    }   
+}

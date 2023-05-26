@@ -1,0 +1,50 @@
+.infobox-section{ 
+  .info-box {
+    background-color:$white;
+    h5{
+      color:$neutral-light-blue;
+    }
+    p{
+      color:rgba($dark, 0.8);
+    }
+    &:hover{
+      background-color:$yellow;
+    }
+  }
+}
+
+.infobox-section.resource-infobox{ 
+  .editor-design{   
+    h2,p{
+      color:$dark;
+    }    
+  } 
+  .info-box{
+    // box-shadow:0 5px 20px rgba($dark, 0.2);
+    }
+  }
+.checklist-infobox{
+  .info-box{
+    &:hover{
+    .btn{
+        background-color: $primary;
+        color:$white;
+        border-color:$primary;
+      }
+    }
+  }
+}
+
+.accordion-item .accordion-button{
+    background-color:$primary;
+    color:$white;    
+}
+.accordion .accordion-item .accordion-body {
+    background-color:rgba($dark, 0.08);
+}
+
+.content-topic-section, .content-type-section{    
+  .btn{
+    color:$white;
+  }   
+}

@@ -1,0 +1,13 @@
+.newsletter-section {   
+    .shape-color{
+       background-color:$light-gray;
+   }
+   .container {
+        background:$primary; 
+        .editor-design{
+            h2,p{
+                color:$white;
+            }
+        }
+    }
+}

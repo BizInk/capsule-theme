@@ -1,0 +1,107 @@
+.teamlist-section {
+    .team-member-wrap{
+        .member-details {
+            h4 {
+                color:$dark;
+            }
+            h6,p{
+              color:$dark;
+            }
+        }
+    }
+}
+
+
+.member-details-section{
+    h3{
+        color:$neutral-light-blue;
+    }
+    ul.social-nav {      
+        li{  
+            a{  
+                color:#C8C8C8;
+                &:hover{
+                    color:$yellow; 
+                }
+                                        
+            }
+        }
+    }  
+}
+
+.get-in-touch{    
+    &:before{
+        background-color:rgba($dark, 0.18);
+    }
+    h2 + p{
+        color:$dark
+    }
+    .location-wrap{
+        ul{
+            li {       
+                i {
+                    color:$yellow;
+                }
+                a {
+                    color:rgba($dark,0.8);
+                    &:hover{
+                        color:$dark;
+                    }
+                }
+                &:hover{
+                   color:$dark;
+                   i{
+                      color:$dark;
+                   }
+                }
+            }        
+        }
+    }
+    
+    .gForm{    
+        .gform_wrapper{
+            form{
+                .gform_body{
+                    .gform_fields{
+                        .gfield{             
+                            .ginput_container{
+                                input[type="text"],
+                                input[type="number"],
+                                input[type="date"],
+                                input[type="email"],
+                                input[type="tel"],
+                                textarea {           
+                                                    
+                                    &:focus{
+                                   
+                                    }
+                                }
+                                textarea{
+                                   
+                                }
+                                ::-webkit-input-placeholder {
+                                    color:$dark;
+                                }                      
+                                :-moz-placeholder {
+                                    color:$dark;
+                                }                    
+                                ::-moz-placeholder {
+                                    color:$dark;                              
+                                }                
+                                :-ms-input-placeholder {
+                                    color:$dark;
+                                }
+                            }
+                        }
+                    }
+                }
+        
+                .gform_footer{
+                    .gform_button{                   
+                                                 
+                    }
+                }
+            }            
+        }
+    }  
+}
