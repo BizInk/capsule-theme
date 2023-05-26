@@ -169,7 +169,7 @@ $gravity_forms = get_field('gravity_forms', 'options');
 			<div class="row">
 				<div class="col-md-12">
 					<div class="copyright-wrap">
-						<?= do_shortcode($copyright_information); ?>
+						<?= do_shortcode($copyright_information); ?> | <a style="color:<?php echo get_field('copyright_color', 'options'); ?>;" href="https://www.bizinkonline.com"><?php _e('Website By Bizink','wave-theme');?></a>
 					</div>
 				</div>
 			</div>
@@ -180,18 +180,13 @@ $gravity_forms = get_field('gravity_forms', 'options');
 <?php wp_footer(); ?>
 
 <script>
-
 	function fetch_blog_posts(category='', pagenumber=1){
-
 		var ajaxurl = "<?php echo admin_url( 'admin-ajax.php' ); ?>";
-        
 		// Check if we are on correct page
 		if( jQuery('.blog-posts-cont').length ){
-
 			if( pagenumber == 1 ){
-
 				jQuery('.blog-posts-cont').html('Loading...');
-			}else{
+			} else{
 				jQuery('.load-more').text('Loading...');
 			}
            
