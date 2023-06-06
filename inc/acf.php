@@ -1,10 +1,10 @@
 <?php
-add_action('acf/include_fields', function () {
-	if (!function_exists('acf_add_local_field_group')) {
+add_action( 'acf/include_fields', function() {
+	if ( ! function_exists( 'acf_add_local_field_group' ) ) {
 		return;
 	}
 
-	acf_add_local_field_group(array(
+	acf_add_local_field_group( array(
 		'key' => 'group_62da7fa00e1fd',
 		'title' => 'Admin Settings',
 		'fields' => array(
@@ -194,24 +194,6 @@ add_action('acf/include_fields', function () {
 				'return_format' => 'string',
 			),
 			array(
-				'key' => 'field_62ed0822ae9ad',
-				'label' => 'Global Theme Copyright Color',
-				'name' => 'copyright_color',
-				'aria-label' => '',
-				'type' => 'color_picker',
-				'instructions' => '',
-				'required' => 0,
-				'conditional_logic' => 0,
-				'wrapper' => array(
-					'width' => '',
-					'class' => '',
-					'id' => '',
-				),
-				'default_value' => '#fefefe',
-				'enable_opacity' => 0,
-				'return_format' => 'string',
-			),
-			array(
 				'key' => 'field_62da85b882311',
 				'label' => 'Custom Embed Code - Head',
 				'name' => 'custom_embed_code_head',
@@ -351,7 +333,7 @@ add_action('acf/include_fields', function () {
 				array(
 					'param' => 'options_page',
 					'operator' => '==',
-					'value' => 'acf-options-admin-settings',
+					'value' => 'admin-settings',
 				),
 			),
 		),
@@ -364,9 +346,9 @@ add_action('acf/include_fields', function () {
 		'active' => true,
 		'description' => '',
 		'show_in_rest' => 0,
-	));
+	) );
 
-	acf_add_local_field_group(array(
+	acf_add_local_field_group( array(
 		'key' => 'group_62d9269388f5f',
 		'title' => 'Check list',
 		'fields' => array(
@@ -473,9 +455,9 @@ add_action('acf/include_fields', function () {
 		'active' => true,
 		'description' => '',
 		'show_in_rest' => 0,
-	));
+	) );
 
-	acf_add_local_field_group(array(
+	acf_add_local_field_group( array(
 		'key' => 'group_63eca3ee3b7e5',
 		'title' => 'Content Topic Content',
 		'fields' => array(
@@ -523,9 +505,9 @@ add_action('acf/include_fields', function () {
 		'active' => true,
 		'description' => '',
 		'show_in_rest' => 0,
-	));
+	) );
 
-	acf_add_local_field_group(array(
+	acf_add_local_field_group( array(
 		'key' => 'group_62d922a68c0f2',
 		'title' => 'Fixed Price Packages',
 		'fields' => array(
@@ -792,9 +774,9 @@ add_action('acf/include_fields', function () {
 		'active' => true,
 		'description' => '',
 		'show_in_rest' => 0,
-	));
+	) );
 
-	acf_add_local_field_group(array(
+	acf_add_local_field_group( array(
 		'key' => 'group_62e26e44a3dae',
 		'title' => 'Flexible Page',
 		'fields' => array(
@@ -855,12 +837,39 @@ add_action('acf/include_fields', function () {
 									'Add Common Margin' => 'Add Common Margin',
 								),
 								'allow_custom' => 0,
-								'default_value' => array(),
+								'default_value' => array(
+								),
 								'layout' => 'horizontal',
 								'toggle' => 0,
 								'return_format' => 'value',
 								'save_custom' => 0,
 								'custom_choice_button_text' => 'Add new choice',
+							),
+							array(
+								'key' => 'field_64781ea70898f',
+								'label' => 'Alignment',
+								'name' => 'alignment',
+								'aria-label' => '',
+								'type' => 'radio',
+								'instructions' => '',
+								'required' => 0,
+								'conditional_logic' => 0,
+								'wrapper' => array(
+									'width' => '',
+									'class' => '',
+									'id' => '',
+								),
+								'choices' => array(
+									'Align left' => 'Align left',
+									'Align center' => 'Align center',
+									'Align right' => 'Align right',
+								),
+								'default_value' => '',
+								'return_format' => 'value',
+								'allow_null' => 0,
+								'other_choice' => 0,
+								'layout' => 'vertical',
+								'save_other_choice' => 0,
 							),
 							array(
 								'key' => 'field_63be8ea4067da',
@@ -1109,7 +1118,8 @@ add_action('acf/include_fields', function () {
 									'Add Common Padding' => 'Add Common Padding',
 									'Add Common Margin' => 'Add Common Margin',
 								),
-								'default_value' => array(),
+								'default_value' => array(
+								),
 								'return_format' => 'value',
 								'allow_custom' => 0,
 								'layout' => 'horizontal',
@@ -1133,8 +1143,8 @@ add_action('acf/include_fields', function () {
 								),
 								'choices' => array(
 									'Align left' => 'Align left',
-									'Align right' => 'Align right',
 									'Align center' => 'Align center',
+									'Align right' => 'Align right',
 								),
 								'default_value' => '',
 								'return_format' => 'value',
@@ -1286,7 +1296,8 @@ add_action('acf/include_fields', function () {
 									'Add Common Margin' => 'Add Common Margin',
 								),
 								'allow_custom' => 0,
-								'default_value' => array(),
+								'default_value' => array(
+								),
 								'layout' => 'horizontal',
 								'toggle' => 0,
 								'return_format' => 'value',
@@ -1445,7 +1456,8 @@ add_action('acf/include_fields', function () {
 										'choices' => array(
 											'Show form ?' => 'Show form ?',
 										),
-										'default_value' => array(),
+										'default_value' => array(
+										),
 										'return_format' => 'value',
 										'allow_custom' => 0,
 										'layout' => 'vertical',
@@ -1603,7 +1615,8 @@ add_action('acf/include_fields', function () {
 									'Add Common Margin' => 'Add Common Margin',
 								),
 								'allow_custom' => 0,
-								'default_value' => array(),
+								'default_value' => array(
+								),
 								'layout' => 'horizontal',
 								'toggle' => 0,
 								'return_format' => 'value',
@@ -1795,7 +1808,8 @@ add_action('acf/include_fields', function () {
 									'Add Common Margin' => 'Add Common Margin',
 								),
 								'allow_custom' => 0,
-								'default_value' => array(),
+								'default_value' => array(
+								),
 								'layout' => 'horizontal',
 								'toggle' => 0,
 								'return_format' => 'value',
@@ -2008,7 +2022,8 @@ add_action('acf/include_fields', function () {
 									'Add Common Margin' => 'Add Common Margin',
 								),
 								'allow_custom' => 0,
-								'default_value' => array(),
+								'default_value' => array(
+								),
 								'layout' => 'horizontal',
 								'toggle' => 0,
 								'return_format' => 'value',
@@ -2089,7 +2104,8 @@ add_action('acf/include_fields', function () {
 								'choices' => array(
 									'Show form ?' => 'Show form ?',
 								),
-								'default_value' => array(),
+								'default_value' => array(
+								),
 								'return_format' => 'value',
 								'allow_custom' => 0,
 								'layout' => 'vertical',
@@ -2192,7 +2208,8 @@ add_action('acf/include_fields', function () {
 									'Add Common Margin' => 'Add Common Margin',
 								),
 								'allow_custom' => 0,
-								'default_value' => array(),
+								'default_value' => array(
+								),
 								'layout' => 'horizontal',
 								'toggle' => 0,
 								'return_format' => 'value',
@@ -2436,7 +2453,8 @@ add_action('acf/include_fields', function () {
 									'Add Common Margin' => 'Add Common Margin',
 								),
 								'allow_custom' => 0,
-								'default_value' => array(),
+								'default_value' => array(
+								),
 								'layout' => 'horizontal',
 								'toggle' => 0,
 								'return_format' => 'value',
@@ -2589,7 +2607,8 @@ add_action('acf/include_fields', function () {
 									'Add Common Margin' => 'Add Common Margin',
 								),
 								'allow_custom' => 0,
-								'default_value' => array(),
+								'default_value' => array(
+								),
 								'layout' => 'horizontal',
 								'toggle' => 0,
 								'return_format' => 'value',
@@ -2769,7 +2788,8 @@ add_action('acf/include_fields', function () {
 									'Add Common Margin' => 'Add Common Margin',
 								),
 								'allow_custom' => 0,
-								'default_value' => array(),
+								'default_value' => array(
+								),
 								'layout' => 'horizontal',
 								'toggle' => 0,
 								'return_format' => 'value',
@@ -2956,7 +2976,8 @@ add_action('acf/include_fields', function () {
 									'Add Common Margin' => 'Add Common Margin',
 								),
 								'allow_custom' => 0,
-								'default_value' => array(),
+								'default_value' => array(
+								),
 								'layout' => 'horizontal',
 								'toggle' => 0,
 								'return_format' => 'value',
@@ -3089,7 +3110,8 @@ add_action('acf/include_fields', function () {
 									'Add Common Margin' => 'Add Common Margin',
 								),
 								'allow_custom' => 0,
-								'default_value' => array(),
+								'default_value' => array(
+								),
 								'layout' => 'horizontal',
 								'toggle' => 0,
 								'return_format' => 'value',
@@ -3261,7 +3283,8 @@ add_action('acf/include_fields', function () {
 									'Add Common Margin' => 'Add Common Margin',
 								),
 								'allow_custom' => 0,
-								'default_value' => array(),
+								'default_value' => array(
+								),
 								'layout' => 'horizontal',
 								'toggle' => 0,
 								'return_format' => 'value',
@@ -3709,9 +3732,9 @@ add_action('acf/include_fields', function () {
 		'active' => true,
 		'description' => '',
 		'show_in_rest' => 0,
-	));
+	) );
 
-	acf_add_local_field_group(array(
+	acf_add_local_field_group( array(
 		'key' => 'group_63da3fd0476de',
 		'title' => 'Inner Banner',
 		'fields' => array(
@@ -3786,9 +3809,9 @@ add_action('acf/include_fields', function () {
 		'active' => true,
 		'description' => '',
 		'show_in_rest' => 0,
-	));
+	) );
 
-	acf_add_local_field_group(array(
+	acf_add_local_field_group( array(
 		'key' => 'group_63eca5e524cdf',
 		'title' => 'Resources Page Content',
 		'fields' => array(
@@ -3931,9 +3954,9 @@ add_action('acf/include_fields', function () {
 		'active' => true,
 		'description' => '',
 		'show_in_rest' => 0,
-	));
+	) );
 
-	acf_add_local_field_group(array(
+	acf_add_local_field_group( array(
 		'key' => 'group_62d7e20f0ea6d',
 		'title' => 'Team Member',
 		'fields' => array(
@@ -4242,9 +4265,9 @@ add_action('acf/include_fields', function () {
 		'active' => true,
 		'description' => '',
 		'show_in_rest' => 0,
-	));
+	) );
 
-	acf_add_local_field_group(array(
+	acf_add_local_field_group( array(
 		'key' => 'group_63be9b331bf75',
 		'title' => 'Testimonial Information',
 		'fields' => array(
@@ -4391,9 +4414,9 @@ add_action('acf/include_fields', function () {
 		'active' => true,
 		'description' => '',
 		'show_in_rest' => 0,
-	));
+	) );
 
-	acf_add_local_field_group(array(
+	acf_add_local_field_group( array(
 		'key' => 'group_62da54168051f',
 		'title' => 'Website Settings',
 		'fields' => array(
@@ -4924,52 +4947,6 @@ add_action('acf/include_fields', function () {
 				'return_format' => 'array',
 			),
 			array(
-				'key' => 'field_63da5812d1c62',
-				'label' => 'Member Details Content',
-				'name' => '',
-				'aria-label' => '',
-				'type' => 'tab',
-				'instructions' => '',
-				'required' => 0,
-				'conditional_logic' => 0,
-				'wrapper' => array(
-					'width' => '',
-					'class' => '',
-					'id' => '',
-				),
-				'placement' => 'top',
-				'endpoint' => 0,
-			),
-			array(
-				'key' => 'field_63da581cd1c63',
-				'label' => 'Get in Touch Form',
-				'name' => 'gravity_forms',
-				'aria-label' => '',
-				'type' => 'select',
-				'instructions' => '',
-				'required' => 0,
-				'conditional_logic' => 0,
-				'wrapper' => array(
-					'width' => '',
-					'class' => '',
-					'id' => '',
-				),
-				'choices' => array(
-					5 => 'Get in Touch Member',
-					4 => 'Lead Magnet',
-					3 => 'Newsletter Form',
-					1 => 'Request a Quote',
-					2 => 'Sign up',
-				),
-				'default_value' => false,
-				'return_format' => 'value',
-				'multiple' => 0,
-				'allow_null' => 0,
-				'ui' => 0,
-				'ajax' => 0,
-				'placeholder' => '',
-			),
-			array(
 				'key' => 'field_642d69a08073a',
 				'label' => 'Header Settings',
 				'name' => '',
@@ -5199,7 +5176,7 @@ add_action('acf/include_fields', function () {
 				array(
 					'param' => 'options_page',
 					'operator' => '==',
-					'value' => 'acf-options-website-settings',
+					'value' => 'website-settings',
 				),
 			),
 		),
@@ -5212,5 +5189,6 @@ add_action('acf/include_fields', function () {
 		'active' => true,
 		'description' => '',
 		'show_in_rest' => 0,
-	));
-});
+	) );
+} );
+
