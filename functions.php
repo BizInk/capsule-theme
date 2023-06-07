@@ -24,6 +24,13 @@ function understrap_remove_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'understrap_remove_scripts', 20 );
 
+
+/** Force Showing of ACF Meta Boxes */
+function my_acf_init() {
+    acf_update_setting('remove_wp_meta_box', false);
+}
+add_action('acf/init', 'my_acf_init');
+
 /**
  * Enqueue our stylesheet and javascript file
  */
@@ -216,36 +223,9 @@ function dashboard_widget_function( $post, $callback_args ) {
 }
 
 add_filter( 'gform_enable_password_field', '__return_true' );
-add_filter('acf/settings/save_json', 'my_acf_json_save_point');
- 
-function my_acf_json_save_point( $path ) {
-    
-    // update path
-    $path = get_stylesheet_directory() . '/acf-json';
-    
-    // return
-    return $path;
-    
-}
-
-add_filter('acf/settings/load_json', 'my_acf_json_load_point');
-
-function my_acf_json_load_point( $paths ) {
-    
-    // remove original path (optional)
-    unset($paths[0]);
-    
-    // append path
-    $paths[] = get_stylesheet_directory() . '/acf-json';
-    
-    // return
-    return $paths;
-    
-}
 
 add_action( 'init', 'wpdocs_custom_init' );
 function wpdocs_custom_init() {
-	remove_post_type_support('post','excerpt');
 	remove_post_type_support('fixed-price-packages','excerpt');
 	remove_post_type_support('testimonial','excerpt');
 	remove_post_type_support('team-member','excerpt');

@@ -35,9 +35,7 @@ $google_my_business = get_field('google_my_business', 'options');
 
 	<?php
 	$header_custom_css = get_field('header_custom_css', 'option');
-	
 	if( !empty($header_custom_css) ){
-
 		echo '<style>'. $header_custom_css .'</style>';
 	} ?>
 
@@ -55,7 +53,11 @@ $google_my_business = get_field('google_my_business', 'options');
 			<div class="top-nav">
 				<div class="container">
 					<div class="client-area-wrap">
-						<div class="client-area-anchor"><?php _e('Client Area','capsule'); ?> <i class="fa fa-angle-down" aria-hidden="true"></i></div>
+						<?php
+							$locations = get_nav_menu_locations();
+							$menu = wp_get_nav_menu_object( $locations['client-area'] );
+						?>
+						<div class="client-area-anchor"><?php echo $menu->name ? $menu->name : __("Client Area",'capsule'); ?> <i class="fa fa-angle-down" aria-hidden="true"></i></div>
 						<div class="client-area-cont">
 							<?php
 							if( has_nav_menu('client-area') ){
