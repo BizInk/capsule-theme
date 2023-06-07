@@ -351,7 +351,7 @@ add_action( 'acf/include_fields', function() {
 				array(
 					'param' => 'options_page',
 					'operator' => '==',
-					'value' => 'admin-settings',
+					'value' => 'acf-options-admin-settings',
 				),
 			),
 		),
@@ -5194,7 +5194,7 @@ add_action( 'acf/include_fields', function() {
 				array(
 					'param' => 'options_page',
 					'operator' => '==',
-					'value' => 'website-settings',
+					'value' => 'acf-options-website-settings',
 				),
 			),
 		),
