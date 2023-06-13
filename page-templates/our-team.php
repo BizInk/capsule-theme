@@ -12,33 +12,26 @@ get_header();
 
 get_template_part('global-templates/inner-banner');
 
-$team_args = array(  
-    'post_type' => 'team-member',
-    'post_status' => 'publish',
-    'posts_per_page' => -1,
-    'order' => 'ASC'
-);
+$team_members = get_field('team_members');
 
-$team_loop = new WP_Query( $team_args );
+if( !empty($team_members) ){ ?>
 
-if( $team_loop->have_posts() ){
-?>
     <section class="teamlist-section comman-margin">
         <div class="container">
             <div class="row g-lg-5">
-                <?php while( $team_loop->have_posts() ){
-                    $team_loop->the_post();
+                <?php foreach( $team_members as $team_member ){
 
-                    $member_image = get_field('member_image');
-                    $member_position = get_field('member_position');
-                    $member_company = get_field('member_company'); ?>
+                    $member_image = get_field('member_image', $team_member);
+                    $member_position = get_field('member_position', $team_member);
+                    $member_company = get_field('member_company', $team_member); ?>
+
                     <div class="col-md-6 col-lg-4 team-member">
-                        <a href="<?php the_permalink(); ?>" class="team-member-wrap">
+                        <a href="<?php echo get_permalink($team_member); ?>" class="team-member-wrap">
                             <div class="member-img">
                                 <img src="<?php echo $member_image; ?>" class="img-fluid" alt="">
                             </div>
                             <div class="member-details">
-                                <h4><?php the_title(); ?></h4>
+                                <h4><?php echo $team_member->post_title; ?></h4>
                                 
                                 <?php if( !empty($member_position) ){ ?>
                                     
@@ -52,8 +45,7 @@ if( $team_loop->have_posts() ){
                             </div>
                         </a>
                     </div>
-                <?php }
-                wp_reset_query(); ?>
+                <?php } ?>
             </div>
         </div>
     </section>

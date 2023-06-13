@@ -1,6 +1,7 @@
 <!-- infobox-section-start -->
 <?php
 $general_settings = get_sub_field('general_settings');
+$alignment = get_sub_field_object('alignment');
 $info_box_small_title = get_sub_field('info_box_small_title');
 $info_box_title = get_sub_field('info_box_title');
 $info_box_content = get_sub_field('info_box_content');
@@ -14,6 +15,18 @@ if( in_array('Add Common Padding', $general_settings) ){
 if( in_array('Add Common Margin', $general_settings) ){
 
 	$general_class .= ' comman-margin';
+}
+
+if( $alignment['value'] == "Align left" ){
+	$align_class .= 'text-start';
+}
+
+if( $alignment['value'] == "Align right"  ){
+	$align_class .= 'text-end';
+}
+
+if( $alignment['value'] == "Align center" ){
+	$align_class .= 'text-center';
 }
 
 if( have_rows('information_box') ):
@@ -49,11 +62,11 @@ if( have_rows('information_box') ):
 
 							$info_image = get_sub_field('info_image');
 							$info_title = get_sub_field('info_title');
-							$info_description = get_sub_field('info_description');
+							$info_description = get_sub_field('info_description'); 
 							$info_button = get_sub_field('info_button');
 							?>
 							<div class="col-md-6 col-lg-4 col-xl-3">
-								<div class="info-box  h-100">
+								<div class="info-box h-100 <?php echo $align_class ?>">
 
 									<?php if( !empty($info_image) ) { ?>
 

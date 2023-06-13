@@ -10,7 +10,11 @@
 defined('ABSPATH') || exit;
 
 get_header();
+
 $container = get_theme_mod('understrap_container_type');
+
+$error_button = get_sub_field('error_button');
+
 get_template_part( 'global-templates/inner-banner'); 
 ?>
 

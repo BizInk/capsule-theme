@@ -1,4 +1,6 @@
 <?php 
+$four_col_vid_title_color = get_sub_field('four_col_vid_title_color');
+$four_col_vid_desc_color = get_sub_field('four_col_vid_desc_color');
 $four_col_vid_title = get_sub_field('four_col_vid_title');
 $four_col_vid_desc = get_sub_field('four_col_vid_desc');
 $four_col_vid_button = get_sub_field('four_col_vid_button');
@@ -8,10 +10,10 @@ $four_col_vid_bg = get_sub_field('four_col_vid_bg');
 <section class="video-banner-section comman-margin">
 	<div class="full-width-wysiwyg text-center mb-0 py-5" style="background-image:url(<?php echo $four_col_vid_bg; ?>);">
 		<div class="container">
-			<div class="editor-design">
+			<div class="editor-design"<?= !empty($four_col_vid_desc_color) ? ' style="color: '. $four_col_vid_desc_color . '"' : null; ?>>
 				<?php if( !empty($four_col_vid_title) ){ ?>
 
-					<h1><?= $four_col_vid_title; ?></h1>
+					<h1<?= !empty($four_col_vid_title_color) ? ' style="color: '. $four_col_vid_title_color . '"' : null; ?>><?= $four_col_vid_title; ?></h1>
 				<?php }
 
 				echo $four_col_vid_desc; ?>
@@ -52,6 +54,7 @@ $four_col_vid_bg = get_sub_field('four_col_vid_bg');
 					the_row();
 
 					$four_col_vid_image = get_sub_field('four_col_vid_image');
+					$four_col_vid_image_title = get_sub_field('four_col_vid_image_title');
 					$four_col_vid_link = get_sub_field('four_col_vid_link');
 
 					if( !empty($four_col_vid_image['url']) ){ ?>
@@ -61,8 +64,13 @@ $four_col_vid_bg = get_sub_field('four_col_vid_bg');
 								<?= !empty($four_col_vid_link) ? '<a href="'. $four_col_vid_link .'">' : null; ?>
 									
 									<img src="<?php echo $four_col_vid_image['url']; ?>" alt="<?php echo $four_col_vid_image['alt']; ?>">
+																		
 								<?= !empty($four_col_vid_link) ? '</a>' : null; ?>
 							</div>
+							<?php if( !empty($four_col_vid_image_title) ){ ?>
+
+								<h4 class="text-center mt-5"><?= $four_col_vid_image_title; ?></h4>
+							<?php } ?>
 						</div>
 					<?php }
 				} ?>

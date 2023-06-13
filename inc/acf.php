@@ -352,7 +352,7 @@ add_action( 'acf/include_fields', function() {
 				array(
 					'param' => 'options_page',
 					'operator' => '==',
-					'value' => 'acf-options-admin-settings',
+					'value' => 'admin-settings',
 				),
 			),
 		),
@@ -3546,6 +3546,42 @@ add_action( 'acf/include_fields', function() {
 						'display' => 'block',
 						'sub_fields' => array(
 							array(
+								'key' => 'field_6482cf8d41ff6',
+								'label' => 'Title Color',
+								'name' => 'four_col_vid_title_color',
+								'aria-label' => '',
+								'type' => 'color_picker',
+								'instructions' => '',
+								'required' => 0,
+								'conditional_logic' => 0,
+								'wrapper' => array(
+									'width' => '50',
+									'class' => '',
+									'id' => '',
+								),
+								'default_value' => '#000000',
+								'enable_opacity' => 0,
+								'return_format' => 'string',
+							),
+							array(
+								'key' => 'field_6482d10b217ee',
+								'label' => 'Description Color',
+								'name' => 'four_col_vid_desc_color',
+								'aria-label' => '',
+								'type' => 'color_picker',
+								'instructions' => '',
+								'required' => 0,
+								'conditional_logic' => 0,
+								'wrapper' => array(
+									'width' => '50',
+									'class' => '',
+									'id' => '',
+								),
+								'default_value' => '#000000',
+								'enable_opacity' => 0,
+								'return_format' => 'string',
+							),
+							array(
 								'key' => 'field_6458d9e97c3d4',
 								'label' => 'Title',
 								'name' => 'four_col_vid_title',
@@ -3694,6 +3730,27 @@ add_action( 'acf/include_fields', function() {
 										'max_size' => '',
 										'mime_types' => '',
 										'preview_size' => 'medium',
+										'parent_repeater' => 'field_6458da217c3d7',
+									),
+									array(
+										'key' => 'field_6482cfcd41ff7',
+										'label' => 'Title',
+										'name' => 'four_col_vid_image_title',
+										'aria-label' => '',
+										'type' => 'text',
+										'instructions' => '',
+										'required' => 0,
+										'conditional_logic' => 0,
+										'wrapper' => array(
+											'width' => '',
+											'class' => '',
+											'id' => '',
+										),
+										'default_value' => '',
+										'maxlength' => '',
+										'placeholder' => '',
+										'prepend' => '',
+										'append' => '',
 										'parent_repeater' => 'field_6458da217c3d7',
 									),
 									array(
@@ -3961,6 +4018,57 @@ add_action( 'acf/include_fields', function() {
 					'param' => 'page_template',
 					'operator' => '==',
 					'value' => 'page-templates/resource.php',
+				),
+			),
+		),
+		'menu_order' => 0,
+		'position' => 'normal',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => true,
+		'description' => '',
+		'show_in_rest' => 0,
+	) );
+
+	acf_add_local_field_group( array(
+		'key' => 'group_64880c157b665',
+		'title' => 'Select Team Members',
+		'fields' => array(
+			array(
+				'key' => 'field_64880c166512f',
+				'label' => 'Team Members',
+				'name' => 'team_members',
+				'aria-label' => '',
+				'type' => 'post_object',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'post_type' => array(
+					0 => 'team-member',
+				),
+				'post_status' => array(
+					0 => 'publish',
+				),
+				'taxonomy' => '',
+				'return_format' => 'object',
+				'multiple' => 1,
+				'allow_null' => 0,
+				'ui' => 1,
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'page_template',
+					'operator' => '==',
+					'value' => 'page-templates/our-team.php',
 				),
 			),
 		),
@@ -5195,7 +5303,7 @@ add_action( 'acf/include_fields', function() {
 				array(
 					'param' => 'options_page',
 					'operator' => '==',
-					'value' => 'acf-options-website-settings',
+					'value' => 'website-settings',
 				),
 			),
 		),
@@ -5210,4 +5318,3 @@ add_action( 'acf/include_fields', function() {
 		'show_in_rest' => 0,
 	) );
 } );
-

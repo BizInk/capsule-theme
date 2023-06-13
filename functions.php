@@ -57,7 +57,7 @@ add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
  * Load the child theme's text domain
  */
 function add_child_theme_textdomain() {
-	load_child_theme_textdomain( 'understrap-child', get_stylesheet_directory() . '/languages' );
+	load_child_theme_textdomain( 'capsule', get_stylesheet_directory() . '/languages' );
 }
 add_action( 'after_setup_theme', 'add_child_theme_textdomain' );
 
@@ -90,28 +90,33 @@ function understrap_child_customize_controls_js() {
 add_action( 'customize_controls_enqueue_scripts', 'understrap_child_customize_controls_js' );
 
 /*Website Settings*/
-if( function_exists('acf_add_options_sub_page') ) {
-	
+
+if( function_exists('acf_add_options_page') ){
+
 	acf_add_options_page(array(
-		'page_title'  => __('Website Settings'),
-        'menu_title'  => __('Website Settings'),
+		'page_title' => 'Website Settings',
+		'menu_title' => 'Website Settings',
+		'menu_slug' => 'website-settings',
 		'capability' => 'edit_posts',
-		'icon_url' => 'dashicons-info'
+		'icon_url' => 'dashicons-info',
+		'redirect' => false
 	));
 
 	acf_add_options_page(array(
-		'page_title'  => __('Admin Settings'),
-        'menu_title'  => __('Admin Settings'),
+		'page_title' => 'Admin Settings',
+		'menu_title' => 'Admin Settings',
+		'menu_slug' => 'admin-settings',
 		'capability' => 'manage_options',
-		'icon_url' => 'dashicons-carrot'
+		'icon_url' => 'dashicons-carrot',
+		'redirect' => false
 	));
 }
 
 
 // This theme uses wp_nav_menu() in two locations.  
 register_nav_menus( array(  
-  'footer-menu' => __( 'Footer Menu', 'understrap-child' ),
-  'client-area' => __( 'Client Area', 'understrap-child' )
+  'footer-menu' => __( 'Footer Menu', 'capsule' ),
+  'client-area' => __( 'Client Area', 'capsule' )
 ) );
 
 
@@ -155,7 +160,7 @@ if ( !function_exists('base_rss_feed') ) {
 			$rss_items = $rss->get_items(0, $maxitems);
 			// Store the total number of items found in the feed
 			$i = 0;
-			$total_entries = count($rss_items);
+			$total_entries = count($rss_items);         
 			// Output HTML
 			$html = "<ul class='rss-widget'>";
             // echo '<ul class="rss-widget">';
@@ -181,13 +186,12 @@ if ( !function_exists('base_rss_feed') ) {
 				// if( $date == true ) $html .= "$date_posted";
 				// $html .= '<li class="rss-widget-description">'."$desc".'</li>';
 				$html .= '<li class="rss-widget-description">'.wp_trim_words( $desc, 50, '&nbsp[...]' ).'</li>';
-				$html .= "";
+				$html .= "";		
 			}
-			// echo '</ul>';
-            $html .= "</ul>";             
+			// echo '</ul>';     
+            $html .= "</ul>";
 
 		} else {
-
 			$html = "An error occurred while parsing your RSS feed. Check that it's a valid XML file.";
 		}
 		return $html;
