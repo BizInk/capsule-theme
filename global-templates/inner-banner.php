@@ -2,6 +2,9 @@
 
 	$inner_banner_title = get_field('inner_banner_title');
 	$inner_banner_content = get_field('inner_banner_content'); 
+    if(empty($inner_banner_title)){
+        $inner_banner_title = get_the_title();
+    }
 }else if( is_singular('team-member') ){
 
 	$inner_banner_title = get_the_title();
@@ -25,12 +28,18 @@
     $inner_banner_content = get_field('inner_banner_content', 'option');
 }else if( is_archive() ){
 
-    $inner_banner_title = single_cat_title( '', false ); 
+    $inner_banner_title = single_cat_title( '', false );
+    if(empty($inner_banner_title) && is_post_type_archive()){
+        $inner_banner_title = post_type_archive_title( '', false );
+    }
     $inner_banner_content = '';
 }else if( is_404() ){
 
     $inner_banner_title = get_field('404_banner_title', 'option'); 
     $inner_banner_content = get_field('404_banner_content', 'option');
+    if(empty($inner_banner_title)){
+        $inner_banner_title = "Error 404";
+    }
 }
 
 if( empty($inner_banner_title) || !$inner_banner_title ){

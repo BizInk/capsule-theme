@@ -39,12 +39,11 @@ get_template_part('global-templates/inner-banner');
 		</div><!-- .row -->
 
 		<?php 
-		$categories = wp_get_post_categories( get_the_id() );
 		$related_args = array(
 			'post_status' => 'publish',
 			'posts_per_page' => 3,
-			'orderby'  => 'rand',
-			'cat' => $categories,
+			'orderby'  => 'DESC',
+			'post__not_in' => array(get_the_id())
 		);
 
 		$related_loop = new WP_Query( $related_args );
@@ -55,7 +54,7 @@ get_template_part('global-templates/inner-banner');
 				<div class="text-left">
 					<div class="container">
 						<div class="editor-design mb-5">
-							<h2>Related Posts</h2>
+							<h2>Recent Posts</h2>
 						</div>
 					</div>
 				</div>
@@ -64,7 +63,6 @@ get_template_part('global-templates/inner-banner');
 						<div class="row g-lg-5">
 
 							<?php
-
 		                    while ( $related_loop->have_posts() ) {
 		                        $related_loop->the_post();
 
