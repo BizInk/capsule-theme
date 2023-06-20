@@ -63,12 +63,15 @@ if( !is_search() ){ ?>
         <div class="full-width-wysiwyg text-center">
             <div class="container">
                 <div class="editor-design">
-
-                    <?php if( !empty($inner_banner_title) ) { ?>
+                    <?php 
+                    
+                    if( !empty($inner_banner_title) ) { ?>
 
                         <h1><?php echo do_shortcode($inner_banner_title); ?></h1>
                     <?php }
-
+                    else{
+                        echo '<h1>'. get_the_title() .'</h1>';
+                    }
                     if( !empty($inner_banner_content) && !is_singular('resource') ) {
 
                         echo $inner_banner_content;
