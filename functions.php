@@ -7,9 +7,9 @@
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
+
 define('DEFAULT_IMG', get_stylesheet_directory_uri().'/images/default.jpg');
 
-require_once 'inc/acf.php';
 require_once 'inc/cpt.php';
 
 /**
@@ -57,7 +57,7 @@ add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
  * Load the child theme's text domain
  */
 function add_child_theme_textdomain() {
-	load_child_theme_textdomain( 'capsule', get_stylesheet_directory() . '/languages' );
+	load_child_theme_textdomain( 'understrap-child', get_stylesheet_directory() . '/languages' );
 }
 add_action( 'after_setup_theme', 'add_child_theme_textdomain' );
 
@@ -90,7 +90,6 @@ function understrap_child_customize_controls_js() {
 add_action( 'customize_controls_enqueue_scripts', 'understrap_child_customize_controls_js' );
 
 /*Website Settings*/
-
 if( function_exists('acf_add_options_page') ){
 
 	acf_add_options_page(array(
@@ -115,17 +114,10 @@ if( function_exists('acf_add_options_page') ){
 
 // This theme uses wp_nav_menu() in two locations.  
 register_nav_menus( array(  
-  'footer-menu' => __( 'Footer Menu', 'capsule' ),
-  'client-area' => __( 'Client Area', 'capsule' )
-) );
+	'footer-menu' => __( 'Footer Menu', 'capsule' ),
+	'client-area' => __( 'Client Area', 'capsule' )
+));
 
-
-//$new_color = get_field('primary_color', 'option');
-// require_once(get_stylesheet_directory() . '/inc/scssphp/scss.inc.php');
-// use ScssPhp\ScssPhp\Compiler;
-// $compiler = new Compiler();
-// echo $compiler->compileString('
-//   $primary: '.$new_color.'')->getCss();
 
 /**
  * Add a new dashboard widget.
@@ -136,7 +128,8 @@ function wpdocs_add_dashboard_widgets() {
 }
 add_action( 'wp_dashboard_setup', 'wpdocs_add_dashboard_widgets' );
 
-/*
+
+  /*
 *	Re-usable RSS feed reader with shortcode
 */
 if ( !function_exists('base_rss_feed') ) {
@@ -158,15 +151,18 @@ if ( !function_exists('base_rss_feed') ) {
 			// Set a limit for the number of items to parse
 			$maxitems = $rss->get_item_quantity($size);
 			$rss_items = $rss->get_items(0, $maxitems);
+ 
 			// Store the total number of items found in the feed
 			$i = 0;
-			$total_entries = count($rss_items);         
+			$total_entries = count($rss_items);
+            
 			// Output HTML
 			$html = "<ul class='rss-widget'>";
             // echo '<ul class="rss-widget">';
 			foreach ($rss_items as $item) {
 				 
 				$i++;
+ 
 				// Add a class of "last" to the last item in the list
 				if( $total_entries == $i ) {
 					$last = " class='last'";
@@ -186,14 +182,22 @@ if ( !function_exists('base_rss_feed') ) {
 				// if( $date == true ) $html .= "$date_posted";
 				// $html .= '<li class="rss-widget-description">'."$desc".'</li>';
 				$html .= '<li class="rss-widget-description">'.wp_trim_words( $desc, 50, '&nbsp[...]' ).'</li>';
-				$html .= "";		
+				$html .= "";
+			 
 			}
-			// echo '</ul>';     
+			// echo '</ul>';
+           
             $html .= "</ul>";
 
+             
+
 		} else {
+ 
 			$html = "An error occurred while parsing your RSS feed. Check that it's a valid XML file.";
+ 
 		}
+ 
+
 		return $html;
 
 	}
@@ -224,12 +228,43 @@ function dashboard_widget_function( $post, $callback_args ) {
     // esc_html_e( "Hello World, this is my first Dashboard Widget!", "textdomain" );
     $feed_url = get_field('feed_url', 'option');
    if( function_exists('base_rss_feed') ) echo base_rss_feed(3, $feed_url, true);
+
 }
 
 add_filter( 'gform_enable_password_field', '__return_true' );
+add_filter('acf/settings/save_json', 'my_acf_json_save_point');
+ 
+function my_acf_json_save_point( $path ) {
+    
+    // update path
+    $path = get_stylesheet_directory() . '/acf-json';
+    
+    
+    // return
+    return $path;
+    
+}
+
+add_filter('acf/settings/load_json', 'my_acf_json_load_point');
+
+function my_acf_json_load_point( $paths ) {
+    
+    // remove original path (optional)
+    unset($paths[0]);
+    
+    
+    // append path
+    $paths[] = get_stylesheet_directory() . '/acf-json';
+    
+    
+    // return
+    return $paths;
+    
+}
 
 add_action( 'init', 'wpdocs_custom_init' );
 function wpdocs_custom_init() {
+	remove_post_type_support('post','excerpt');
 	remove_post_type_support('fixed-price-packages','excerpt');
 	remove_post_type_support('testimonial','excerpt');
 	remove_post_type_support('team-member','excerpt');
@@ -247,7 +282,6 @@ function wpdocs_custom_init() {
 	        remove_post_type_support('page', 'editor');
 		}
 	}
-
 }
 
 // Adding option to select gravity form in ACF
@@ -354,7 +388,7 @@ function fetch_blog_posts() {
 	                            <a href="<?php the_permalink(); ?>" class="member-name"><h4><?php the_title(); ?></h4></a>
 	                            <?php the_excerpt(); ?>
 	   
-	                            <a href="<?php the_permalink(); ?>" class="readmore"><?php _e('Read More','capsule'); ?></a>                           
+	                            <a href="<?php the_permalink(); ?>" class="readmore">Read More</a>                           
 	                        </div>
 	                    </div>
 	            </div>
