@@ -1347,3 +1347,67 @@ function cptui_register_my_taxes_content_type() {
 	register_taxonomy( "content-type", [ "resource" ], $args );
 }
 add_action( 'init', 'cptui_register_my_taxes_content_type' );
+
+function capsule_register_videos(){
+	// CPT registration
+	$videos_labels = array(
+		'name'                  => _x( 'Videos', 'Post type general name', 'capsule' ),
+		'singular_name'         => _x( 'Video', 'Post type singular name', 'capsule' ),
+		'menu_name'             => _x( 'Videos', 'Admin Menu text', 'capsule' ),
+		'name_admin_bar'        => _x( 'Video', 'Add New on Toolbar', 'capsule' ),
+		'add_new'               => __( 'Add New', 'capsule' ),
+		'add_new_item'          => __( 'Add New Video', 'capsule' ),
+		'new_item'              => __( 'New Video', 'capsule' ),
+		'edit_item'             => __( 'Edit Video', 'capsule' ),
+		'view_item'             => __( 'View Video', 'capsule' ),
+		'all_items'             => __( 'All Videos', 'capsule' ),
+		'search_items'          => __( 'Search Videos', 'capsule' ),
+		'parent_item_colon'     => __( 'Parent Videos:', 'capsule' ),
+		'not_found'             => __( 'No videos found.', 'capsule' ),
+		'not_found_in_trash'    => __( 'No videos found in Trash.', 'capsule' )
+	);
+
+	$videos_args = array(
+		'labels'             => $videos_labels,
+		'public'             => true,
+		'publicly_queryable' => true,
+		'menu_icon'			 => 'dashicons-video-alt3',
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'video' ),
+		'capability_type'    => 'post',
+		'has_archive'        => true,
+		'hierarchical'       => false,
+		'menu_position'      => null,
+		'supports'           => array( 'title', 'editor', 'thumbnail' )
+	);
+
+	register_post_type( 'video', $videos_args );
+
+	$videos_cat = array(
+		'name'              => _x( 'Categories', 'taxonomy general name', 'capsule' ),
+		'singular_name'     => _x( 'Category', 'taxonomy singular name', 'capsule' ),
+		'search_items'      => __( 'Search Categories', 'capsule' ),
+		'all_items'         => __( 'All Categories', 'capsule' ),
+		'parent_item'       => __( 'Parent Category', 'capsule' ),
+		'parent_item_colon' => __( 'Parent Category:', 'capsule' ),
+		'edit_item'         => __( 'Edit Category', 'capsule' ),
+		'update_item'       => __( 'Update Category', 'capsule' ),
+		'add_new_item'      => __( 'Add New Category', 'capsule' ),
+		'new_item_name'     => __( 'New Category Name', 'capsule' ),
+		'menu_name'         => __( 'Category', 'capsule' ),
+	);
+
+	$videos_cat_args = array(
+		'hierarchical'      => true,
+		'labels'            => $videos_cat,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'rewrite'           => array( 'slug' => 'video_cat' ),
+	);
+
+	register_taxonomy( 'video_cat', array( 'video' ), $videos_cat_args );
+}
+add_action( 'init', 'capsule_register_videos' );

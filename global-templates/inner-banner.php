@@ -14,27 +14,25 @@
     $inner_banner_title = get_the_title();
     $inner_banner_content = '';
 }else if( is_single() ){
-
     global $post;
     $author_id=$post->post_author;
-
     $inner_banner_title = get_the_title();
     $inner_banner_content = '<p class="post-meta">
             <span>'. get_the_author_meta('display_name', $author_id) .'</span> | <span>'. get_the_date('d M, Y') .'</span>
         </p>';
-}else if( is_home() ){
-
+}
+else if( is_home() ){
     $inner_banner_title = 'Blogs'; 
     $inner_banner_content = get_field('inner_banner_content', 'option');
-}else if( is_archive() ){
-
+}
+else if( is_archive() ){
     $inner_banner_title = single_cat_title( '', false );
     if(empty($inner_banner_title) && is_post_type_archive()){
         $inner_banner_title = post_type_archive_title( '', false );
     }
     $inner_banner_content = '';
-}else if( is_404() ){
-
+}
+else if( is_404() ){
     $inner_banner_title = get_field('404_banner_title', 'option'); 
     $inner_banner_content = get_field('404_banner_content', 'option');
     if(empty($inner_banner_title)){
@@ -43,7 +41,6 @@
 }
 
 if( empty($inner_banner_title) || !$inner_banner_title ){
-
     $inner_banner_title = get_field('inner_banner_title', 'option');
     if(empty($inner_banner_title)){
         $inner_banner_title = get_the_title();
@@ -51,7 +48,6 @@ if( empty($inner_banner_title) || !$inner_banner_title ){
 }
 
 if( empty($inner_banner_content) || !$inner_banner_content ){
-        
     $inner_banner_content = get_field('inner_banner_content', 'option');
 }
 
