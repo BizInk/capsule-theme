@@ -59,10 +59,8 @@ if( !empty($content_topics) ){ ?>
                         $icon = get_field('content_topic_icon', $content_topic); ?>
 
                         <a href="<?= get_term_link($content_topic); ?>" class="col-md-6 col-lg-4 text-decoration-none" <?= $topics_counter > $ppp ? 'style="display:none;"' : ''; ?> data-pagenumber="topics<?= ceil($topics_counter/$ppp); ?>">
-                            <div class="info-box text-center h-100">
-                                
+                            <div class="info-box text-center h-100"> 
                                 <?php if( !empty($icon) ){ ?>
-                                    
                                     <img src="<?php echo $icon; ?>" class="img-fluid" alt="">
                                 <?php } ?>
                                 <h4><?= $content_topic->name; ?></h4>
@@ -80,7 +78,6 @@ if( !empty($content_topics) ){ ?>
                 </div>
 
                 <?php if( count($content_topics) > $ppp ){ ?>
-
                     <a href="javascript:void(0);" class="btn red-btn topics-load-more" data-pagenumber="1"><?php _e('Load More','wave-theme'); ?></a>
                 <?php } ?>
 
@@ -88,18 +85,12 @@ if( !empty($content_topics) ){ ?>
                     // Script to load more topics
                     jQuery(document).on('click', '.topics-load-more', function(e){
                         e.preventDefault();
-
                         var pagenumber = parseInt(jQuery(this).attr('data-pagenumber'));
                         pagenumber = parseInt(pagenumber+1);
-
                         jQuery('[data-pagenumber="topics'+ pagenumber +'"]').show();
-
                         jQuery(this).attr('data-pagenumber', pagenumber);
-
                         pagenumber = parseInt(pagenumber+1);
-                        
                         if( jQuery('[data-pagenumber="topics'+ pagenumber +'"]').length == 0 ){
-
                             jQuery(this).remove();
                         }
                     });
@@ -126,17 +117,12 @@ if( !empty($content_types) ){ ?>
         <div class="full-width-wysiwyg text-center">
             <div class="container">
                 <div class="editor-design">
-                    
                     <?php if( !empty($content_types_small_title) ){ ?>
-                        
                         <h6><?= $content_types_small_title; ?></h6>
                     <?php }
-
                     if( !empty($content_types_title) ){ ?>
-                        
                         <h2><?= $content_types_title; ?></h2>
                     <?php }
-
                     echo $content_types_content; ?>
                 </div>
             </div>
@@ -144,7 +130,6 @@ if( !empty($content_types) ){ ?>
         <div class="container">
             <div class="infobox-warp">
                 <div class="row gy-5 g-md-5">
-
                     <?php
                     $types_counter = 1;
                     foreach( $content_types as $content_type ){ ?>
@@ -167,7 +152,6 @@ if( !empty($content_types) ){ ?>
                 </div>
 
                 <?php if( count($content_types) > $ppp ){ ?>
-
                     <a href="javascript:void(0);" class="btn red-btn types-load-more" data-pagenumber="1"><?php _e('Load More','wave-theme'); ?></a>
                 <?php } ?>
 
@@ -175,18 +159,12 @@ if( !empty($content_types) ){ ?>
                     // Script to load more types
                     jQuery(document).on('click', '.types-load-more', function(e){
                         e.preventDefault();
-
                         var pagenumber = parseInt(jQuery(this).attr('data-pagenumber'));
                         pagenumber = parseInt(pagenumber+1);
-
                         jQuery('[data-pagenumber="types'+ pagenumber +'"]').show();
-
                         jQuery(this).attr('data-pagenumber', pagenumber);
-
                         pagenumber = parseInt(pagenumber+1);
-                        
                         if( jQuery('[data-pagenumber="types'+ pagenumber +'"]').length == 0 ){
-
                             jQuery(this).remove();
                         }
                     });
