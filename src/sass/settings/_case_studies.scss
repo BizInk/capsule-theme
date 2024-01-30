@@ -1,0 +1,44 @@
+.case-studies-two-col-section{    
+    .case-study-details {       
+        h3 {             
+           color:$neutral-light-blue;
+        }            
+        .client-details {            
+            .icon-wrap{            
+                background:$white;                                               
+            } 
+            .client-content{                
+            }                                                          
+            span {                                               
+            }
+        }
+    }
+    .case-study-sidebar{
+            h3{
+                 color:$neutral-light-blue;
+            }
+         .case-study-sidebar-details{
+            h4,h3{
+                 color:$neutral-light-blue;
+            }
+            .client-details{
+                                
+                .client-content {
+                
+                    h5{
+                        color:$dark;
+                    }
+                    span{
+                
+                    }
+                }
+            }
+        }  
+    }
+}
+
+.case-study-card-section{
+    a.member-name h4, p, h5 {
+      color:$dark;
+    }
+}

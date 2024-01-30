@@ -53,3 +53,12 @@ nav.contact-details ul li a{
 		color:$primary;		
 	}
 }
+
+
+
+ .video-wrap i.fa{
+    color:$yellow;
+ }
+ .video-wrap:before {
+    background: rgba($dark, 0.50);
+}

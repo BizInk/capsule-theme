@@ -43,7 +43,7 @@ get_template_part( 'global-templates/inner-banner');
 
                             $error_button = get_field('error_button','option');
 
-                            if(isset($error_button['title'])) { ?>
+                            if($error_button['title']) { ?>
                                 
                                 <a href="<?php echo $error_button['url']; ?>" class="btn btn-outline-primary mt-4"><?php echo $error_button['title']; ?></a>
                             <?php } ?>

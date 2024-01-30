@@ -1,4 +1,14 @@
 .pricing-section {
+   .form-check.form-switch {   
+     .form-check-input {
+      background-color:$yellow;
+      border-color:$yellow;
+      &:checked{
+        background-color:$primary;
+        border-color:$primary;
+      }
+    }
+  }
   .card {
       // border:1px solid rgba($neutral-blue, 0.3);
     .card-header {

@@ -62,48 +62,8 @@
             "endpoint": 0
         },
         {
-            "key": "field_62d7e2415e29b",
-            "label": "Position",
-            "name": "member_position",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_63da44e76c806",
-            "label": "Company Name",
-            "name": "member_company",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
             "key": "field_62d7e2515e29c",
-            "label": "Full Profile",
+            "label": "About Me",
             "name": "member_full_profile",
             "aria-label": "",
             "type": "wysiwyg",
@@ -123,7 +83,7 @@
         },
         {
             "key": "field_63da4660125fb",
-            "label": "My Story",
+            "label": "Fun Facts",
             "name": "member_my_story",
             "aria-label": "",
             "type": "wysiwyg",
@@ -142,31 +102,11 @@
             "delay": 0
         },
         {
-            "key": "field_63da44bf6c805",
-            "label": "Contact Text",
-            "name": "member_contact_text",
-            "aria-label": "",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "rows": 4,
-            "placeholder": "",
-            "new_lines": ""
-        },
-        {
-            "key": "field_62d7e2575e29d",
+            "key": "field_65a8c3d682d7e",
             "label": "Phone",
             "name": "member_phone",
             "aria-label": "",
-            "type": "text",
+            "type": "number",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -176,13 +116,15 @@
                 "id": ""
             },
             "default_value": "",
+            "min": "",
+            "max": "",
             "placeholder": "",
+            "step": "",
             "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "append": ""
         },
         {
-            "key": "field_62d7e2605e29e",
+            "key": "field_65a8c3e682d7f",
             "label": "Email",
             "name": "member_email",
             "aria-label": "",
@@ -201,11 +143,11 @@
             "append": ""
         },
         {
-            "key": "field_63da44aa6c804",
+            "key": "field_65a8c42782d80",
             "label": "Address",
             "name": "member_address",
             "aria-label": "",
-            "type": "text",
+            "type": "textarea",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -216,9 +158,9 @@
             },
             "default_value": "",
             "maxlength": "",
+            "rows": 4,
             "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "new_lines": ""
         },
         {
             "key": "field_62d7e27e5e29f",
@@ -307,5 +249,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1676455002
+    "modified": 1705559128
 }

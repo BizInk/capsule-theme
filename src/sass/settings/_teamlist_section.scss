@@ -26,7 +26,15 @@
                                         
             }
         }
-    }  
+    }
+    .address-wrpal {       
+        a {            
+            color:$neutral-light-blue;                       
+            &:hover{
+                color:$yellow;
+            }            
+        }
+    }    
 }
 
 .get-in-touch{    

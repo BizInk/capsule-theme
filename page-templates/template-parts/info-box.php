@@ -2,6 +2,8 @@
 <?php
 $general_settings = get_sub_field('general_settings');
 $alignment = get_sub_field_object('alignment');
+$column_counts = get_sub_field('column_counts');
+$center_info_boxes = get_sub_field('center_info_boxes');
 $info_box_small_title = get_sub_field('info_box_small_title');
 $info_box_title = get_sub_field('info_box_title');
 $info_box_content = get_sub_field('info_box_content');
@@ -31,7 +33,7 @@ if( $alignment['value'] == "Align center" ){
 
 if( have_rows('information_box') ):
 	?>
-	<section class="infobox-section<?= $general_class; ?>">
+	<section class="infobox-section<?php echo $general_class; ?>">
 
 		<div class="full-width-wysiwyg text-center">
 			<div class="container">
@@ -39,12 +41,12 @@ if( have_rows('information_box') ):
 
 					<?php if( !empty($info_box_small_title) ){ ?>
 
-						<h6><?= $info_box_small_title; ?></h6>
+						<h6><?php echo $info_box_small_title; ?></h6>
 					<?php }
 
 					if( !empty($info_box_title) ){ ?>
 						
-						<h2><?= $info_box_title; ?></h2>
+						<h2><?php echo $info_box_title; ?></h2>
 					<?php }
 
 					echo $info_box_content; ?>
@@ -54,7 +56,7 @@ if( have_rows('information_box') ):
 
 		<div class="container">
 			<div class="infobox-warp">
-				<div class="row gy-5 g-md-5">
+				<div class="row gy-5 g-md-5<?php echo $center_info_boxes ? ' justify-content-center': null; ?>">
 					<?php if( have_rows('information_box') ):
 
 						while( have_rows('information_box') ):
@@ -65,7 +67,7 @@ if( have_rows('information_box') ):
 							$info_description = get_sub_field('info_description'); 
 							$info_button = get_sub_field('info_button');
 							?>
-							<div class="col-md-6 col-lg-4 col-xl-3">
+							<div class="col-md-6 col-lg-4 <?php echo $column_counts; ?>">
 								<div class="info-box h-100 <?php echo $align_class ?>">
 
 									<?php if( !empty($info_image) ) { ?>

@@ -5,7 +5,9 @@ get_template_part('global-templates/inner-banner');
 
 $member_image = get_field('member_image');
 $member_image = !empty($member_image) ? $member_image : get_stylesheet_directory_uri() . '/images/testimonial-default.jpg';
+$member_about_me_title = get_field('member_about_me_title', 'options');
 $member_full_profile = get_field('member_full_profile'); 
+$member_my_story_title = get_field('member_my_story_title', 'options');
 $member_my_story = get_field('member_my_story'); 
 $member_contact_text = get_field('member_contact_text'); 
 $member_phone = get_field('member_phone'); 
@@ -29,35 +31,63 @@ $gravity_forms = get_field('gravity_forms', 'option');
             <div class="col-md-7">
                 <div class="editor-design">
                     <div class="d-flex justify-content-between mb-4">
-                        <h3>About Me</h3>
+                        <?php if( !empty($member_about_me_title) ){ ?>
+
+                            <h3><?php echo $member_about_me_title; ?></h3>
+                        <?php } ?>
+                        
                         <ul class="social-nav">
                             
                             <?php if( !empty($member_facebook) ){ ?>
 
-                                <li><a href="<?= $member_facebook; ?>" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+                                <li><a href="<?php echo $member_facebook; ?>" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
                             <?php }
 
                             if( !empty($member_twitter) ){ ?>
 
-                                <li><a href="<?= $member_twitter; ?>" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href="<?php echo $member_twitter; ?>" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                             <?php }
 
                             if( !empty($member_linkedin) ){ ?>
 
-                                <li><a href="<?= $member_linkedin; ?>" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                                <li><a href="<?php echo $member_linkedin; ?>" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
                             <?php } ?>
                         </ul>
                     </div>
-                    <?= $member_full_profile; ?>
+                    <?php echo $member_full_profile; ?>                    
                 </div>
+
+                <?php if( !empty($member_phone) || !empty($member_email) ){ ?>
+
+                    <div class="address-wrpal">
+                        <ul>
+                            <?php if( !empty($member_phone) ){ ?>
+
+                                <li><a href="tel:<?php echo $member_phone; ?>"><i class="fa fa-phone" aria-hidden="true"></i> Tel: <?php echo $member_phone; ?> </a></li>
+                            <?php }
+                            if( !empty($member_email) ){ ?>
+
+                                <li><a href="mailto:<?php echo $member_email; ?>"><i class="fa fa-envelope" aria-hidden="true"></i> Email: <?php echo $member_email; ?></a></li>
+                            <?php }
+                            if( !empty($member_address) ){ ?>
+
+                                <li><a href="https://maps.google.com?q=<?php echo urlencode($member_address); ?>" target="_blank"><i class="fa fa-map-marker" aria-hidden="true"></i> Address: <?php echo do_shortcode($member_address); ?></a></li>
+                            <?php } ?>
+                        </ul>
+                    </div>
+                <?php } ?>
             </div>
 
             <?php if( !empty($member_my_story) ){ ?>
 
                 <div class="col-md-12">
                     <div class="editor-design">
-                        <h3>My Story</h3>
-                        <?= $member_my_story; ?>
+                        <?php if( !empty($member_my_story_title) ){ ?>
+
+                            <h3><?php echo $member_my_story_title; ?></h3>
+                        <?php }
+                        
+                        echo $member_my_story; ?>
                     </div>
                 </div>
             <?php } ?>

@@ -120,7 +120,8 @@
             "return_format": "object",
             "multiple": 0,
             "allow_null": 0,
-            "ui": 1
+            "ui": 1,
+            "bidirectional_target": []
         }
     ],
     "location": [
@@ -141,5 +142,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1687432299
+    "modified": 1695985419
 }

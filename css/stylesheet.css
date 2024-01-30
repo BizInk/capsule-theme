@@ -218,6 +218,12 @@ header.fixed {
 nav.contact-details ul li a:hover {
   color: #ec4b84; }
 
+.video-wrap i.fa {
+  color: #429bd6; }
+
+.video-wrap:before {
+  background: rgba(0, 0, 0, 0.50); }
+
 .page-not-found h1 {
   color: #ec4b84; }
 
@@ -387,8 +393,14 @@ nav.contact-details ul li a:hover {
   .testimonial-card .testimonial-card-inner .testimonial-header {
     border-bottom: 1px solid ; }
 
-.pricing-section .card .card-header h5 {
-  color: #272343; }
+.pricing-section .form-check.form-switch .form-check-input {
+  background-color: #429bd6;
+  border-color: #429bd6; }
+  .pricing-section .form-check.form-switch .form-check-input:checked {
+    background-color: #ec4b84;
+    border-color: #ec4b84; }
+  .pricing-section .card .card-header h5 {
+    color: #272343; }
   .pricing-section .card .card-header h2 small {
     color: #000; }
   .pricing-section .card .card-body {
@@ -475,6 +487,10 @@ nav.contact-details ul li a:hover {
     color: #c8c8c8; }
   .member-details-section ul.social-nav li a:hover {
     color: #429bd6; }
+  .member-details-section .address-wrpal a {
+    color: #272343; }
+  .member-details-section .address-wrpal a:hover {
+    color: #429bd6; }
 
 .get-in-touch:before {
   background-color: rgba(0, 0, 0, 0.18); }
@@ -546,3 +562,27 @@ input[type="submit"] {
     color: #ec4b84; }
   .video-banner-section .video-img-wrap {
     background: transparent; }
+
+.careers-two-col-section .default-content h5 {
+  color: #429bd6; }
+
+.careers-info-box-section h5 {
+  color: #429bd6; }
+
+.infobox-section.careers-open-position-section .info-box .btn {
+  background-color: #ffdf35;
+  border-color: #ffdf35;
+  color: #272343; }
+
+.case-studies-two-col-section .case-study-details h3 {
+  color: #272343; }
+  .case-studies-two-col-section .case-study-details .client-details .icon-wrap {
+    background: #fff; }
+  .case-studies-two-col-section .case-study-sidebar h3 {
+    color: #272343; }
+  .case-studies-two-col-section .case-study-sidebar .case-study-sidebar-details h4, .case-studies-two-col-section .case-study-sidebar .case-study-sidebar-details h3 {
+    color: #272343; }
+  .case-studies-two-col-section .case-study-sidebar .case-study-sidebar-details .client-details .client-content h5 {
+    color: #000; }
+  .case-study-card-section a.member-name h4, .case-study-card-section p, .case-study-card-section h5 {
+    color: #000; }

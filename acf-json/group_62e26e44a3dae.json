@@ -67,8 +67,71 @@
                             "custom_choice_button_text": "Add new choice"
                         },
                         {
+                            "key": "field_65a62349eb663",
+                            "label": "Center Info Boxes?",
+                            "name": "center_info_boxes",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "Make Info Boxes centered?",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_65a61e9da5ec6",
+                            "label": "Layout",
+                            "name": "column_counts",
+                            "aria-label": "",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "col-xl-6": "Two Columns",
+                                "col-xl-4": "Three Columns",
+                                "col-xl-3": "Four Columns"
+                            },
+                            "default_value": "col-xl-3",
+                            "return_format": "value",
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "layout": "horizontal",
+                            "save_other_choice": 0
+                        },
+                        {
+                            "key": "field_63be8ea4067da",
+                            "label": "Title & Content",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0
+                        },
+                        {
                             "key": "field_64781ea70898f",
-                            "label": "Alignment",
+                            "label": "Title Alignment",
                             "name": "alignment",
                             "aria-label": "",
                             "type": "radio",
@@ -89,25 +152,8 @@
                             "return_format": "value",
                             "allow_null": 0,
                             "other_choice": 0,
-                            "layout": "vertical",
+                            "layout": "horizontal",
                             "save_other_choice": 0
-                        },
-                        {
-                            "key": "field_63be8ea4067da",
-                            "label": "Title & Content",
-                            "name": "",
-                            "aria-label": "",
-                            "type": "tab",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "placement": "top",
-                            "endpoint": 0
                         },
                         {
                             "key": "field_63d8e3de90cea",
@@ -839,6 +885,66 @@
                             "return_format": "value",
                             "save_custom": 0,
                             "custom_choice_button_text": "Add new choice"
+                        },
+                        {
+                            "key": "field_65b724555eb45",
+                            "label": "Style",
+                            "name": "logo_style",
+                            "aria-label": "",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "slider": "Slider",
+                                "grid": "Grid"
+                            },
+                            "default_value": "slider",
+                            "return_format": "value",
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "layout": "vertical",
+                            "save_other_choice": 0
+                        },
+                        {
+                            "key": "field_65b724795eb46",
+                            "label": "Layout",
+                            "name": "logo_layout",
+                            "aria-label": "",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_65b724555eb45",
+                                        "operator": "==",
+                                        "value": "grid"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "col-md-6": "Two Columns",
+                                "col-md-6 col-lg-4": "Three Columns",
+                                "col-md-6 col-lg-4 col-xl-3": "Four Columns"
+                            },
+                            "default_value": "col-md-6 col-lg-4 col-xl-3",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": ""
                         },
                         {
                             "key": "field_6369d2408ccc0",
@@ -1771,7 +1877,8 @@
                             "return_format": "object",
                             "multiple": 1,
                             "allow_null": 0,
-                            "ui": 1
+                            "ui": 1,
+                            "bidirectional_target": []
                         }
                     ],
                     "min": "",
@@ -1951,7 +2058,8 @@
                             "return_format": "object",
                             "multiple": 1,
                             "allow_null": 0,
-                            "ui": 1
+                            "ui": 1,
+                            "bidirectional_target": []
                         }
                     ],
                     "min": "",
@@ -2271,7 +2379,8 @@
                             "allow_null": 0,
                             "multiple": 1,
                             "return_format": "object",
-                            "ui": 1
+                            "ui": 1,
+                            "bidirectional_target": []
                         }
                     ],
                     "min": "",
@@ -2996,5 +3105,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1686295159
+    "modified": 1706501619
 }

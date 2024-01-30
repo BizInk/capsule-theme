@@ -3,50 +3,6 @@
     "title": "Fixed Price Packages",
     "fields": [
         {
-            "key": "field_62d922c488899",
-            "label": "Most popular",
-            "name": "most_popular",
-            "aria-label": "",
-            "type": "radio",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "most popular": "Most popular"
-            },
-            "allow_null": 0,
-            "other_choice": 0,
-            "default_value": "",
-            "layout": "vertical",
-            "return_format": "value",
-            "save_other_choice": 0
-        },
-        {
-            "key": "field_62d923908889a",
-            "label": "Subtitle text",
-            "name": "price_subtitle_text",
-            "aria-label": "",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
-        },
-        {
             "key": "field_62d923978889b",
             "label": "Description",
             "name": "price_description",
@@ -67,6 +23,32 @@
             "delay": 0
         },
         {
+            "key": "field_6557370096333",
+            "label": "Features Alignment",
+            "name": "price_features_alignment",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "text-start": "Left",
+                "text-center": "Center",
+                "text-end": "Right"
+            },
+            "default_value": "text-start",
+            "return_format": "value",
+            "allow_null": 0,
+            "other_choice": 0,
+            "layout": "horizontal",
+            "save_other_choice": 0
+        },
+        {
             "key": "field_62d923ac8889c",
             "label": "Features",
             "name": "price_features",
@@ -85,6 +67,7 @@
             "max": 0,
             "layout": "table",
             "button_label": "Add Row",
+            "rows_per_page": 20,
             "sub_fields": [
                 {
                     "key": "field_62d923ce8889d",
@@ -107,144 +90,665 @@
                     "maxlength": "",
                     "parent_repeater": "field_62d923ac8889c"
                 }
-            ],
-            "rows_per_page": 20
+            ]
         },
         {
             "key": "field_62d923dd8889e",
-            "label": "Price",
-            "name": "price",
+            "label": "Monthly Price",
+            "name": "monthly_price",
             "aria-label": "",
             "type": "text",
             "instructions": "Enter the price of your package. Currency symbol added automatically.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "25",
                 "class": "",
                 "id": ""
             },
             "default_value": "",
+            "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "append": ""
+        },
+        {
+            "key": "field_65979ff8d08f1",
+            "label": "Yearly Price",
+            "name": "yearly_price",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Enter the price of your package. Currency symbol added automatically.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_62d923ec8889f",
             "label": "Price From",
             "name": "price_from",
             "aria-label": "",
-            "type": "radio",
+            "type": "true_false",
             "instructions": "If you would like you price to be 'From' (eg. From $250) then check this box",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "25",
                 "class": "",
                 "id": ""
             },
-            "choices": {
-                "pricefrom": "Show \"Price from\""
-            },
-            "allow_null": 0,
-            "other_choice": 0,
-            "default_value": "",
-            "layout": "vertical",
-            "return_format": "value",
-            "save_other_choice": 0
+            "message": "Show Price From",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "Yes",
+            "ui_off_text": "No"
         },
         {
-            "key": "field_62d92405888a0",
-            "label": "GST\/VAT",
+            "key": "field_655d645ebcee3",
+            "label": "Currency Symbol",
+            "name": "show_currency_symbol",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Check this if you wish to show the currency symbol before the price.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "message": "Show Currency Symbol",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "Yes",
+            "ui_off_text": "No"
+        },
+        {
+            "key": "field_62d92421888a2",
+            "label": "Small Decimals",
+            "name": "show_decimals",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "If Enabled this will make the decimals smaller in the price",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "message": "Show Small Decimals",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "Yes",
+            "ui_off_text": "No"
+        },
+        {
+            "key": "field_655d64cdba7d6",
+            "label": "Show +Tax",
             "name": "gstvat",
             "aria-label": "",
-            "type": "radio",
-            "instructions": "If you want your price to say +GST\/+VAT (eg. $250+gst) then check this box",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "gst": "Show \"+GST\/+VAT\""
-            },
-            "allow_null": 0,
-            "other_choice": 0,
-            "default_value": "",
-            "layout": "vertical",
-            "return_format": "value",
-            "save_other_choice": 0
-        },
-        {
-            "key": "field_62d92421888a1",
-            "label": "Show price per period?",
-            "name": "show_price_per_period",
-            "aria-label": "",
             "type": "select",
-            "instructions": "Show price per period?",
+            "instructions": "If you wish to show the price and show plus Tax (plus GST and plus VAT are also options)",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "25",
                 "class": "",
                 "id": ""
             },
             "choices": {
-                "day": "day",
-                "week": "week",
-                "month": "month",
-                "year": "year"
+                "no": "Hidden",
+                "gst": "GST",
+                "vat": "VAT",
+                "tax": "TAX"
             },
-            "default_value": false,
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
+            "default_value": "no",
             "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
             "ajax": 0,
             "placeholder": ""
         },
         {
-            "key": "field_62d9242e888a2",
-            "label": "Button Label",
-            "name": "price_button_label",
+            "key": "field_62d922c488899",
+            "label": "Most popular",
+            "name": "most_popular_item",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Show Most Popular \/ Featured Text above this package. (Text can be customised)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "message": "Show Most Popular Text",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "Yes",
+            "ui_off_text": "No"
+        },
+        {
+            "key": "field_62d923dd8888e",
+            "label": "Most Popular Text",
+            "name": "most_popular_item_text",
             "aria-label": "",
             "type": "text",
+            "instructions": "Enter the text you wish to display for the Most Popular \/ Featured item. Default to 'Most Popular'",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_62d922c488899",
+                        "operator": "==",
+                        "value": 1
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Most Popular",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_65573390ad2af",
+            "label": "Button",
+            "name": "price_button",
+            "aria-label": "",
+            "type": "link",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "25",
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "return_format": "array"
         },
         {
-            "key": "field_62d92436888a3",
-            "label": "Button URL",
-            "name": "price_button_url",
+            "key": "field_655effa01144b",
+            "label": "Use Custom Colours",
+            "name": "use_custom_colours",
             "aria-label": "",
-            "type": "text",
-            "instructions": "Add a link to place someone can signup for this package",
+            "type": "true_false",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "message": "If enabled allows you to customize the colours, if disabled follows you main colours",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "Yes",
+            "ui_off_text": "No"
+        },
+        {
+            "key": "field_655efd331ba48",
+            "label": "Normal Colors",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_655effa01144b",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_655efe1b1ba4c",
+            "label": "Title Color",
+            "name": "title_color",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#333333",
+            "enable_opacity": 0,
+            "return_format": "string"
+        },
+        {
+            "key": "field_655efe451ba4d",
+            "label": "Text Color",
+            "name": "text_color",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#000000",
+            "enable_opacity": 0,
+            "return_format": "string"
+        },
+        {
+            "key": "field_655efe551ba4e",
+            "label": "Background Color",
+            "name": "background_color",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#fefefe",
+            "enable_opacity": 0,
+            "return_format": "string"
+        },
+        {
+            "key": "field_655efe6a1ba4f",
+            "label": "Price Color",
+            "name": "price_color",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#173f5f",
+            "enable_opacity": 0,
+            "return_format": "string"
+        },
+        {
+            "key": "field_655efead1ba50",
+            "label": "Currency Symbol Color",
+            "name": "currency_symbol_color",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#173f5f",
+            "enable_opacity": 0,
+            "return_format": "string"
+        },
+        {
+            "key": "field_655eff2f1ba53",
+            "label": "+Tax \/ Vat \/ Gst Color",
+            "name": "tax__vat__gst_color",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#eeeeee",
+            "enable_opacity": 0,
+            "return_format": "string"
+        },
+        {
+            "key": "field_655efeec1ba51",
+            "label": "Most Popular Text Color",
+            "name": "most_popular_text_color",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#fefefe",
+            "enable_opacity": 0,
+            "return_format": "string"
+        },
+        {
+            "key": "field_655eff0a1ba52",
+            "label": "Most Popular Background Color",
+            "name": "most_popular_background_color",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#173f5f",
+            "enable_opacity": 0,
+            "return_format": "string"
+        },
+        {
+            "key": "field_655eff0a1ba53",
+            "label": "Price From Color",
+            "name": "pricefrom_color",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#eeeeee",
+            "enable_opacity": 0,
+            "return_format": "string"
+        },
+        {
+            "key": "field_655eff0a1ba56",
+            "label": "Price Per Color",
+            "name": "priceper_color",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#eeeeee",
+            "enable_opacity": 0,
+            "return_format": "string"
+        },
+        {
+            "key": "field_655eff0a1ba25",
+            "label": "Checkmark Color",
+            "name": "checkmark_color",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#173f5f",
+            "enable_opacity": 0,
+            "return_format": "string"
+        },
+        {
+            "key": "field_655eff711ba54",
+            "label": "Hover Colors",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_655effa01144b",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_655efe1b1ba4d",
+            "label": "Title Color",
+            "name": "title_color_hover",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#fefefe",
+            "enable_opacity": 0,
+            "return_format": "string"
+        },
+        {
+            "key": "field_655efe451ba4e",
+            "label": "Text Color",
+            "name": "text_color_hover",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#fefefe",
+            "enable_opacity": 0,
+            "return_format": "string"
+        },
+        {
+            "key": "field_655efe551ba4f",
+            "label": "Background Color",
+            "name": "background_color_hover",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#173f5f",
+            "enable_opacity": 0,
+            "return_format": "string"
+        },
+        {
+            "key": "field_655efe6a1ba4a",
+            "label": "Price Color",
+            "name": "price_color_hover",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#fefefe",
+            "enable_opacity": 0,
+            "return_format": "string"
+        },
+        {
+            "key": "field_655efead1ba51",
+            "label": "Currency Symbol Color",
+            "name": "currency_symbol_color_hover",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#fefefe",
+            "enable_opacity": 0,
+            "return_format": "string"
+        },
+        {
+            "key": "field_655eff2f1ba54",
+            "label": "+Tax \/ Vat \/ Gst Color",
+            "name": "tax__vat__gst_color_hover",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#eeeeee",
+            "enable_opacity": 0,
+            "return_format": "string"
+        },
+        {
+            "key": "field_655efeec1ba52",
+            "label": "Most Popular Text Color",
+            "name": "most_popular_text_color_hover",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#eeeeee",
+            "enable_opacity": 0,
+            "return_format": "string"
+        },
+        {
+            "key": "field_655eff0a1ba43",
+            "label": "Most Popular Background Color",
+            "name": "most_popular_background_color_hover",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#ed553b",
+            "enable_opacity": 0,
+            "return_format": "string"
+        },
+        {
+            "key": "field_655eff0a1ba54",
+            "label": "Price From Color",
+            "name": "pricefrom_color_hover",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#eeeeee",
+            "enable_opacity": 0,
+            "return_format": "string"
+        },
+        {
+            "key": "field_655eff0a1ba55",
+            "label": "Price Per Color",
+            "name": "priceper_color_hover",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#eeeeee",
+            "enable_opacity": 0,
+            "return_format": "string"
+        },
+        {
+            "key": "field_655eff0a1ba35",
+            "label": "Checkmark Color",
+            "name": "checkmark_color_hover",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#fefefe",
+            "enable_opacity": 0,
+            "return_format": "string"
         }
     ],
     "location": [
@@ -265,5 +769,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1677233397
+    "modified": 1704435761
 }

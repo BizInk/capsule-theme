@@ -257,6 +257,26 @@
             "append": ""
         },
         {
+            "key": "field_65a8c52023e4e",
+            "label": "Column 4 Title",
+            "name": "column_4_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_63d76b5c9b5f4",
             "label": "Copyright Information",
             "name": "copyright_information",
@@ -599,6 +619,66 @@
             "append": ""
         },
         {
+            "key": "field_65b1dfd2f7b14",
+            "label": "Style",
+            "name": "global_logo_style",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "slider": "Slider",
+                "grid": "Grid"
+            },
+            "default_value": "slider",
+            "return_format": "value",
+            "allow_null": 0,
+            "other_choice": 0,
+            "layout": "horizontal",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_65b1dedef7b13",
+            "label": "Layout",
+            "name": "global_logo_layout",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_65b1dfd2f7b14",
+                        "operator": "==",
+                        "value": "grid"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "col-md-6": "Two Columns",
+                "col-md-6 col-lg-4": "Three Columns",
+                "col-md-6 col-lg-4 col-xl-3": "Four Columns"
+            },
+            "default_value": "col-md-6 col-lg-4 col-xl-3",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
             "key": "field_645b82d6cde62",
             "label": "Logos",
             "name": "global_logos",
@@ -751,6 +831,63 @@
             "ui": 0,
             "ajax": 0,
             "placeholder": ""
+        },
+        {
+            "key": "field_65a62e9cf66e7",
+            "label": "Member Details Content",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_65a62eb5f66e8",
+            "label": "About Me Title",
+            "name": "member_about_me_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_65a62ec0f66e9",
+            "label": "Fun Facts Title",
+            "name": "member_my_story_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -771,5 +908,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1685593523
+    "modified": 1706500244
 }

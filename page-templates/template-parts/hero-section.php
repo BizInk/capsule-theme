@@ -16,8 +16,9 @@ if( in_array('Add Common Margin', $general_settings) ){
 <!-- hero-section-start -->
 <section class="banner-section light-blue-bg<?= $general_class; ?>">
   <div class="container">
-    <?php if( have_rows('hero_section') ):
-      while( have_rows('hero_section') ): the_row();
+    <?php if( have_rows('hero_section') ): ?>
+      <?php while( have_rows('hero_section') ): the_row(); ?>
+        <?php 
         $hero_title = get_sub_field('hero_title');
         $hero_description = get_sub_field('hero_description');
         $hero_button = get_sub_field('hero_button');
@@ -36,15 +37,16 @@ if( in_array('Add Common Margin', $general_settings) ){
             <div class="banner-content-wrap <?php if(get_sub_field('image_position') == 'left') { echo "ms-auto"; } ?>">
               <?php if($hero_title) { ?>
                 <h2><?php echo $hero_title; ?></h2>
-              <?php }
-              if($hero_description) {
-                echo $hero_description;
-              }
-              if($hero_button['title']) {
+              <?php } ?>
+              <?php if($hero_description) { ?>
+                <?php echo $hero_description; ?>
+              <?php } ?>
+              <?php if($hero_button['title']) {
 
                 $toggle_modal = !empty($show_signup_form) ? 'data-bs-toggle="modal" data-bs-target="#signupModal"' : '';
                 
                 if( !empty($show_signup_form) && !is_user_logged_in() ){ ?>
+                  
                   <a href="<?php echo $hero_button['url']; ?>" <?= $toggle_modal; ?> class="btn navyblue-btn mt-3"><?php echo $hero_button['title']; ?></a>
                 <?php }
                 } ?>
@@ -52,7 +54,7 @@ if( in_array('Add Common Margin', $general_settings) ){
           </div>
           <div class="col-md-6 banner-img mb-5 mb-md-0">
             <?php if($hero_image) { ?>
-              <img src="<?php echo $hero_image; ?>" class="img-fluid" alt="<?php echo $hero_title; ?>">
+              <img src="<?php echo $hero_image; ?>" class="img-fluid" alt="">
             <?php } ?>
           </div>
         </div>
@@ -75,7 +77,7 @@ if( in_array('Add Common Margin', $general_settings) ){
             </div>
           </div>
       <?php }
-      endwhile;
-    endif; ?>
+      endwhile; ?>
+    <?php endif; ?>
   </div>
 </section>
