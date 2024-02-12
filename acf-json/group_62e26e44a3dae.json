@@ -2060,6 +2060,31 @@
                             "allow_null": 0,
                             "ui": 1,
                             "bidirectional_target": []
+                        },
+                        {
+                            "key": "field_6401c9cf69626",
+                            "label": "Show Prices",
+                            "name": "show_prices",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "If you would like to show the prices and price switcher then select this",
+                            "message": "Show Prices & Price Switcher",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "fixed-price-packages"
+                            ],
+                            "taxonomy": "",
+                            "return_format": "object",
+                            "default_value": 1,
+                            "ui": 1,
+                            "ui_on_text": "Yes",
+                            "ui_off_text": "No"
                         }
                     ],
                     "min": "",

@@ -19496,13 +19496,12 @@ section.infobox-section.resource-infobox {
 .pricing-section .card {
   border: 0;
   border-radius: 10px;
-  padding: 20px 25px 30px;
   height: 100%;
 }
 .pricing-section .card .card-header {
   background: transparent;
   border: none;
-  padding: 20px 0 0 0;
+  padding: 20px 25px 0;
   text-align: center;
 }
 .pricing-section .card .card-header p {
@@ -19552,7 +19551,7 @@ section.infobox-section.resource-infobox {
   display: none;
 }
 .pricing-section .card .card-body {
-  margin: 0 40px 30px;
+  margin: 0 10px 30px;
   padding-top: 40px;
 }
 .pricing-section .card .card-body ul {

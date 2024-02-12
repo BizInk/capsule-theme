@@ -138,7 +138,7 @@
             "name": "price_from",
             "aria-label": "",
             "type": "true_false",
-            "instructions": "If you would like you price to be 'From' (eg. From $250) then check this box",
+            "instructions": "If you would like you price to be 'From' (eg. From $250) then select this",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {

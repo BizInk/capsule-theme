@@ -12,7 +12,7 @@ if( in_array('Add Common Margin', $general_settings) ){
   
   $general_class .= ' comman-margin';
 }
-
+$show_prices = get_sub_field('show_prices');
 $pricing_sub_title = get_sub_field('pricing_sub_title');
 $pricing_title = get_sub_field('pricing_title');
 $pricing_description = get_sub_field('pricing_description');
@@ -43,11 +43,13 @@ $columns_classes = 'col-md-6 col-lg-3';
         </div>
     </div>
     <div class="container">
+        <?php if( $show_prices == 'yes' ): ?>
         <div class="form-check form-switch">
           <label class="form-check-label" for="flexSwitchCheckDefault">Monthly Price</label> 
           <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
           <label class="form-check-label" for="flexSwitchCheckDefault">Yearly Price</label>
         </div>
+        <?php endif; ?>
         <div class="row gy-5 g-md-5 <?php echo $columns_number == 5 ? 'row-cols-md-2 row-cols-lg-3 row-cols-xl-4 row-cols-xxl-5' : null; ?>">
                 <?php
                 if( $choose_pricing_packeges ){
@@ -168,37 +170,39 @@ $columns_classes = 'col-md-6 col-lg-3';
                                         <?php if(get_field('price_description')): ?>
                                             <p><?php echo get_field('price_description'); ?></p>
                                         <?php endif;
-                                        if( $monthly_price || $yearly_price ) {
-                                            echo $price_from ? '<span class="pricefrom">From: </span>' : null; 
-                                            $monthly_decimals = floatval($monthly_price) - floor(floatval($monthly_price));
-                                            $yearly_decimals = floatval($yearly_price) - floor(floatval($yearly_price));
-                                            $currency_symbol = get_field('currency_symbol');
-                                            $currency_symbol = $currency_symbol ? $currency_symbol : '$';
-                                            ?>
-                                            <h2 class="mb-1 pb-0 card-title pricing-card-title<?php echo $show_decimals ? ' show-decimals' : null; ?>">
-                                                <span class="currency_symbol"><?php echo get_field('currency_symbol') ? get_field('currency_symbol'):"$"; ?></span>
-                                                <span class="price monthly-price"><?php if($show_decimals): echo str_replace(" ","",floor(floatval($monthly_price))); else: echo $monthly_price; endif; ?></span>
-                                                <span class="price yearly-price"><?php if($show_decimals): echo str_replace(" ","",floor(floatval($yearly_price))); else: echo $yearly_price; endif; ?></span>
+                                        if( $show_prices == 'yes' ){
+                                            if( $monthly_price || $yearly_price ) {
+                                                echo $price_from ? '<span class="pricefrom">From: </span>' : null; 
+                                                $monthly_decimals = floatval($monthly_price) - floor(floatval($monthly_price));
+                                                $yearly_decimals = floatval($yearly_price) - floor(floatval($yearly_price));
+                                                $currency_symbol = get_field('currency_symbol');
+                                                $currency_symbol = $currency_symbol ? $currency_symbol : '$';
+                                                ?>
+                                                <h2 class="mb-1 pb-0 card-title pricing-card-title<?php echo $show_decimals ? ' show-decimals' : null; ?>">
+                                                    <span class="currency_symbol"><?php echo get_field('currency_symbol') ? get_field('currency_symbol'):"$"; ?></span>
+                                                    <span class="price monthly-price"><?php if($show_decimals): echo str_replace(" ","",floor(floatval($monthly_price))); else: echo $monthly_price; endif; ?></span>
+                                                    <span class="price yearly-price"><?php if($show_decimals): echo str_replace(" ","",floor(floatval($yearly_price))); else: echo $yearly_price; endif; ?></span>
 
-                                            <?php if( $show_decimals ){ ?>
-                                                <sub style="bottom:0;left:-10px;font-size:.6em;" class="monthly_decimals">.<?php echo $monthly_decimals == 0 ? "00":($monthly_decimals*100); ?></sub>
-                                                <sub style="bottom:0;left:-10px;font-size:.6em;" class="yearly_decimals">.<?php echo $yearly_decimals == 0 ? "00":($yearly_decimals*100); ?></sub>
-                                            <?php }
-                                            if(empty($gstvat) || $gstvat != 'no'){
-                                                echo '<small style="left:-10px;" class="gstvat"> +';
-                                                switch($gstvat){
-                                                    case 'gst':
-                                                        _e('GST','wave');
-                                                        break;
-                                                    case 'vat':
-                                                        _e('VAT','wave');
-                                                        break;
-                                                    case 'tax':
-                                                    default:
-                                                        _e('Tax','wave');
-                                                        break;
+                                                <?php if( $show_decimals ){ ?>
+                                                    <sub style="bottom:0;left:-10px;font-size:.6em;" class="monthly_decimals">.<?php echo $monthly_decimals == 0 ? "00":($monthly_decimals*100); ?></sub>
+                                                    <sub style="bottom:0;left:-10px;font-size:.6em;" class="yearly_decimals">.<?php echo $yearly_decimals == 0 ? "00":($yearly_decimals*100); ?></sub>
+                                                <?php }
+                                                if(empty($gstvat) || $gstvat != 'no'){
+                                                    echo '<small style="left:-10px;" class="gstvat"> +';
+                                                    switch($gstvat){
+                                                        case 'gst':
+                                                            _e('GST','wave');
+                                                            break;
+                                                        case 'vat':
+                                                            _e('VAT','wave');
+                                                            break;
+                                                        case 'tax':
+                                                        default:
+                                                            _e('Tax','wave');
+                                                            break;
+                                                    }
+                                                    echo '</small>';
                                                 }
-                                                echo '</small>';
                                             }
                                         }
                                         ?>
