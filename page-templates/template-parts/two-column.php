@@ -33,7 +33,7 @@ if( have_rows('column_section') ):
 				} ?>
 
 				<div class="row align-item-center <?php echo $column_image_position; ?> flex-column-reverse">
-					<div class="col-md-6 col-left mb-5 mb-md-0">
+					<div class="col col-md-6 col-left mb-5 mb-md-0">
 						<div class="col-content default-content">
 
 							<?php if( get_sub_field('column_small_title') ) { ?>
@@ -65,7 +65,7 @@ if( have_rows('column_section') ):
 
 						</div>
 					</div>
-					<div class="col-md-6 col-right mb-5 mb-md-0">
+					<div class="col col-md-6 col-right mb-5 mb-md-0">
 
 						<?php if( get_sub_field('column_hero_image') ) { ?>
 

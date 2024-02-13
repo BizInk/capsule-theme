@@ -68,7 +68,7 @@ $gravity_forms = get_field('gravity_forms', 'options');
 <section class="newsletter-section">
     <div class="container">
         <div class="row flex-column text-center">
-            <div class="col-md-9">
+            <div class="col col-md-9">
                 <div class="full-width-wysiwyg text-left">
                     <div class="editor-design">
                         <?php if( !empty($newsletter_title) ){ ?>
@@ -78,7 +78,7 @@ $gravity_forms = get_field('gravity_forms', 'options');
                     </div>
                 </div>
             </div>
-            <div class="col-md-9 col-lg-6">
+            <div class="col col-md-9 col-lg-6">
                 <?php echo !empty($gravity_forms) ? do_shortcode('[gravityform id="'. $gravity_forms .'" title="false"]') : ''; ?>
             </div>
         </div>
@@ -89,7 +89,7 @@ $gravity_forms = get_field('gravity_forms', 'options');
 <footer>
 	<div class="container">
 		<div class="row footer-wrap">
-			<div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+			<div class="col col-md-6 col-lg-4 mb-4 mb-lg-0">
 				<div class="footer-logo">
 					<a href="<?= site_url(); ?>"><img src="<?php echo $footer_logo['url']; ?>" alt="<?php echo $footer_logo['alt']; ?>"></a>
 				</div>				
@@ -97,7 +97,7 @@ $gravity_forms = get_field('gravity_forms', 'options');
 					<?= $footer_text; ?>
 				</div>
 			</div>
-			<div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
+			<div class="col col-md-6 col-lg-3 mb-5 mb-lg-0">
 				<h5><?= $column_2_title; ?></h5>
 				<nav class="contact-details">
 					<ul>
@@ -110,7 +110,7 @@ $gravity_forms = get_field('gravity_forms', 'options');
 					</ul>
 				</nav>
 			</div>
-			<div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
+			<div class="col col-md-6 col-lg-3 mb-5 mb-lg-0">
 				<h5><?= $column_3_title; ?></h5>
 				<nav class="social-nav">
 					<ul>
@@ -132,7 +132,7 @@ $gravity_forms = get_field('gravity_forms', 'options');
 					</ul>
 				</nav>
 			</div>
-			<div class="col-md-6 col-lg-2">
+			<div class="col col-md-6 col-lg-2">
 				<?php
 				if( has_nav_menu('footer-menu') ){
 					wp_nav_menu(
@@ -153,7 +153,7 @@ $gravity_forms = get_field('gravity_forms', 'options');
 	<div class="social-wrap">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12">
+				<div class="col col-md-12">
 					<div class="copyright-wrap" style="color:<?php echo get_field('copyright_color', 'options') ? get_field('copyright_color', 'options') : '#fefefe'; ?>;">
 						<?= do_shortcode($copyright_information); ?> | <a style="color:<?php echo get_field('copyright_color', 'options') ? get_field('copyright_color', 'options') : '#fefefe'; ?>;" href="https://www.bizinkonline.com"><?php _e('Website By Bizink','wave-theme');?></a>
 					</div>
