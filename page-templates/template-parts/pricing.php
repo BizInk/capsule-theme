@@ -49,7 +49,70 @@ $columns_classes = 'col-md-6 col-lg-3';
           <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
           <label class="form-check-label" for="flexSwitchCheckDefault">Yearly Price</label>
         </div>
-        <?php endif; ?>
+        <?php
+        endif; 
+        
+        if( $choose_pricing_packeges ){
+            $cssOutput = '';
+            $enableCSSOutput = false;
+            foreach( $choose_pricing_packeges as $post ){
+                setup_postdata($post);
+                $use_custom_colours = get_field('use_custom_colours');
+                $title_color = get_field('title_color');
+                $title_color_hover = get_field('title_color_hover');
+                $text_color = get_field('text_color');
+                $text_color_hover = get_field('text_color_hover');
+                $background_color = get_field('background_color');
+                $background_color_hover = get_field('background_color_hover');
+                $price_color = get_field('price_color');
+                $price_color_hover = get_field('price_color_hover');
+                $currency_symbol_color = get_field('currency_symbol_color');
+                $currency_symbol_color_hover = get_field('currency_symbol_color_hover');
+                $tax__vat__gst_color = get_field('tax__vat__gst_color');
+                $tax__vat__gst_color_hover = get_field('tax__vat__gst_color_hover');
+                $most_popular_text_color = get_field('most_popular_text_color');
+                $most_popular_text_color_hover = get_field('most_popular_text_color_hover');
+                $most_popular_background_color = get_field('most_popular_background_color');
+                $most_popular_background_color_hover = get_field('most_popular_background_color_hover');
+                $pricefrom_color = get_field('pricefrom_color');
+                $pricefrom_color_hover = get_field('pricefrom_color_hover');
+                $priceper_color = get_field('priceper_color');
+                $priceper_color_hover = get_field('priceper_color_hover');
+                $checkmark_color = get_field('checkmark_color');
+                $checkmark_color_hover = get_field('checkmark_color_hover');
+                if( $use_custom_colours ){
+                    $enableCSSOutput = true;
+
+                    $cssOutput .= "#package-".$post->ID." .card{background-color:".$background_color.";color:".$text_color.";}";
+                    $cssOutput .= "#package-".$post->ID." .card:hover{background-color:". $background_color_hover."; color:".$text_color_hover.";}";
+                    $cssOutput .= "#package-".$post->ID." .card .card-inner{background-color:".$background_color.";color:".$text_color.";}";
+                    $cssOutput .= "#package-".$post->ID." .card:hover .card-inner{background-color:". $background_color_hover."; color:".$text_color_hover.";}";
+                    $cssOutput .= "#package-".$post->ID." .card .card-body, #package-".$post->ID." .card ul{color:".$text_color.";}";
+                    $cssOutput .= "#package-".$post->ID." .card h5{color:".$title_color.";}";
+                    $cssOutput .= "#package-".$post->ID." .card:hover h5{color:".$title_color_hover.";}";
+                    $cssOutput .= "#package-".$post->ID." .card:hover .card-body, #package-".$post->ID." .card:hover h5, #package-".$post->ID." .card:hover ul{color: ". $text_color_hover.";}"; 
+                    $cssOutput .= "#package-".$post->ID." .card .most_popular_header{color:". $most_popular_text_color.";background-color:". $most_popular_background_color.";}";
+                    $cssOutput .= "#package-".$post->ID." .card:hover .most_popular_header{color:". $most_popular_text_color_hover.";background-color:". $most_popular_background_color_hover.";}";
+                    $cssOutput .= "#package-".$post->ID." .card .currency_symbol{color:". $currency_symbol_color.";}";
+                    $cssOutput .= "#package-".$post->ID." .card:hover .currency_symbol{color:".$currency_symbol_color_hover.";}";
+                    $cssOutput .= "#package-".$post->ID." .card .pricefrom{color:".$pricefrom_color.";}";
+                    $cssOutput .= "#package-".$post->ID." .card:hover .pricefrom{color:".$pricefrom_color_hover.";}";
+                    $cssOutput .= "#package-".$post->ID." .card .priceper{color:". $pricefrom_color.";}";
+                    $cssOutput .= "#package-".$post->ID." .card:hover .priceper{color:". $pricefrom_color_hover.";}";
+                    $cssOutput .= "#package-".$post->ID." .card .price, #package-".$post->ID." .card .decimals{color:". $priceper_color.";}";
+                    $cssOutput .= "#package-".$post->ID." .card:hover .price, #package-".$post->ID." .card:hover .decimals{color:". $priceper_color_hover.";}";
+                    $cssOutput .= "#package-".$post->ID." .card .gstvat{color:". $tax__vat__gst_color.";}";
+                    $cssOutput .= "#package-".$post->ID." .card:hover .gstvat{color:". $tax__vat__gst_color_hover.";}";
+                    $cssOutput .= "#package-".$post->ID." .card svg .check{fill:". $checkmark_color.";}";
+                    $cssOutput .= "#package-".$post->ID." .card:hover svg .check{fill:". $checkmark_color_hover.";}";
+                }
+                wp_reset_postdata();
+            }
+            if( $enableCSSOutput ){
+                echo '<style>'.$cssOutput.'</style>';
+            }
+        }
+        ?>
         <div class="row gy-5 g-md-5 <?php echo $columns_number == 5 ? 'row-cols-md-2 row-cols-lg-3 row-cols-xl-4 row-cols-xxl-5' : null; ?>">
                 <?php
                 if( $choose_pricing_packeges ){
@@ -67,94 +130,6 @@ $columns_classes = 'col-md-6 col-lg-3';
                         $yearly_price = get_field('yearly_price');
                         $price_features_alignment = get_field( 'price_features_alignment' );
                         $show_decimals = get_field( 'show_decimals' );
-                        
-                        $use_custom_colours = get_field('use_custom_colours');
-                        $title_color = get_field('title_color');
-                        $title_color_hover = get_field('title_color_hover');
-                        $text_color = get_field('text_color');
-                        $text_color_hover = get_field('text_color_hover');
-                        $background_color = get_field('background_color');
-                        $background_color_hover = get_field('background_color_hover');
-                        $price_color = get_field('price_color');
-                        $price_color_hover = get_field('price_color_hover');
-                        $currency_symbol_color = get_field('currency_symbol_color');
-                        $currency_symbol_color_hover = get_field('currency_symbol_color_hover');
-                        $tax__vat__gst_color = get_field('tax__vat__gst_color');
-                        $tax__vat__gst_color_hover = get_field('tax__vat__gst_color_hover');
-                        $most_popular_text_color = get_field('most_popular_text_color');
-                        $most_popular_text_color_hover = get_field('most_popular_text_color_hover');
-                        $most_popular_background_color = get_field('most_popular_background_color');
-                        $most_popular_background_color_hover = get_field('most_popular_background_color_hover');
-                        $pricefrom_color = get_field('pricefrom_color');
-                        $pricefrom_color_hover = get_field('pricefrom_color_hover');
-                        $priceper_color = get_field('priceper_color');
-                        $priceper_color_hover = get_field('priceper_color_hover');
-                        $checkmark_color = get_field('checkmark_color');
-                        $checkmark_color_hover = get_field('checkmark_color_hover');
-                        if( $use_custom_colours ){
-                            ?>
-                            <style>
-                                #package-<?php echo $post->ID; ?> .card .card-inner{
-                                    background-color: <?php echo $background_color; ?>;
-                                    color: <?php echo $text_color; ?>;
-                                }
-                                #package-<?php echo $post->ID; ?> .card:hover .card-inner{
-                                    background-color: <?php echo $background_color_hover; ?>;
-                                    color: <?php echo $text_color_hover; ?>;
-                                }
-                                #package-<?php echo $post->ID; ?> .card .card-body, #package-<?php echo $post->ID; ?> .card h5, #package-<?php echo $post->ID; ?> .card ul{
-                                    color: <?php echo $text_color; ?>;
-                                }
-                                #package-<?php echo $post->ID; ?> .card:hover .card-body, #package-<?php echo $post->ID; ?> .card:hover h5, #package-<?php echo $post->ID; ?> .card:hover ul{
-                                    color: <?php echo $text_color_hover; ?>;
-                                }
-                                #package-<?php echo $post->ID; ?> .card .most_popular_header{
-                                    color: <?php echo $most_popular_text_color; ?>;
-                                    background-color: <?php echo $most_popular_background_color; ?>;
-                                }
-                                #package-<?php echo $post->ID; ?> .card:hover .most_popular_header{
-                                    color: <?php echo $most_popular_text_color_hover; ?>;
-                                    background-color: <?php echo $most_popular_background_color_hover; ?>;
-                                }
-                                #package-<?php echo $post->ID; ?> .card .currency_symbol{
-                                    color: <?php echo $currency_symbol_color; ?>;
-                                }
-                                #package-<?php echo $post->ID; ?> .card:hover .currency_symbol{
-                                    color: <?php echo $currency_symbol_color_hover; ?>;
-                                }
-                                #package-<?php echo $post->ID; ?> .card .pricefrom{
-                                    color: <?php echo $pricefrom_color; ?>;
-                                }
-                                #package-<?php echo $post->ID; ?> .card:hover .pricefrom{
-                                    color: <?php echo $pricefrom_color_hover; ?>;
-                                }
-                                #package-<?php echo $post->ID; ?> .card .priceper{
-                                    color: <?php echo $pricefrom_color; ?>;
-                                }
-                                #package-<?php echo $post->ID; ?> .card:hover .priceper{
-                                    color: <?php echo $pricefrom_color_hover; ?>;
-                                }
-                                #package-<?php echo $post->ID; ?> .card .price, #package-<?php echo $post->ID; ?> .card .decimals{
-                                    color: <?php echo $priceper_color; ?>;
-                                }
-                                #package-<?php echo $post->ID; ?> .card:hover .price, #package-<?php echo $post->ID; ?> .card:hover .decimals{
-                                    color: <?php echo $priceper_color_hover; ?>;
-                                }
-                                #package-<?php echo $post->ID; ?> .card .gstvat{
-                                    color: <?php echo $tax__vat__gst_color; ?>;
-                                }
-                                #package-<?php echo $post->ID; ?> .card:hover .gstvat{
-                                    color: <?php echo $tax__vat__gst_color_hover; ?>;
-                                }
-                                #package-<?php echo $post->ID; ?> .card svg .check{
-                                    fill: <?php echo $checkmark_color; ?>;
-                                }
-                                #package-<?php echo $post->ID; ?> .card:hover svg .check{
-                                    fill: <?php echo $checkmark_color_hover; ?>;
-                                }
-                            </style>
-                            <?php
-                        }
                         ?>
                         <div id="package-<?php echo $post->ID; ?>" class="<?php echo $columns_classes; ?>">
 
