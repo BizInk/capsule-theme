@@ -131,7 +131,7 @@ $columns_classes = 'col-md-6 col-lg-3';
                         $price_features_alignment = get_field( 'price_features_alignment' );
                         $show_decimals = get_field( 'show_decimals' );
                         ?>
-                        <div id="package-<?php echo $post->ID; ?>" class="col <?php echo $columns_classes; ?>">
+                        <div id="package-<?php echo $post->ID; ?>" class="<?php echo $columns_classes; ?>">
 
                             <div class="card box-shadow <?php if($most_popular == false): echo 'mt-4'; endif; ?>">
                                 <?php if( $most_popular ) { ?>
