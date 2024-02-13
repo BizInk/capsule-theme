@@ -11640,15 +11640,19 @@
 	    if (window.matchMedia("(max-width:992px)").matches) {
 	      jQuery("header nav .btn").insertAfter(jQuery(".navbar-collapse > ul"));
 	    }
-	  }); // blog-category-filter  
+	  });
 
-	  jQuery('.filter-wrap .dropdown').click(function () {
-	    jQuery(this).next('ul').slideToggle();
-	  });
-	  jQuery(".filter-wrap ul li").on("click", function () {
-	    jQuery(this).parents("ul").slideUp(200);
-	    jQuery(this).parents(".filter-wrap").find(".dropdown").text($(this).text());
-	  });
+	  if (window.matchMedia('(max-width: 767px)').matches) {
+	    // blog-category-filter  
+	    jQuery('.filter-wrap .dropdown').click(function () {
+	      jQuery(this).next('ul').slideToggle();
+	    });
+	    jQuery(".filter-wrap ul li").on("click", function () {
+	      jQuery(this).parents("ul").slideUp(200);
+	      jQuery(this).parents(".filter-wrap").find(".dropdown").text($(this).text());
+	    });
+	  }
+
 	  jQuery('.form-switch input:checkbox').change(function () {
 	    if (jQuery(this).is(":checked")) {
 	      jQuery('.pricing-card-title').addClass("show");
