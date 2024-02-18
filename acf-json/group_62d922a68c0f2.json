@@ -94,11 +94,11 @@
         },
         {
             "key": "field_62d923dd8889e",
-            "label": "Monthly Price",
+            "label": "Price A",
             "name": "monthly_price",
             "aria-label": "",
             "type": "text",
-            "instructions": "Enter the price of your package. Currency symbol added automatically.",
+            "instructions": "Enter the price of your package. Currency symbol added automatically. Use this for the main price or the first Price if using a the Pricing Switcher",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -114,11 +114,11 @@
         },
         {
             "key": "field_65979ff8d08f1",
-            "label": "Yearly Price",
+            "label": "Price B",
             "name": "yearly_price",
             "aria-label": "",
             "type": "text",
-            "instructions": "Enter the price of your package. Currency symbol added automatically.",
+            "instructions": "Enter the price of your package. Currency symbol added automatically. Use this for the main price or the second Price if using a the Pricing Switcher. If there is just one price for this package leave this blank",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -221,6 +221,35 @@
             "placeholder": ""
         },
         {
+            "key": "field_62d92421888a1",
+            "label": "Price Per Period",
+            "name": "show_price_per_period",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Shows /day, /week, /month, /year after the price. (Not user if  you are using the Pricing Switcher)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "none": "None - Non-Recuring Price", 
+                "day": "Day",
+                "week": "Week",
+                "month": "Month",
+                "year": "Year"
+            },
+            "default_value": "none",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
             "key": "field_62d922c488899",
             "label": "Most popular",
             "name": "most_popular_item",
@@ -274,7 +303,7 @@
             "name": "price_button",
             "aria-label": "",
             "type": "link",
-            "instructions": "",
+            "instructions": "A button / link for this package. Usefull for linking to a purchase page or more information",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -290,7 +319,7 @@
             "name": "use_custom_colours",
             "aria-label": "",
             "type": "true_false",
-            "instructions": "",
+            "instructions": "If enabled allows you to customize the colours, if disabled follows you main colours",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -298,7 +327,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "If enabled allows you to customize the colours, if disabled follows you main colours",
+            "message": "Enable Custom Colours",
             "default_value": 0,
             "ui": 1,
             "ui_on_text": "Yes",

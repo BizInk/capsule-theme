@@ -4,15 +4,14 @@ $choose_pricing_packeges = get_sub_field('choose_pricing_packeges');
 $general_class = '';
 
 if( in_array('Add Common Padding', $general_settings) ){
-  
   $general_class .= ' comman-padding';
 }
 
 if( in_array('Add Common Margin', $general_settings) ){
-  
   $general_class .= ' comman-margin';
 }
 $show_prices = get_sub_field('show_prices');
+$show_price_switcher = $show_prices ? get_sub_field('enable_price_switcher'):false;
 $pricing_sub_title = get_sub_field('pricing_sub_title');
 $pricing_title = get_sub_field('pricing_title');
 $pricing_description = get_sub_field('pricing_description');
@@ -21,10 +20,8 @@ $columns_classes = 'col-md-6 col-lg-4';
 if( $columns_number == 4 ){
 $columns_classes = 'col-md-6 col-lg-3';
 }
+get_template_part('global-templates/inner-banner');
 ?>
-
-<?php get_template_part('global-templates/inner-banner'); ?>
-
 
 <section class="pricing-section<?php echo $general_class; ?>">
     <div class="full-width-wysiwyg text-center">
@@ -43,7 +40,7 @@ $columns_classes = 'col-md-6 col-lg-3';
         </div>
     </div>
     <div class="container">
-        <?php if( $show_prices == 'yes' ): ?>
+        <?php if( $show_price_switcher ): ?>
         <div class="form-check form-switch">
           <label class="form-check-label" for="flexSwitchCheckDefault">Monthly Price</label> 
           <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
@@ -125,6 +122,7 @@ $columns_classes = 'col-md-6 col-lg-3';
                         $most_popular = $most_popular ? $most_popular : false;
                         $price_from = get_field('price_from');
                         $gstvat = get_field('gstvat');
+                        $show_price_per_period = get_field('show_price_per_period');
                         $price_button = get_field('price_button');
                         $monthly_price = get_field('monthly_price');
                         $yearly_price = get_field('yearly_price');
@@ -136,7 +134,7 @@ $columns_classes = 'col-md-6 col-lg-3';
                             <div class="card box-shadow <?php if($most_popular == false): echo 'mt-4'; endif; ?>">
                                 <?php if( $most_popular ) { ?>
                                     <div class="most_popular_header text-center">
-                                        <?php echo get_field('most_popular_item_text') ? get_field('most_popular_item_text'):"Most Popular"; ?>
+                                        <?php echo get_field('most_popular_item_text') ? get_field('most_popular_item_text'):__("Most Popular",'capsule'); ?>
                                     </div>
                                 <?php } ?>
                                 <div class="card-inner">
@@ -145,7 +143,7 @@ $columns_classes = 'col-md-6 col-lg-3';
                                         <?php if(get_field('price_description')): ?>
                                             <p><?php echo get_field('price_description'); ?></p>
                                         <?php endif;
-                                        if( $show_prices == 'yes' ){
+                                        if( $show_prices ){
                                             if( $monthly_price || $yearly_price ) {
                                                 echo $price_from ? '<span class="pricefrom">From: </span>' : null; 
                                                 $monthly_decimals = floatval($monthly_price) - floor(floatval($monthly_price));
@@ -156,32 +154,65 @@ $columns_classes = 'col-md-6 col-lg-3';
                                                 <h2 class="mb-1 pb-0 card-title pricing-card-title<?php echo $show_decimals ? ' show-decimals' : null; ?>">
                                                     <span class="currency_symbol"><?php echo get_field('currency_symbol') ? get_field('currency_symbol'):"$"; ?></span>
                                                     <span class="price monthly-price"><?php if($show_decimals): echo str_replace(" ","",floor(floatval($monthly_price))); else: echo $monthly_price; endif; ?></span>
+                                                    <?php if($show_price_switcher): ?>
                                                     <span class="price yearly-price"><?php if($show_decimals): echo str_replace(" ","",floor(floatval($yearly_price))); else: echo $yearly_price; endif; ?></span>
-
-                                                <?php if( $show_decimals ){ ?>
+                                                    <?php 
+                                                    endif;
+                                                    if( $show_decimals ){
+                                                    ?>
                                                     <sub style="bottom:0;left:-10px;font-size:.6em;" class="monthly_decimals">.<?php echo $monthly_decimals == 0 ? "00":($monthly_decimals*100); ?></sub>
+                                                    <?php if($show_price_switcher): ?>
                                                     <sub style="bottom:0;left:-10px;font-size:.6em;" class="yearly_decimals">.<?php echo $yearly_decimals == 0 ? "00":($yearly_decimals*100); ?></sub>
-                                                <?php }
+                                                    <?php 
+                                                    endif;    
+                                                }
                                                 if(empty($gstvat) || $gstvat != 'no'){
                                                     echo '<small style="left:-10px;" class="gstvat"> +';
                                                     switch($gstvat){
                                                         case 'gst':
-                                                            _e('GST','wave');
+                                                            _e('GST','capsule');
                                                             break;
                                                         case 'vat':
-                                                            _e('VAT','wave');
+                                                            _e('VAT','capsule');
                                                             break;
                                                         case 'tax':
                                                         default:
-                                                            _e('Tax','wave');
+                                                            _e('Tax','capsule');
                                                             break;
                                                     }
                                                     echo '</small>';
                                                 }
+                                                
                                             }
                                         }
                                         ?>
                                         </h2>
+                                        <?php
+                                        if($show_price_switcher == false){
+                                            if(empty($show_price_per_period) && $show_price_per_period != 'none'){
+                                                echo '<small style="left:-10px;" class="priceper">' . __('Per','capsule') . ' ';
+                                                switch($show_price_per_period){
+                                                    case 'day':
+                                                        _e('Day','capsule');
+                                                        break;
+                                                    case 'year':
+                                                        _e('Year','capsule');
+                                                        break;
+                                                    case 'quarter':
+                                                        _e('Quarter','capsule');
+                                                        break;
+                                                    case 'week':
+                                                        _e('Week','capsule');
+                                                        break;
+                                                    default:
+                                                    case 'month':
+                                                        _e('Month','capsule');
+                                                        break;
+                                                }
+                                                echo '</small>';
+                                            }
+                                        }
+                                        ?>
                                     </div>
                                     <?php
                                     if( have_rows('price_features') ){ ?>

@@ -666,11 +666,13 @@
                 "id": ""
             },
             "choices": {
-                "col-md-6": "Two Columns",
-                "col-md-6 col-lg-4": "Three Columns",
-                "col-md-6 col-lg-4 col-xl-3": "Four Columns"
+                "col-6": "Two Columns",
+                "col-5": "Three Columns",
+                "col-4": "Four Columns",
+                "col-3": "Five Columns",
+                "col-2": "Six Columns"
             },
-            "default_value": "col-md-6 col-lg-4 col-xl-3",
+            "default_value": "col-4",
             "return_format": "value",
             "multiple": 0,
             "allow_null": 0,
