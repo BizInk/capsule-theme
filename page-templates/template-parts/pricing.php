@@ -188,9 +188,9 @@ get_template_part('global-templates/inner-banner');
                                         ?>
                                         </h2>
                                         <?php
-                                        if($show_price_switcher == false){
-                                            if(empty($show_price_per_period) && $show_price_per_period != 'none'){
-                                                echo '<small style="left:-10px;" class="priceper">' . __('Per','capsule') . ' ';
+                                        if(empty($show_price_per_period) == false){
+                                            if($show_price_per_period != 'none'){
+                                                echo '<p style="left:-10px;" class="priceper">' . __('Per','capsule') . ' ';
                                                 switch($show_price_per_period){
                                                     case 'day':
                                                         _e('Day','capsule');
@@ -204,12 +204,11 @@ get_template_part('global-templates/inner-banner');
                                                     case 'week':
                                                         _e('Week','capsule');
                                                         break;
-                                                    default:
                                                     case 'month':
                                                         _e('Month','capsule');
                                                         break;
                                                 }
-                                                echo '</small>';
+                                                echo '</p>';
                                             }
                                         }
                                         ?>
