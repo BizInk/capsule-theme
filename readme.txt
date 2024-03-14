@@ -16,6 +16,7 @@ The Capsule theme
 = 1.3.9 =
 * Blogs Pagenation
 * Digests Pagenation
+* Sub menu items
 
 = 1.3.8 =
 * Version Bump

@@ -17732,6 +17732,20 @@ header.fixed .btn, header.fixed .woocommerce-notices-wrapper .woocommerce-messag
   .navbar-dark .navbar-nav .menu-item-has-children:hover .dropdown-menu {
     display: block;
   }
+
+  .navbar-dark .navbar-nav .menu-item-has-children:hover .menu-item-has-children .dropdown-menu{
+    display: none;
+  }
+  .navbar-dark .navbar-nav .menu-item-has-children:hover .menu-item-has-children:hover .dropdown-menu{
+    display: block;
+  }
+
+  .navbar-dark .navbar-nav .menu-item-has-children:hover .menu-item-has-children .menu-item-has-children .dropdown-menu{
+    display: none;
+  }
+  .navbar-dark .navbar-nav .menu-item-has-children:hover .menu-item-has-children:hover .menu-item-has-children:hover .dropdown-menu{
+    display: block;
+  }
 }
 .navbar-dark .navbar-nav .menu-item-has-children .arrow-icon {
   display: none;
