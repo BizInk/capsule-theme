@@ -32,14 +32,14 @@ $get_to_know_subtitle = get_sub_field('get_to_know_subtitle');
                 $member_image = get_field('member_image', $team_member);
                 $member_position = get_field('member_position', $team_member);
                 if( $member_image ){
-                $get_to_know_member_image = $member_image;
+                    $get_to_know_member_image = $member_image;
                 }else{
-                $get_to_know_member_image = get_stylesheet_directory_uri().'/images/team4.jpg';
+                    $get_to_know_member_image = get_stylesheet_directory_uri().'/images/team4.jpg';
                 } ?>
                 <div class="col-md-4 col-lg-3 team-member">
                     <div class="team-member-wrap">
                         <div class="member-img">
-                            <img src="<?php echo $get_to_know_member_image; ?>" alt="member-img">
+                            <img src="<?php echo $get_to_know_member_image; ?>" alt="<?php echo $team_member->post_title; ?>">
                         </div>
                         <div class="member-details">
                             <h4 class="member-name"><?php echo $team_member->post_title; ?></h4>

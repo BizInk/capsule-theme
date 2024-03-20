@@ -67,7 +67,7 @@ if ( $latest_posts_query->have_posts() ) { ?>
                         <div class="col-md-6 col-xl-4 team-member">
                             <div class="team-member-wrap">
                                 <a href="<?php the_permalink(); ?>" class="member-img">
-                                    <img src="<?= $latest_posts_image; ?>" alt="member-img">
+                                    <img src="<?= $latest_posts_image; ?>" alt="<?php the_title(); ?>">
                                 </a>
                                 <div class="member-details">
                                 <a href="<?php the_permalink(); ?>">
@@ -77,7 +77,7 @@ if ( $latest_posts_query->have_posts() ) { ?>
                                         
                                         <p><?php echo wp_trim_words($excerpt, 15, ''); ?></p>
                                     <?php } ?>
-                                    <a href="<?php the_permalink(); ?>" class="readmore">Read More</a>
+                                    <a href="<?php the_permalink(); ?>" class="readmore"><?php _e('Read More','capsule-theme'); ?></a>
                                 </div>
                             </div>
                         </div>

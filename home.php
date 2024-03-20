@@ -19,7 +19,7 @@ if (have_posts()) {
 				<div class="col-4 col-md-6 col-xl-4 team-member weekly-digest">
 					<div class="team-member-wrap">
 						<a href="<?php the_permalink(); ?>" class="member-img">
-						<img src="<?= $post_image; ?>" alt="post-img">
+						<img src="<?= $post_image; ?>" alt="<?php the_title(); ?>">
 						</a>
 						<div class="member-details p-4">
 							<a href="<?php the_permalink(); ?>">

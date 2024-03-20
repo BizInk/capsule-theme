@@ -61,7 +61,7 @@ if( !empty($content_topics) ){ ?>
                                 
                                 <?php if( !empty($icon) ){ ?>
                                     
-                                    <img src="<?php echo $icon; ?>" class="img-fluid" alt="">
+                                    <img src="<?php echo $icon; ?>" class="img-fluid" alt="<?php echo $content_topic->name; ?>">
                                 <?php } ?>
                                 <h5><?php echo $content_topic->name; ?></h5>
 

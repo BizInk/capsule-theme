@@ -47,7 +47,7 @@ if( !empty($videos_featured_video) ){
 				<div class="col-md-6">
 					<a href="<?= $featured_video_url; ?>" data-fancybox="">
 						<div class="video-wrap">
-							<img src="<?= get_the_post_thumbnail_url($videos_featured_video); ?>" class="img-fluid lazyloaded" alt="">
+							<img src="<?= get_the_post_thumbnail_url($videos_featured_video); ?>" class="img-fluid lazyloaded" alt="<?= $videos_featured_video->post_title; ?>">
 							<i class="fa fa-play-circle" aria-hidden="true"></i>
 						</div>
 					</a>

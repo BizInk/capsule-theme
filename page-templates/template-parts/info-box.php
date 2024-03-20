@@ -72,7 +72,7 @@ if( have_rows('information_box') ):
 
 									<?php if( !empty($info_image) ) { ?>
 
-										<img src="<?php echo $info_image; ?>" class="img-fluid" alt="">
+										<img src="<?php echo $info_image; ?>" class="img-fluid" alt="<?php echo $info_title ? $info_title : 'info-img'; ?>">
 									<?php }
 
 									if( !empty($info_title) ) { ?>

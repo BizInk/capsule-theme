@@ -25,7 +25,7 @@ $gravity_forms = get_field('gravity_forms', 'option');
         <div class="row align-items-center">
             <div class="col-md-5">
                 <div class="member-img">
-                    <img src="<?php echo $member_image; ?>" class="img-fluid" alt="">
+                    <img src="<?php echo $member_image; ?>" class="img-fluid" alt="<?php echo $member_about_me_title ? $member_about_me_title : 'member-img'; ?>">
                 </div>
             </div>
             <div class="col-md-7">

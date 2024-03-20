@@ -49,7 +49,7 @@ if( have_rows('logo') ): ?>
                                     <a href="<?php echo $logo_url ?>">
                                 <?php } ?>
                                     
-                                    <img src="<?php echo $slider_image; ?>" class="img-fluid" alt="">
+                                    <img src="<?php echo $slider_image; ?>" class="img-fluid" alt="slider-img">
 
                                 <?php if( !empty($logo_url) ){ ?>
                                     
@@ -76,7 +76,7 @@ if( have_rows('logo') ): ?>
                                     <a href="<?php echo $logo_url ?>" target="_blank">
                                 <?php } ?>
 
-                                    <img src="<?php echo $slider_image; ?>" class="img-fluid" alt="">
+                                    <img src="<?php echo $slider_image; ?>" class="img-fluid" alt="slider-img">
 
                                 <?php if( !empty($logo_url) ){ ?>
                                     

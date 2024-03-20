@@ -61,7 +61,7 @@ if( !empty($content_topics) ){ ?>
                         <a href="<?= get_term_link($content_topic); ?>" class="col-md-6 col-lg-4 text-decoration-none" <?= $topics_counter > $ppp ? 'style="display:none;"' : ''; ?> data-pagenumber="topics<?= ceil($topics_counter/$ppp); ?>">
                             <div class="info-box text-center h-100"> 
                                 <?php if( !empty($icon) ){ ?>
-                                    <img src="<?php echo $icon; ?>" class="img-fluid" alt="">
+                                    <img src="<?php echo $icon; ?>" class="img-fluid" alt="<?= $content_topic->name; ?>">
                                 <?php } ?>
                                 <h4><?= $content_topic->name; ?></h4>
 
@@ -78,7 +78,7 @@ if( !empty($content_topics) ){ ?>
                 </div>
 
                 <?php if( count($content_topics) > $ppp ){ ?>
-                    <a href="javascript:void(0);" class="btn red-btn topics-load-more" data-pagenumber="1"><?php _e('Load More','wave-theme'); ?></a>
+                    <a href="javascript:void(0);" class="btn red-btn topics-load-more" data-pagenumber="1"><?php _e('Load More','capsule-theme'); ?></a>
                 <?php } ?>
 
                 <script>

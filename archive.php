@@ -51,7 +51,7 @@ if( $posts_loop->have_posts() ){ ?>
                         <div class="col-md-6 col-xl-4 team-member" <?= $posts_counter > $ppp ? 'style="display:none;"' : ''; ?> data-pagenumber="posts<?= ceil($posts_counter/$ppp); ?>">
                             <div class="team-member-wrap">
                                 <a href="<?php the_permalink(); ?>" class="member-img">
-                                    <img src="<?= $post_image; ?>" alt="post-img">
+                                    <img src="<?= $post_image; ?>" alt="<?php the_title(); ?>">
                                 </a>
                                 <div class="member-details">
                                     <a href="<?php the_permalink(); ?>">
@@ -59,7 +59,7 @@ if( $posts_loop->have_posts() ){ ?>
                                     </a>
 
                                     <p><?= $post_content; ?></p>
-                                    <a href="<?php the_permalink(); ?>" class="readmore">Read More</a>
+                                    <a href="<?php the_permalink(); ?>" class="readmore"><?php _e('Read More','capsule-theme'); ?></a>
                                 </div>
                             </div>
                         </div>

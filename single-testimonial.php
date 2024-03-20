@@ -17,7 +17,7 @@ $rating_count = get_field('rating_count');
         <div class="client-video">
             <div class="img-wrp">
                 <a href="<?= !empty($reviewer_youtube) ? $reviewer_youtube : "#"; ?>" target="" <?= !empty($reviewer_youtube) ? 'data-fancybox=""' : null; ?> tabindex="0"> 
-                    <img src="<?= $reviewer_image; ?>" alt="client-video">
+                    <img src="<?= $reviewer_image; ?>" alt="<?= $reviewer_name ? $reviewer_name:'client-video'; ?>">
                 </a>
             </div>
         </div>

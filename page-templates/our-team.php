@@ -28,7 +28,7 @@ if( !empty($team_members) ){ ?>
                     <div class="col-md-6 col-lg-4 team-member">
                         <a href="<?php echo get_permalink($team_member); ?>" class="team-member-wrap">
                             <div class="member-img">
-                                <img src="<?php echo $member_image; ?>" class="img-fluid" alt="">
+                                <img src="<?php echo $member_image; ?>" class="img-fluid" alt="<?php echo $team_member->post_title; ?>" title="<?php echo $team_member->post_title; ?>">
                             </div>
                             <div class="member-details">
                                 <h4><?php echo $team_member->post_title; ?></h4>

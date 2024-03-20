@@ -80,7 +80,7 @@ get_template_part('global-templates/inner-banner');
 								<div class="col-md-6 col-xl-4 team-member">
 									<div class="team-member-wrap">
 										<a href="<?php the_permalink(); ?>" class="member-img">
-											<img src="<?= $post_image; ?>" alt="member-img">
+											<img src="<?= $post_image; ?>" alt="<?php the_title(); ?>">
 										</a>
 										<div class="member-details">
 											<a href="<?php the_permalink(); ?>">
@@ -88,7 +88,7 @@ get_template_part('global-templates/inner-banner');
 											</a>
 
 											<p><?= $post_content; ?></p>
-											<a href="<?php the_permalink(); ?>" class="readmore">Read More</a>
+											<a href="<?php the_permalink(); ?>" class="readmore"><?php _e('Read More','capsule-theme'); ?></a>
 										</div>
 									</div>
 								</div>

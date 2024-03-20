@@ -58,7 +58,7 @@ get_template_part('global-templates/inner-banner');
                                 <div class="info-description">
                                     <p><?= $post_content . '...'; ?></p>
                                 </div>
-                                <a class="btn" href="<?php the_permalink(); ?>">Read More</a>                        
+                                <a class="btn" href="<?php the_permalink(); ?>"><?php _e('Read More','capsule-theme'); ?></a>                        
                             </div>
                         </div>
                     </div>
@@ -69,7 +69,7 @@ get_template_part('global-templates/inner-banner');
 
             if( $posts_loop->found_posts > $ppp ){ ?>
                     
-                    <a href="javascript:void(0);" class="btn blue-btn resources-load-more" data-pagenumber="1">Load More</a>
+                    <a href="javascript:void(0);" class="btn blue-btn resources-load-more" data-pagenumber="1"><?php _e('Load More','capsule-theme'); ?></a>
             <?php } ?>
                 
             <script>

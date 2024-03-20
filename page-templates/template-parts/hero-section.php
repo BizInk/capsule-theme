@@ -37,11 +37,12 @@ if( in_array('Add Common Margin', $general_settings) ){
             <div class="banner-content-wrap <?php if(get_sub_field('image_position') == 'left') { echo "ms-auto"; } ?>">
               <?php if($hero_title) { ?>
                 <h2><?php echo $hero_title; ?></h2>
-              <?php } ?>
-              <?php if($hero_description) { ?>
-                <?php echo $hero_description; ?>
-              <?php } ?>
-              <?php if($hero_button['title']) {
+                <?php
+              }
+              if($hero_description) {
+                echo $hero_description;
+              }
+              if($hero_button['title']) {
 
                 $toggle_modal = !empty($show_signup_form) ? 'data-bs-toggle="modal" data-bs-target="#signupModal"' : '';
                 
@@ -54,7 +55,7 @@ if( in_array('Add Common Margin', $general_settings) ){
           </div>
           <div class="col-md-6 banner-img mb-5 mb-md-0">
             <?php if($hero_image) { ?>
-              <img src="<?php echo $hero_image; ?>" class="img-fluid" alt="">
+              <img src="<?php echo $hero_image; ?>" class="img-fluid" alt="<?php echo $hero_title ? $hero_title : 'Banner'; ?>">
             <?php } ?>
           </div>
         </div>
