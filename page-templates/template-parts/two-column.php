@@ -69,7 +69,7 @@ if( have_rows('column_section') ):
 
 						<?php if( get_sub_field('column_hero_image') ) { ?>
 
-							<img src="<?php echo get_sub_field('column_hero_image'); ?>" class="img-fluid" alt="">
+							<img src="<?php echo get_sub_field('column_hero_image'); ?>" class="img-fluid" alt="<?php echo get_sub_field('column_hero_title') ? get_sub_field('column_hero_title'): 'hero-img'; ?>">
 						<?php } ?>
 					</div>
 				</div>
