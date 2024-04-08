@@ -11856,4 +11856,18 @@
 	Object.defineProperty(exports, '__esModule', { value: true });
 
 }));
+
+jQuery(document).ready(function($) {
+	$('.category-selection .dropdown').on('change', function() {
+		var category = $(this).val();
+		var url = window.location.href;
+		var newUrl = '';
+		if (url.indexOf('?') > -1) {
+			newUrl = url + '&category=' + category;
+		} else {
+			newUrl = url + '?category=' + category;
+		}
+		window.location.href = newUrl;
+	});
+});
 //# sourceMappingURL=child-theme.js.map

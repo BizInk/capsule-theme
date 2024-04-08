@@ -1,8 +1,9 @@
 <!-- tab-section-start -->
 <?php
-echo "sfdgsdfgsfdg";
-ecit();
-??
+//echo "sfdgsdfgsfdg";
+//ecit();
+//??
+?>
 <section class="tab-section">
   <div class="container">
     <div class="tab-wrap">
@@ -25,7 +26,7 @@ ecit();
                 <div class="card-header" role="tab" id="heading-A">
                   <h5 class="mb-0">
                     <a data-bs-toggle="collapse" href="#collapse-<?php echo $i; ?>" aria-expanded="true" aria-controls="collapse-A<?php echo $i; ?>">
-                      <?php echo  $tab_titile; ?>
+                      <?php echo $tab_titile; ?>
                       <i class="fa fa-angle-down" aria-hidden="true"></i>
                     </a>
                   </h5>
@@ -39,57 +40,6 @@ ecit();
                 <?php } ?>
                 </div>
               </div>
-             <!--  <div id="pane-B" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-B">
-                <div class="card-header" role="tab" id="heading-B">
-                  <h5 class="mb-0">
-                    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-B" aria-expanded="false" aria-controls="collapse-B">
-                      Inactive
-                      <i class="fa fa-angle-down" aria-hidden="true"></i>
-                    </a>
-                  </h5>
-                </div>
-                <div id="collapse-B" class="collapse" data-bs-parent="#content" role="tabpanel" aria-labelledby="heading-B">
-                  <div class="card-body editor-design">
-                    Realm of the galaxies across the centuries the carbon in our apple pies vanquish the impossible
-                    another world venture. Dream of the mind's eye muse about the only home we've ever known the only home
-                    we've ever known
-                  </div>
-                </div>
-              </div>
-
-              <div id="pane-C" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-C">
-                <div class="card-header" role="tab" id="heading-C">
-                  <h5 class="mb-0">
-                    <a data-bs-toggle="collapse" href="#collapse-C" aria-expanded="false" aria-controls="collapse-C">
-                      Inactive
-                      <i class="fa fa-angle-down" aria-hidden="true"></i>
-                    </a>
-                  </h5>
-                </div>
-                <div id="collapse-C" class="collapse" data-bs-parent="#content" role="tabpanel" aria-labelledby="heading-C">
-                  <div class="card-body editor-design">
-                    concept of the number one gathered by gravity? Stirred by starlight the sky calls to
-                    us rich in mystery paroxysm of global death with pretty stories for which there's little good evidence.
-                  </div>
-                </div>
-              </div>
-              <div id="pane-D" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-D">
-                <div class="card-header" role="tab" id="heading-D">
-                  <h5 class="mb-0">
-                    <a data-bs-toggle="collapse" href="#collapse-D" aria-expanded="false" aria-controls="collapse-D">
-                      Active
-                      <i class="fa fa-angle-down" aria-hidden="true"></i>
-                    </a>
-                  </h5>
-                </div>
-                <div id="collapse-D" class="collapse" data-bs-parent="#content" role="tabpanel" aria-labelledby="heading-D">
-                  <div class="card-body editor-design">
-                    Realm of the galaxies across the centuries the carbon in our apple pies vanquish the impossible
-                    another world venture. Dream of the mind's eye muse about the only home we've ever known the only home
-                    we've ever known concept of the number one gathered by gravity? Stirred by starlight the sky calls to
-                  </div>
-                </div>
-              </div> -->
               <?php $i++; endwhile; ?>
             </div>
             <?php endif; ?>
@@ -100,7 +50,7 @@ ecit();
         ?>
         <div class="col-md-6 text-end mb-5 mb-md-0">
           <?php if($tab_right_image) { ?>
-            <img src="<?php echo $tab_right_image; ?>" class="img-fluid" alt="">
+            <img src="<?php echo $tab_right_image; ?>" class="img-fluid" alt="<?php echo $tab_titile; ?>">
         <?php } ?>
         </div>
       </div>

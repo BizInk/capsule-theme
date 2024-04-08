@@ -25,7 +25,7 @@ if( !empty($team_members) ){ ?>
                     $member_position = get_field('member_position', $team_member);
                     $member_company = get_field('member_company', $team_member); ?>
 
-                    <div class="col-md-6 col-lg-4 team-member">
+                    <div class="col-md-6 col-lg-3 team-member">
                         <a href="<?php echo get_permalink($team_member); ?>" class="team-member-wrap">
                             <div class="member-img">
                                 <img src="<?php echo $member_image; ?>" class="img-fluid" alt="<?php echo $team_member->post_title; ?>" title="<?php echo $team_member->post_title; ?>">

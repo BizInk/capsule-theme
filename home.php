@@ -1,12 +1,22 @@
 <?php
 // Exit if accessed directly.
 defined('ABSPATH') || exit;
+
+if(!empty($_GET['category'])){
+	if($_GET['category'] != 'all'){
+		$cat_URL = get_category_link( get_cat_ID( $_GET['category'] ) );
+		if(!empty($cat_URL)){
+			wp_redirect($cat_URL);
+			exit;
+		}
+	}
+}
+
 get_header();
 get_template_part('global-templates/inner-banner');
-
 if (have_posts()) {
+	get_template_part('global-templates/categoryselection');
 ?>
-
 <section class="four-col-team-section blog-listing-section comman-margin">    
     <div class="container">
 		<div class="team-wrap"> <!-- blog-posts-cont -->
