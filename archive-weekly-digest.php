@@ -3,6 +3,7 @@
 defined('ABSPATH') || exit;
 get_header();
 get_template_part('global-templates/inner-banner');
+get_template_part('global-templates/searchsection');
 
 if (have_posts()) {
 ?>

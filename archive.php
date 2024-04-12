@@ -25,6 +25,8 @@ get_header();
 $container = get_theme_mod( 'understrap_container_type' );
 get_template_part('global-templates/inner-banner');
 
+get_template_part('global-templates/searchsection');
+
 if (have_posts()) {
 	get_template_part('global-templates/categoryselection');
 ?>
@@ -56,7 +58,6 @@ if (have_posts()) {
 			</div>
 		</div>
 		<?php
-      /**blog-posts-cont <a href="<?php the_permalink(); ?>" class="readmore"><?php _e('Read More', 'tab-theme'); ?></a>*/
       wp_reset_postdata();
       ?>
       <div class="post-navigation">

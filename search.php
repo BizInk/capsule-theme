@@ -35,13 +35,17 @@ get_template_part('global-templates/inner-banner');
 							* If you want to overload this in a child theme then include a file
 							* called content-search.php and that will be used instead.
 							*/
-							get_template_part( 'loop-templates/content', 'search' );
+							?><div class="col-12"><?php
+								get_template_part( 'loop-templates/content', 'search' );
+							?></div><?php
 						endwhile;
 						?>
 
 					<?php else : ?>
 
-						<?php get_template_part( 'loop-templates/content', 'none' ); ?>
+						<div class="col-12">
+							<?php get_template_part( 'loop-templates/content', 'none' ); ?>
+						</div>
 
 					<?php endif; ?>			
 				<!-- The pagination component -->

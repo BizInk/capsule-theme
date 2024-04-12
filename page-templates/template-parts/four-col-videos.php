@@ -63,7 +63,7 @@ $four_col_vid_bg = get_sub_field('four_col_vid_bg');
 							<div class="video-img-wrap">	
 								<?= !empty($four_col_vid_link) ? '<a href="'. $four_col_vid_link .'">' : null; ?>
 									
-									<img src="<?php echo $four_col_vid_image['url']; ?>" alt="<?php echo $four_col_vid_image['alt']; ?>">
+									<img src="<?php echo $four_col_vid_image['url']; ?>" alt="<?php echo $four_col_vid_image['alt'] ? esc_attr($four_col_vid_image['alt']):$four_col_vid_image_title; ?>">
 																		
 								<?= !empty($four_col_vid_link) ? '</a>' : null; ?>
 							</div>

@@ -66,10 +66,12 @@ if( have_rows('column_section') ):
 						</div>
 					</div>
 					<div class="col col-md-6 col-right mb-5 mb-md-0">
+						
+						<?php
+						$column_hero_image = get_sub_field('column_hero_image');
+						if( !empty( $column_hero_image ) ) { ?>
 
-						<?php if( get_sub_field('column_hero_image') ) { ?>
-
-							<img src="<?php echo get_sub_field('column_hero_image'); ?>" class="img-fluid" alt="<?php echo get_sub_field('column_hero_title') ? get_sub_field('column_hero_title'): 'hero-img'; ?>">
+							<img src="<?php echo esc_url($column_hero_image['url']); ?>" class="img-fluid" alt="<?php echo $column_hero_image['alt'] ? esc_attr($column_hero_image['alt']):get_sub_field('column_hero_title'); ?>">
 						<?php } ?>
 					</div>
 				</div>
