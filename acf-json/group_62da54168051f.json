@@ -582,6 +582,50 @@
             "return_format": "array"
         },
         {
+            "key": "field_6618ce991eb6d",
+            "label": "Settings",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_6618cea41eb6e",
+            "label": "Category Selection",
+            "name": "category_selection",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "This controls how the category selection happens when viewing blog posts.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "hide": "Hide",
+                "select": "Dropdown Selection",
+                "button": "Buttons \/ Links"
+            },
+            "default_value": "button",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 1,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
             "key": "field_645b8289cde60",
             "label": "Global Logos",
             "name": "",

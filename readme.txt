@@ -15,6 +15,7 @@ The Capsule theme
 
 === 1.4.4 ===
 * Buttton Category Option
+* Enable Options
 
 === 1.4.3 ===
 * Option Search
