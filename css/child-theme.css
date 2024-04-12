@@ -21473,3 +21473,22 @@ header + .video-banner-section.comman-margin {
   padding: 0.8rem 1rem;
   border-radius: 8px;
 }
+
+.search-selection h4{
+  text-align: center;
+  font-size: 2rem;
+}
+.search-form .input-group{
+  display: grid;
+  width: 100%;
+  grid-template-columns: 65% auto;
+  border-radius: 8px;
+}
+.search-form .input-group input{
+  padding: 0.8rem 1rem;
+  font-size: 1.5rem;
+  width: 100%;
+}
+.search-form .input-group input[type=submit]{
+  padding: 1rem 0.5rem;
+}
