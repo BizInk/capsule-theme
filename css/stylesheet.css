@@ -1029,3 +1029,14 @@ input[type="submit"]:hover {
   color: #ddd;
   border-color: #c4822d;
 }
+
+.category-selection .filter-wrap .btn{
+  background: transparent;
+  color: #c4822d;
+  border-color: #c4822d;
+}
+.category-selection .filter-wrap .btn.active, .category-selection .filter-wrap .btn:hover{
+  background: #c4822d;
+  border-color: #c4822d;
+  color: #fff;
+}

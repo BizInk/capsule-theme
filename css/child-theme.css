@@ -21474,6 +21474,13 @@ header + .video-banner-section.comman-margin {
   border-radius: 8px;
 }
 
+.category-selection .filter-wrap .btn{
+  margin-top: 1rem;
+  padding: 0.8rem 1rem;
+  font-size: 1.5rem;
+  margin: 0.5rem;
+}
+
 .search-selection h4{
   text-align: center;
   font-size: 2rem;
