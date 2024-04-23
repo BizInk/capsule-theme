@@ -202,7 +202,7 @@
             "name": "footer_text",
             "aria-label": "",
             "type": "wysiwyg",
-            "instructions": "",
+            "instructions": "This is the content area that applears below the logo in the footer.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -215,6 +215,26 @@
             "toolbar": "full",
             "media_upload": 1,
             "delay": 0
+        },
+        {
+            "key": "field_63d762da748b2",
+            "label": "Column 1 Title",
+            "name": "column_1_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_63d763da748b2",
@@ -295,6 +315,26 @@
             "placeholder": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_62da54b1cb2a2",
+            "label": "Disclaimer text",
+            "name": "disclaimer_text",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
         },
         {
             "key": "field_62da73eb3f25e",
@@ -749,14 +789,14 @@
                 {
                     "key": "field_645b82decde63",
                     "label": "Logo",
-                    "name": "global_logo",
+                    "name": "logo_image",
                     "aria-label": "",
                     "type": "image",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "33",
                         "class": "",
                         "id": ""
                     },
@@ -775,19 +815,40 @@
                 {
                     "key": "field_645b82eccde64",
                     "label": "Link",
-                    "name": "global_link",
+                    "name": "logo_image_url",
                     "aria-label": "",
                     "type": "url",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "33",
                         "class": "",
                         "id": ""
                     },
                     "default_value": "",
                     "placeholder": "",
+                    "parent_repeater": "field_645b82d6cde62"
+                },
+                {
+                    "key": "field_6627bc57178dd",
+                    "label": "Alt Text",
+                    "name": "logo_image_alt",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
                     "parent_repeater": "field_645b82d6cde62"
                 }
             ]
@@ -863,13 +924,7 @@
                 "class": "",
                 "id": ""
             },
-            "choices": {
-                "5": "Get in Touch Member",
-                "4": "Lead Magnet",
-                "3": "Newsletter Form",
-                "1": "Request a Quote",
-                "2": "Sign up"
-            },
+            "choices": [],
             "default_value": false,
             "return_format": "value",
             "multiple": 0,
@@ -954,5 +1009,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1706500244
+    "modified": 1713880208
 }

@@ -45,9 +45,7 @@ file_put_contents($output_file, $compiled_css);
 
  //echo 'File Compiled & Saved!';
 
-
 get_header();
-
 
 ?>
 <?php

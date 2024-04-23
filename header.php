@@ -82,19 +82,19 @@ $youtube = get_field('youtube', 'options');
 						<nav class="social-nav">
 							<ul>
 								<?php if (!empty($facebook)) { ?>
-									<li><a href="<?= $facebook; ?>" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+									<li><a href="<?= esc_url($facebook); ?>" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
 								<?php }
 								if (!empty($twitter)) { ?>
-									<li><a href="<?= $twitter; ?>" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+									<li><a href="<?= esc_url($twitter); ?>" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
 								<?php }
 								if (!empty($linkedin)) { ?>
-									<li><a href="<?= $linkedin; ?>" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+									<li><a href="<?= esc_url($linkedin); ?>" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
 								<?php }
 								if (!empty($instagram)) { ?>
-									<li><a href="<?= $instagram; ?>" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+									<li><a href="<?= esc_url($instagram); ?>" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
 								<?php }
 								if (!empty($youtube)) { ?>
-									<li><a href="<?= $youtube; ?>" target="_blank"><i class="fa fa-youtube-square" aria-hidden="true"></i></a></li>
+									<li><a href="<?= esc_url($youtube); ?>" target="_blank"><i class="fa fa-youtube-square" aria-hidden="true"></i></a></li>
 								<?php } ?>
 							</ul>
 						</nav>

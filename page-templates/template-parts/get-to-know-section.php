@@ -18,8 +18,8 @@ $get_to_know_subtitle = get_sub_field('get_to_know_subtitle');
         <div class="container">
             <div class="editor-design">
                <!-- <h6>our team</h6>  Note for developer: add option in backend to add content -->
-                <h2><?php echo $get_to_know_title ? $get_to_know_title : 'Get to know us, we are<br>dedicated'; ?></h2>
-                <p><?php echo $get_to_know_subtitle ? $get_to_know_subtitle : 'Lorem dolor sit amet, consectetur tempor incididun psum <br> sit amet, consectetur tempor incididunt'; ?></p>
+                <h2><?php echo $get_to_know_title ? $get_to_know_title : 'Get to know us'; ?></h2>
+                <p><?php echo $get_to_know_subtitle ? $get_to_know_subtitle : ''; ?></p>
             </div>
         </div>
     </div>
@@ -27,7 +27,7 @@ $get_to_know_subtitle = get_sub_field('get_to_know_subtitle');
     <?php if( !empty($team_members) ): ?>
     <div class="container">
         <div class="team-wrap">
-            <div class="row g-lg-5">
+            <div class="row g-lg-5 justify-content-center">
                 <?php foreach( $team_members as $team_member  ):
                 $member_image = get_field('member_image', $team_member);
                 $member_position = get_field('member_position', $team_member);
@@ -37,15 +37,17 @@ $get_to_know_subtitle = get_sub_field('get_to_know_subtitle');
                     $get_to_know_member_image = get_stylesheet_directory_uri().'/images/team4.jpg';
                 } ?>
                 <div class="col-md-4 col-lg-3 team-member">
-                    <div class="team-member-wrap">
-                        <div class="member-img">
-                            <img src="<?php echo $get_to_know_member_image; ?>" alt="<?php echo $team_member->post_title; ?>">
+                    <a href="<?php echo get_permalink($team_member); ?>" class="team-member-link">
+                        <div class="team-member-wrap">
+                            <div class="member-img">
+                                <img src="<?php echo $get_to_know_member_image; ?>" alt="<?php echo esc_html($team_member->post_title); ?>">
+                            </div>
+                            <div class="member-details">
+                                <h4 class="member-name"><?php echo esc_html($team_member->post_title); ?></h4>
+                                <h6 class="designation"><?php echo $member_position ? esc_html($member_position) : ''; ?></h6>
+                            </div>
                         </div>
-                        <div class="member-details">
-                            <h4 class="member-name"><?php echo $team_member->post_title; ?></h4>
-                            <h6 class="designation"><?php echo $member_position ? $member_position : 'Web Designer'; ?></h6>
-                        </div>
-                    </div>
+                    </a>
                 </div>
                 <?php endforeach; ?>
             </div>

@@ -8,6 +8,7 @@ $info_box_small_title = get_sub_field('info_box_small_title');
 $info_box_title = get_sub_field('info_box_title');
 $info_box_content = get_sub_field('info_box_content');
 $general_class = '';
+$align_class = '';
 
 if( in_array('Add Common Padding', $general_settings) ){
 

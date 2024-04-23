@@ -61,7 +61,7 @@ $google_my_business = get_field('google_my_business', 'options');
 					<div class="client-area-wrap">						
 						<div class="dropdown">
 							<button class="dropdown-toggle client-area-anchor" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-								Call to action <i class="fa fa-angle-down" aria-hidden="true"></i>
+								<?php _e('Call to action','capsule-theme'); ?> <i class="fa fa-angle-down" aria-hidden="true"></i>
 							</button>							
 							<?php 
 							wp_nav_menu( array(
@@ -91,32 +91,32 @@ $google_my_business = get_field('google_my_business', 'options');
 							<ul>
 								<?php if( !empty($facebook) ){ ?>
 									
-									<li><a href="<?= $facebook; ?>" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+									<li><a href="<?= esc_url($facebook); ?>" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
 								<?php }
 
 								if( !empty($twitter) ){ ?>
 									
-									<li><a href="<?= $twitter; ?>" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+									<li><a href="<?= esc_url($twitter); ?>" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
 								<?php }
 
 								if( !empty($linkedin) ){ ?>
 									
-									<li><a href="<?= $linkedin; ?>" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+									<li><a href="<?= esc_url($linkedin); ?>" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
 								<?php }
 
 								if( !empty($instagram) ){ ?>
 									
-									<li><a href="<?= $instagram; ?>" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+									<li><a href="<?= esc_url($instagram); ?>" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
 								<?php } 
 
 								if( !empty($youtube) ){ ?>
 									
-									<li><a href="<?= $youtube; ?>" target="_blank"><i class="fa fa-youtube-square" aria-hidden="true"></i></a></li>
+									<li><a href="<?= esc_url($youtube); ?>" target="_blank"><i class="fa fa-youtube-square" aria-hidden="true"></i></a></li>
 								<?php }
 
 								if( !empty($google_my_business) ){ ?>
 									
-									<li><a href="<?= $google_my_business; ?>" target="_blank"><img src="/wp-content/uploads/2023/04/icons8-google-business-50.png" /></a></li>
+									<li><a href="<?= esc_url($google_my_business); ?>" target="_blank"><img src="/wp-content/uploads/2023/04/icons8-google-business-50.png" /></a></li>
 								<?php } ?>
 
 

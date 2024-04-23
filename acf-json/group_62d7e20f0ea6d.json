@@ -62,6 +62,26 @@
             "endpoint": 0
         },
         {
+            "key": "field_62d7e2415e29b",
+            "label": "Position",
+            "name": "member_position",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_62d7e2515e29c",
             "label": "About Me",
             "name": "member_full_profile",

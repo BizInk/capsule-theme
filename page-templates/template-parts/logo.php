@@ -17,7 +17,7 @@ if( in_array('Add Common Margin', $general_settings) ){
 
 $logo_title = get_sub_field('logo_title');
 
-if( have_rows('logo') ): ?>
+if( have_rows('logos') ): ?>
 
     <section class="logo-section text-center<?php echo $general_class; ?>">
         <?php if( !empty($logo_title) ){ ?>
@@ -35,7 +35,7 @@ if( have_rows('logo') ): ?>
             <?php if( $logo_style == 'slider' ){ ?>
 
                 <div class="logo-slider">
-                    <?php while( have_rows('logo') ):
+                    <?php while( have_rows('logos') ):
                         the_row();
 
                         $slider_image = get_sub_field('slider_image');
@@ -59,10 +59,13 @@ if( have_rows('logo') ): ?>
                         <?php }
                     endwhile; ?>
                 </div>
-            <?php }else{ ?>
+            <?php 
+            }
+            else { 
+            ?>
 
                 <div class="row g-5 grid-section">
-                    <?php while( have_rows('logo') ):
+                    <?php while( have_rows('logos') ):
                         the_row();
 
                         $slider_image = get_sub_field('slider_image');

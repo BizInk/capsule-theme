@@ -6,17 +6,22 @@
 			color:rgba($dark, 0.8);
 		}
 	}
-	nav li a {		
+	nav li a,nav li span {
 		color: rgba($dark, 0.8);
 		&:hover{
 			color:$primary;			
 		}
-	}	
+	}
 	h5{
 		color:$dark;
 	}	
 	.contact-details{
-		ul li a {		     
+		ul li{
+			i{
+				color:$primary;			   
+			}
+		}
+		ul li a,ul li span {		     
 			i{
                color:$primary;			   
 			}			

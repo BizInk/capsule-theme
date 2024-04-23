@@ -18056,7 +18056,7 @@ footer .shape-color {
   max-width: 20px;
   margin-right: 10px;
 }
-.footer-wrap .contact-details ul li a i {
+.footer-wrap .contact-details ul li a i,.footer-wrap .contact-details ul li i {
   margin-right: 10px;
 }
 .footer-wrap .social-nav ul {
@@ -19682,6 +19682,10 @@ section.infobox-section.resource-infobox {
 .team-section .team-wrap .team-member {
   padding-bottom: 20px;
 }
+.team-section .team-wrap .team-member .team-member-link{
+  text-decoration: none;
+}
+
 @media (max-width: 991.98px) {
   .team-section .team-wrap .team-member {
     padding-bottom: 30px;
@@ -21498,4 +21502,9 @@ header + .video-banner-section.comman-margin {
 }
 .search-form .input-group input[type=submit]{
   padding: 1rem 0.5rem;
+}
+.disclaimer-wrap .disclaimer-content{
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 2rem;
 }

@@ -25,7 +25,7 @@ $gravity_forms = get_field('gravity_forms', 'option');
         <div class="row align-items-center">
             <div class="col-md-5">
                 <div class="member-img">
-                    <img src="<?php echo $member_image; ?>" class="img-fluid" alt="<?php echo $member_about_me_title ? $member_about_me_title : 'member-img'; ?>">
+                    <img src="<?php echo $member_image; ?>" class="img-fluid" alt="<?php echo $member_about_me_title ? esc_html($member_about_me_title) : esc_html($member_about_me_title); ?>">
                 </div>
             </div>
             <div class="col-md-7">
@@ -33,24 +33,24 @@ $gravity_forms = get_field('gravity_forms', 'option');
                     <div class="d-flex justify-content-between mb-4">
                         <?php if( !empty($member_about_me_title) ){ ?>
 
-                            <h3><?php echo $member_about_me_title; ?></h3>
+                            <h3><?php echo esc_html($member_about_me_title); ?></h3>
                         <?php } ?>
                         
                         <ul class="social-nav">
                             
                             <?php if( !empty($member_facebook) ){ ?>
 
-                                <li><a href="<?php echo $member_facebook; ?>" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+                                <li><a href="<?php echo esc_url($member_facebook); ?>" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
                             <?php }
 
                             if( !empty($member_twitter) ){ ?>
 
-                                <li><a href="<?php echo $member_twitter; ?>" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href="<?php echo esc_url($member_twitter); ?>" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                             <?php }
 
                             if( !empty($member_linkedin) ){ ?>
 
-                                <li><a href="<?php echo $member_linkedin; ?>" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                                <li><a href="<?php echo esc_url($member_linkedin); ?>" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
                             <?php } ?>
                         </ul>
                     </div>
@@ -63,15 +63,15 @@ $gravity_forms = get_field('gravity_forms', 'option');
                         <ul>
                             <?php if( !empty($member_phone) ){ ?>
 
-                                <li><a href="tel:<?php echo $member_phone; ?>"><i class="fa fa-phone" aria-hidden="true"></i> Tel: <?php echo $member_phone; ?> </a></li>
+                                <li><a href="tel:<?php echo $member_phone; ?>"><i class="fa fa-phone" aria-hidden="true"></i> <?php echo __('Tel:','capsule-theme').''.$member_phone; ?></a></li>
                             <?php }
                             if( !empty($member_email) ){ ?>
 
-                                <li><a href="mailto:<?php echo $member_email; ?>"><i class="fa fa-envelope" aria-hidden="true"></i> Email: <?php echo $member_email; ?></a></li>
+                                <li><a href="mailto:<?php echo $member_email; ?>"><i class="fa fa-envelope" aria-hidden="true"></i> <?php echo __('Email:','capsule-theme').''.$member_email; ?></a></li>
                             <?php }
                             if( !empty($member_address) ){ ?>
 
-                                <li><a href="https://maps.google.com?q=<?php echo urlencode($member_address); ?>" target="_blank"><i class="fa fa-map-marker" aria-hidden="true"></i> Address: <?php echo do_shortcode($member_address); ?></a></li>
+                                <li><a href="https://maps.google.com?q=<?php echo urlencode($member_address); ?>" target="_blank"><i class="fa fa-map-marker" aria-hidden="true"></i> <?php echo __('Address:','capsule-theme') .' '. do_shortcode($member_address); ?></a></li>
                             <?php } ?>
                         </ul>
                     </div>
@@ -83,8 +83,7 @@ $gravity_forms = get_field('gravity_forms', 'option');
                 <div class="col-md-12">
                     <div class="editor-design">
                         <?php if( !empty($member_my_story_title) ){ ?>
-
-                            <h3><?php echo $member_my_story_title; ?></h3>
+                            <h3><?php echo esc_html($member_my_story_title); ?></h3>
                         <?php }
                         
                         echo $member_my_story; ?>

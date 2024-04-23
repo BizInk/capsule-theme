@@ -54,7 +54,7 @@ get_template_part('global-templates/inner-banner');
 				<div class="text-left">
 					<div class="container">
 						<div class="editor-design mb-5">
-							<h2>Recent Posts</h2>
+							<h2><?php _e('Recent Posts','capsule-theme'); ?></h2>
 						</div>
 					</div>
 				</div>
