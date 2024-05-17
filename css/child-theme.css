@@ -18023,6 +18023,10 @@ footer .shape-color {
   transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
+  font-size: 1.6rem;
+}
+.footer-wrap nav li span{
+  font-size: 1.6rem;
 }
 @media (max-width: 767.98px) {
   .footer-wrap nav li a {
@@ -20856,10 +20860,12 @@ section.infobox-section.resource-infobox {
 .teamlist-section .team-member .team-member-wrap .member-details h4, .teamlist-section .team-member .team-member-wrap .member-details .h4 {
   font-weight: bold;
   margin-bottom: 15px;
+  text-decoration: none;
 }
 .teamlist-section .team-member .team-member-wrap .member-details h6, .teamlist-section .team-member .team-member-wrap .member-details .h6 {
   font-weight: normal;
   font-size: 2rem;
+  text-decoration: none;
 }
 @media (max-width: 767.98px) {
   .teamlist-section .team-member:last-child {

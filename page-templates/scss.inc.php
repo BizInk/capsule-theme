@@ -95,6 +95,15 @@ class scssc {
 
 	protected $formatter = "scss_formatter_nested";
 
+	protected $indentLevel = 0;
+	protected $commentsSeen = array();
+	protected $extends = array();
+	protected $extendsMap = array();
+	protected $parsedFiles = array();
+	protected $env = null;
+	protected $scope = null;
+	protected $parser = null;
+
 	/**
 	 * Compile scss
 	 *
@@ -891,12 +900,12 @@ class scssc {
 				// 1. op_[op name]_[left type]_[right type]
 				// 2. op_[left type]_[right type] (passing the op as first arg
 				// 3. op_[op name]
-				$fn = "op_${opName}_${ltype}_${rtype}";
+				$fn = "op_{$opName}_{$ltype}_{$rtype}";
 				if (is_callable(array($this, $fn)) ||
-					(($fn = "op_${ltype}_${rtype}") &&
+					(($fn = "op_{$ltype}_{$rtype}") &&
 						is_callable(array($this, $fn)) &&
 						$passOp = true) ||
-					(($fn = "op_${opName}") &&
+					(($fn = "op_{$opName}") &&
 						is_callable(array($this, $fn)) &&
 						$genOp = true))
 				{
@@ -1242,7 +1251,15 @@ class scssc {
 			// [3] - blue component
 			// [4] - optional alpha component
 			list(, $r, $g, $b) = $value;
-
+			if(empty($r)){
+				$r = 0;
+			}
+			if(empty($g)){
+				$g = 0;
+			}
+			if(empty($b)){
+				$b = 0;
+			}
 			$r = round($r);
 			$g = round($g);
 			$b = round($b);
@@ -1750,7 +1767,9 @@ class scssc {
 
 		foreach ($args as $arg) {
 			list($key, $value) = $arg;
-			if(is_array($key)) $key = $key[1];
+			if(isset($key[1])){
+				$key = $key[1];
+			}
 			if (empty($key)) {
 				$posArgs[] = $value;
 			} else {
@@ -2687,6 +2706,15 @@ class scss_parser {
 	static protected $commentMultiLeft = "/*";
 	static protected $commentMultiRight = "*/";
 
+	protected $sourceName = null;
+	protected $rootParser = true;
+
+	protected $count           = 0;
+	protected $env             = null;
+	protected $inParens        = false;
+	protected $eatWhiteDefault = true;
+	protected $insertComments  = true;
+	protected $buffer          = null;
 	/**
 	 * Constructor
 	 *
@@ -2694,7 +2722,6 @@ class scss_parser {
 	 * @param boolean $rootParser
 	 */
 	public function __construct($sourceName = null, $rootParser = true) {
-		$this->sourceName = $sourceName;
 		$this->rootParser = $rootParser;
 
 		if (empty(self::$operatorStr)) {
@@ -3558,7 +3585,7 @@ class scss_parser {
 
 			$num = hexdec($num);
 			foreach (array(3,2,1) as $i) {
-				$t = $num % $width;
+				$t = intval($num) % $width;
 				$num /= $width;
 
 				$color[$i] = $t * (256/$width) + $t * floor(16/$width);

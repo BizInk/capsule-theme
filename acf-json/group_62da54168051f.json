@@ -751,12 +751,12 @@
             },
             "choices": {
                 "col-6": "Two Columns",
-                "col-5": "Three Columns",
-                "col-4": "Four Columns",
-                "col-3": "Five Columns",
-                "col-2": "Six Columns"
+                "col-4": "Three Columns",
+                "col-3": "Four Columns",
+                "col-2": "Five Columns",
+                "col": "Six Columns"
             },
-            "default_value": "col-4",
+            "default_value": "col-3",
             "return_format": "value",
             "multiple": 0,
             "allow_null": 0,
@@ -1009,5 +1009,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1713880208
+    "modified": 1715911668
 }

@@ -1,4 +1,10 @@
 <?php
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+if(function_exists('get_field')):
+
 function wave_custompost_type() {
 
 	/**
@@ -779,3 +785,4 @@ function wave_custompost_type() {
 	register_taxonomy( 'video_cat', array( 'video' ), $videos_cat_args );
 }
 add_action( 'init', 'wave_custompost_type' );
+endif;

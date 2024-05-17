@@ -86,7 +86,7 @@ if( have_rows('global_logos','options') ): ?>
             }
             else { 
             ?>
-                <div class="row g-5 grid-section">
+                <div class="row justify-content-center">
                     <?php while( have_rows('global_logos','options') ):
                         the_row();
 
@@ -146,7 +146,7 @@ $gravity_forms = get_field('gravity_forms', 'options');
 <footer>
 	<div class="container">
 		<div class="row footer-wrap">
-			<div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+			<div class="col-md-6 col-lg-3 mb-4 mb-lg-0 px-lg-4">
 				<?php if(!empty($column_1_title)): echo '<h5>'.esc_html($column_1_title).'</h5>'; endif; ?>
 				<div class="footer-logo">
 					<a href="<?= site_url(); ?>"><img src="<?php echo $footer_logo['url']; ?>" alt="<?php echo $footer_logo['alt']; ?>"></a>
@@ -155,7 +155,7 @@ $gravity_forms = get_field('gravity_forms', 'options');
 					<?= $footer_text; ?>
 				</div>
 			</div>
-			<div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
+			<div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
 				<?php if(!empty($column_2_title)): echo '<h5>'.esc_html($column_2_title).'</h5>'; endif; ?>
 				<nav class="contact-details">
 					<ul>
