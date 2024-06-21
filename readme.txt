@@ -15,6 +15,7 @@ The Capsule theme
 
 = 1.5.2 =
 * Newsletter Form Fix
+* Blog title
 
 = 1.5.1 =
 * Social Icon Fix

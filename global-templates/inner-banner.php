@@ -25,7 +25,10 @@
         </p>';
 }
 else if( is_home() ){
-    $inner_banner_title = __('Blog', 'capsule-theme'); 
+    $inner_banner_title = get_the_title();
+    if( empty($inner_banner_title) ){
+        $inner_banner_title = __('Blog', 'capsule-theme'); 
+    }
     $inner_banner_content = get_field('inner_banner_content', 'option');
 }
 else if( is_archive() ){
