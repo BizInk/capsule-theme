@@ -2,8 +2,8 @@
 Contributors: Capsule,Jayden Major
 Tags: Bizink, Capsule
 Requires at least: 5.6
-Tested up to: 6.4.3
-Stable tag: 1.5.1
+Tested up to: 6.5.3
+Stable tag: 1.5.2
 Requires PHP: 7.4
 
 The Capsule theme
@@ -12,6 +12,9 @@ The Capsule theme
 The Capsule theme
 
 == Changelog ==
+
+= 1.5.2 =
+* Newsletter Form Fix
 
 = 1.5.1 =
 * Social Icon Fix

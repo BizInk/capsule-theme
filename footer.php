@@ -121,7 +121,7 @@ if( have_rows('global_logos','options') ): ?>
 <!-- logo-section-end -->
 <?php 
 $enable_newsletter_section = get_field('enable_newsletter_section', 'options');
-if( $enable_newsletter_section == 'yes' ){
+if( empty($enable_newsletter_section) || $enable_newsletter_section == true || $enable_newsletter_section == 'yes' ){
 	get_template_part('global-templates/newsletter');
 }
 ?>

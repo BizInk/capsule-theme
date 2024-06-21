@@ -21,8 +21,13 @@ $gravity_forms = get_field('gravity_forms', 'options');
             </div>
             <div class="col col-md-9 col-lg-6">
                 <?php 
-				if(!empty($gravity_forms) && function_exists('gravity_form')): 
-					gravity_form($gravity_forms,false); 
+				if(!empty($gravity_forms) && function_exists('gravity_form')):
+                    if(gettype($gravity_forms) != 'array'){
+                        $gravity_forms = array('id' => $gravity_forms);
+                    }
+                    echo '<!-- Gravity Form ID: '.$gravity_forms.'-->';
+                    gravity_form_enqueue_scripts($gravity_forms['id'], true);
+                    gravity_form( $gravity_forms['id'], false, false, false, '', true, 12 );
 				endif;
 				?>
 			</div>
