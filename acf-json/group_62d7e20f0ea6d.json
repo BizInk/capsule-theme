@@ -17,7 +17,8 @@
                 "id": ""
             },
             "placement": "left",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_62d7e21e5e299",
@@ -59,7 +60,8 @@
                 "id": ""
             },
             "placement": "left",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_62d7e2415e29b",
@@ -82,6 +84,26 @@
             "maxlength": ""
         },
         {
+            "key": "field_667bb2d72fecb",
+            "label": "About Me Section Title",
+            "name": "member_about_me_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "About Me",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_62d7e2515e29c",
             "label": "About Me",
             "name": "member_full_profile",
@@ -100,6 +122,26 @@
             "toolbar": "full",
             "media_upload": 1,
             "delay": 0
+        },
+        {
+            "key": "field_667bb2f52fecc",
+            "label": "Fun Facts Section Title",
+            "name": "member_my_story_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Fun Facts",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_63da4660125fb",
@@ -197,7 +239,8 @@
                 "id": ""
             },
             "placement": "left",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_62d7e2bc5e2a2",
@@ -269,5 +312,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1705559128
+    "modified": 1719383078
 }

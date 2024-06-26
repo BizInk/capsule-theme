@@ -5,9 +5,9 @@ get_template_part('global-templates/inner-banner');
 
 $member_image = get_field('member_image');
 $member_image = !empty($member_image) ? $member_image : get_stylesheet_directory_uri() . '/images/testimonial-default.jpg';
-$member_about_me_title = get_field('member_about_me_title', 'options');
+$member_about_me_title = get_field('member_about_me_title');
 $member_full_profile = get_field('member_full_profile'); 
-$member_my_story_title = get_field('member_my_story_title', 'options');
+$member_my_story_title = get_field('member_my_story_title');
 $member_my_story = get_field('member_my_story'); 
 $member_contact_text = get_field('member_contact_text'); 
 $member_phone = get_field('member_phone'); 

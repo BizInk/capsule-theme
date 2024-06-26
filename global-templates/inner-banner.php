@@ -25,7 +25,7 @@
         </p>';
 }
 else if( is_home() ){
-    $inner_banner_title = single_post_title('',false);
+    $inner_banner_title = get_the_title( get_option('page_for_posts', true) );
     if( empty($inner_banner_title) ){
         $inner_banner_title = __('Blog', 'capsule-theme'); 
     }

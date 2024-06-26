@@ -18,8 +18,8 @@ get_template_part('global-templates/inner-banner');
 
 	<div class="<?php echo esc_attr($container); ?>" id="content" tabindex="-1">
 
-		<div class="row justify-content-between">
-			<div class="col-md-12 col-lg-7 col-xl-8">
+		<div class="row justify-content-between gap-4">
+			<div class="col">
 
 				<main class="site-main" id="main">
 
@@ -29,13 +29,14 @@ get_template_part('global-templates/inner-banner');
 						get_template_part('loop-templates/content', 'single'); 
 
 					}
-					get_template_part('global-templates/right-sidebar-check');
+					
 					?>
 
 				</main><!-- #main -->
-
+				<?php get_template_part('global-templates/right-sidebar-check'); ?>
 				<!-- Do the right sidebar check -->
 			</div>
+			
 		</div><!-- .row -->
 
 		<?php 

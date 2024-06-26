@@ -124,8 +124,7 @@ register_nav_menus( array(
  * Add a new dashboard widget.
  */
 function wpdocs_add_dashboard_widgets() {
-	$feed_url = get_field('feed_title', 'option');
-    wp_add_dashboard_widget( 'dashboard_widget', $feed_url, 'dashboard_widget_function' );
+    wp_add_dashboard_widget( 'dashboard_widget', 'Bizink News', 'dashboard_widget_function' );
 }
 add_action( 'wp_dashboard_setup', 'wpdocs_add_dashboard_widgets' );
 
@@ -134,14 +133,14 @@ add_action( 'wp_dashboard_setup', 'wpdocs_add_dashboard_widgets' );
 *	Re-usable RSS feed reader with shortcode
 */
 if ( !function_exists('base_rss_feed') ) {
-	$feed_url = get_field('feed_url', 'option');
-	function base_rss_feed($size = 5, $feed = '$feed_url', $date = false, $cache_time = 1800)
+	function base_rss_feed($size = 5, $date = false, $cache_time = 1800)
 	{
+		$feed = 'https://bizinkonline.com/feed/';
 		// Include SimplePie RSS parsing engine
 		include_once ABSPATH . WPINC . '/feed.php';
  
 		// Set the cache time for SimplePie
-		add_filter( 'wp_feed_cache_transient_lifetime', create_function( '$a', "return $cache_time;" ) );
+		add_filter( 'wp_feed_cache_transient_lifetime' , 'bizink_feed_cachetime' );
  
 		// Build the SimplePie object
 		$rss = fetch_feed($feed);
@@ -203,20 +202,21 @@ if ( !function_exists('base_rss_feed') ) {
 
 	}
 }
+function bizink_feed_cachetime($seconds){
+	return 7200;
+}
 
 /** Define [rss] shortcode */
 if( function_exists('base_rss_feed') && !function_exists('base_rss_shortcode') ) {
 
-	$feed_url = get_field('feed_url', 'option');
-
 	function base_rss_shortcode($atts) {
 		extract(shortcode_atts(array(
 			'size' => '3',
-			'feed' => $feed_url,
+			'feed' => 'https://bizinkonline.com/feed/',
 			'date' => false,
 		), $atts));
 		
-		$content = base_rss_feed($size, $feed, $date);
+		$content = base_rss_feed($size, $date);
 		return $content;
 	}
 	add_shortcode("rss", "base_rss_shortcode");
@@ -227,8 +227,7 @@ if( function_exists('base_rss_feed') && !function_exists('base_rss_shortcode') )
  */
 function dashboard_widget_function( $post, $callback_args ) {
     // esc_html_e( "Hello World, this is my first Dashboard Widget!", "textdomain" );
-    $feed_url = get_field('feed_url', 'option');
-   if( function_exists('base_rss_feed') ) echo base_rss_feed(3, $feed_url, true);
+   if( function_exists('base_rss_feed') ) echo base_rss_feed(3, true);
 
 }
 
@@ -236,14 +235,10 @@ add_filter( 'gform_enable_password_field', '__return_true' );
 add_filter('acf/settings/save_json', 'my_acf_json_save_point');
  
 function my_acf_json_save_point( $path ) {
-    
     // update path
     $path = get_stylesheet_directory() . '/acf-json';
-    
-    
     // return
     return $path;
-    
 }
 
 add_filter('acf/settings/load_json', 'my_acf_json_load_point');
@@ -253,11 +248,9 @@ function my_acf_json_load_point( $paths ) {
     // remove original path (optional)
     unset($paths[0]);
     
-    
     // append path
     $paths[] = get_stylesheet_directory() . '/acf-json';
-    
-    
+
     // return
     return $paths;
     

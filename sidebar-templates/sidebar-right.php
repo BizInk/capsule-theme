@@ -17,9 +17,9 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 ?>
 
 <?php if ( 'both' === $sidebar_pos ) : ?>
-	<div class="col-md-6 col-lg-4 col-xl-3 widget-area" id="right-sidebar">
+	<div class="col-12 col-md-6 col-lg-4 col-xl-3 widget-area" id="right-sidebar">
 <?php else : ?>
-	<div class="col-md-6 col-lg-4 col-xl-3  widget-area" id="right-sidebar">
+	<div class="col-12 col-md-6 col-lg-4 col-xl-3  widget-area" id="right-sidebar">
 <?php endif; ?>
 <?php dynamic_sidebar( 'right-sidebar' ); ?>
 

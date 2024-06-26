@@ -978,7 +978,10 @@
             },
             "allow_null": 0,
             "allow_multiple": 0,
-            "choices": []
+            "choices": {
+                "1": "Contact",
+                "2": "Test 2"
+            }
         },
         {
             "key": "field_65a62e9cf66e7",
@@ -997,46 +1000,6 @@
             "placement": "left",
             "endpoint": 0,
             "selected": 0
-        },
-        {
-            "key": "field_65a62eb5f66e8",
-            "label": "About Me Title",
-            "name": "member_about_me_title",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_65a62ec0f66e9",
-            "label": "Fun Facts Title",
-            "name": "member_my_story_title",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
         }
     ],
     "location": [
@@ -1057,5 +1020,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1718865694
+    "modified": 1719382812
 }
