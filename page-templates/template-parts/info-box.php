@@ -68,7 +68,7 @@ if( have_rows('information_box') ):
 							$info_description = get_sub_field('info_description'); 
 							$info_button = get_sub_field('info_button');
 							?>
-							<div class="col-md-6 col-lg-4 <?php echo $column_counts; ?>">
+							<div class="col-12 col-md-6 col-lg-4 <?php echo $column_counts; ?>">
 								<div class="info-box h-100 <?php echo $align_class ?>">
 
 									<?php if( !empty($info_image) ) { ?>

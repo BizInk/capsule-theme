@@ -585,5 +585,6 @@ input[type="submit"] {
     color: #565656; }
   .case-studies-two-col-section .case-study-sidebar .case-study-sidebar-details .client-details .client-content h5 {
     color: #161616; }
-  .case-study-card-section a.member-name h4, .case-study-card-section p, .case-study-card-section h5 {
-    color: #161616; }
+
+.case-study-card-section a.member-name h4, .case-study-card-section p, .case-study-card-section h5 {
+  color: #161616; }
