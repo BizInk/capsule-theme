@@ -424,6 +424,25 @@ function luca_excerpt_length( $length ) {
     return 30;
 }
 
+add_action('login_head', 'capsule_login_page_styles');
+/**
+ * Show BizInk logo on login page
+ */
+function login_page_styles() { 
+	?>
+	<style>
+		#login h1 a {
+			background: url(<?php echo get_stylesheet_directory_uri() . '/images/login-logo.png' ?>) no-repeat center center;
+			padding-bottom: 30px;
+			height: 70px;
+			width: 310px;
+			background-size: 310px 80px;
+		}
+	</style>
+	<?php 
+}
+
+
 // Theme Updater
 require 'plugin-update-checker/plugin-update-checker.php';
 use YahnisElsts\PluginUpdateChecker\v5\PucFactory;

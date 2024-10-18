@@ -18701,72 +18701,67 @@ footer .shape-color {
   }
 }
 
-body .gform_wrapper.gravity-theme .gform_heading .gform_title {
+.gform_wrapper .gform_heading .gform_title {
   display: none;
 }
-body .gform_wrapper.gravity-theme .gform_validation_errors {
+.gform_wrapper .gform_validation_errors {
   border: 0;
   box-shadow: none;
   background: transparent;
   text-align: left;
 }
-body .gform_wrapper.gravity-theme .gform_validation_errors h2, body .gform_wrapper.gravity-theme .gform_validation_errors .h2 {
+.gform_wrapper .gform_validation_errors h2, .gform_wrapper .gform_validation_errors .h2 {
   font-family: inherit;
 }
 @media (max-width: 991.98px) {
-  body .gform_wrapper.gravity-theme form .gform_body .gform_fields .gfield.gfield--width-half {
+  .gform_wrapper form .gform_body .gform_fields .gfield.gfield--width-half {
     grid-column: span 12;
   }
 }
-body .gform_wrapper.gravity-theme form .gform_body .gform_fields .gfield .ginput_container input[type=text],
-body .gform_wrapper.gravity-theme form .gform_body .gform_fields .gfield .ginput_container input[type=number],
-body .gform_wrapper.gravity-theme form .gform_body .gform_fields .gfield .ginput_container input[type=date],
-body .gform_wrapper.gravity-theme form .gform_body .gform_fields .gfield .ginput_container input[type=email],
-body .gform_wrapper.gravity-theme form .gform_body .gform_fields .gfield .ginput_container input[type=tel],
-body .gform_wrapper.gravity-theme form .gform_body .gform_fields .gfield .ginput_container textarea {
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=text],
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=number],
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=date],
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=email],
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=tel],
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container textarea {
   border: 1px solid #C3CAD9;
-  height: 60px;
-  padding: 13px 20px;
+  line-height: 1.2;
+  padding: 2.2rem 1rem;
   font-size: 1.8rem;
   border-radius: 8px;
+  text-align: left;
 }
-body .gform_wrapper.gravity-theme form .gform_body .gform_fields .gfield .ginput_container input[type=text]:focus-visible,
-body .gform_wrapper.gravity-theme form .gform_body .gform_fields .gfield .ginput_container input[type=number]:focus-visible,
-body .gform_wrapper.gravity-theme form .gform_body .gform_fields .gfield .ginput_container input[type=date]:focus-visible,
-body .gform_wrapper.gravity-theme form .gform_body .gform_fields .gfield .ginput_container input[type=email]:focus-visible,
-body .gform_wrapper.gravity-theme form .gform_body .gform_fields .gfield .ginput_container input[type=tel]:focus-visible,
-body .gform_wrapper.gravity-theme form .gform_body .gform_fields .gfield .ginput_container textarea:focus-visible {
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=text]:focus-visible,
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=number]:focus-visible,
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=date]:focus-visible,
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=email]:focus-visible,
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container input[type=tel]:focus-visible,
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container textarea:focus-visible {
   outline: none;
   box-shadow: none;
 }
-body .gform_wrapper.gravity-theme form .gform_body .gform_fields .gfield .ginput_container textarea {
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container textarea {
   min-height: 190px;
 }
-body .gform_wrapper.gravity-theme form .gform_body .gform_fields .gfield .ginput_container ::-webkit-input-placeholder {
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container ::-webkit-input-placeholder {
   color: #646464;
 }
 @media (max-width: 991.98px) {
-  body .gform_wrapper.gravity-theme form .gform_body .gform_fields .gfield .ginput_container ::-webkit-input-placeholder {
+  .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container ::-webkit-input-placeholder {
     font-size: 12px;
   }
 }
-body .gform_wrapper.gravity-theme form .gform_body .gform_fields .gfield .ginput_container :-moz-placeholder {
-  /* Firefox 18- */
-}
-body .gform_wrapper.gravity-theme form .gform_body .gform_fields .gfield .ginput_container ::-moz-placeholder {
-  /* Firefox 19+ */
-}
-body .gform_wrapper.gravity-theme form .gform_body .gform_fields .gfield .ginput_container .gfield_description {
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container .gfield_description {
   font-size: 1.3rem;
   padding: 10px 13px;
 }
-body .gform_wrapper.gravity-theme form .gform_body .gform_fields .gfield .gfield_description.validation_message.gfield_validation_message {
+.gform_wrapper form .gform_body .gform_fields .gfield .gfield_description.validation_message.gfield_validation_message {
   border: 0;
   padding: 5px;
   background: transparent;
   text-align: left;
 }
-body .gform_wrapper.gravity-theme form .gform_footer input[type=submit] {
+.gform_wrapper form .gform_footer input[type=submit],.gform_wrapper form .gform_footer .gform_button {
   border-radius: 4rem;
   font-size: 1.8rem;
   font-weight: 500;
@@ -18781,13 +18776,13 @@ body .gform_wrapper.gravity-theme form .gform_footer input[type=submit] {
   min-width: 228px;
 }
 @media (max-width: 991.98px) {
-  body .gform_wrapper.gravity-theme form .gform_footer input[type=submit] {
+  .gform_wrapper form .gform_footer input[type=submit],.gform_wrapper form .gform_footer .gform_button {
     padding: 10px 40px;
     font-size: 1.6rem;
     min-width: auto;
   }
 }
-body .gform_confirmation_message {
+.gform_confirmation_message {
   font-weight: 600;
 }
 
@@ -19913,7 +19908,7 @@ section.infobox-section.resource-infobox {
 .signup_modal .form-wrap h2, .signup_modal .form-wrap .h2 {
   margin-bottom: 40px;
 }
-.signup_modal .form-wrap .gform_wrapper.gravity-theme .gfield input, .signup_modal .form-wrap .gform_wrapper.gravity-theme .gfield select {
+.signup_modal .form-wrap .gform_wrapper .gfield input, .signup_modal .form-wrap .gform_wrapper .gfield select {
   border: none;
 }
 
@@ -20756,44 +20751,40 @@ section.infobox-section.resource-infobox {
 .newsletter-section .full-width-wysiwyg p {
   opacity: 0.8;
 }
-.newsletter-section form#gform_3 {
+.newsletter-section form {
   position: relative;
 }
-.newsletter-section form#gform_3 input[type=email] {
+.newsletter-section.newsletter_styleing form input[type=email] {
   border-radius: 30px !important;
 }
-.newsletter-section form#gform_3 .gform_footer.top_label {
+.newsletter-section.newsletter_styleing form .gform_footer {
   position: absolute;
   top: 0;
   padding: 0 !important;
   margin: 0 !important;
   right: 0;
 }
-.newsletter-section form#gform_3 .gform_footer.top_label input[type=submit] {
+.newsletter-section.newsletter_styleing form .gform_footer input[type=submit] {
   border-radius: 0 30px 30px 0 !important;
   margin: 0 auto;
 }
-.newsletter-section form#gform_3 .gform_footer.top_label input[type=submit]:hover {
+.newsletter-section form .gform_footer input:is([type="submit"], [type="button"], [type="reset"]):hover {
   background-color: #212529;
   color: #fff;
 }
 @media (max-width: 991.98px) {
-  .newsletter-section form#gform_3 .gform_footer.top_label input[type=submit] {
+  .newsletter-section form .gform_footer input:is([type="submit"], [type="button"], [type="reset"]) {
     padding: 16px 42px;
   }
 }
 @media (max-width: 767.98px) {
-  .newsletter-section form#gform_3 .gform_footer.top_label input[type=submit] {
+  .newsletter-section form .gform_footer input:is([type="submit"], [type="button"], [type="reset"]) {
     padding: 14px 42px;
     height: 60px;
   }
 }
-.newsletter-section form .gform_footer.top_label input[type=submit] {
+.newsletter-section form .gform_footer input:is([type="submit"], [type="button"], [type="reset"]) {
   margin: 0 auto;
-}
-.newsletter-section form .gform_footer.top_label input[type=submit]:hover {
-  background-color: #212529;
-  color: #fff;
 }
 
 @media (max-width: 991.98px) {

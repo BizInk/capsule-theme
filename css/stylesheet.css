@@ -534,20 +534,20 @@ nav.contact-details ul li a:hover {
       color: #161616, 0.4; }
     .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container :-ms-input-placeholder {
       color: #161616, 0.4; }
-    .gform_wrapper form .gform_footer input[type="submit"] {
-      color: #ddd;
-      background-color: #c4822d; }
-  .gform_wrapper form .gform_footer input[type="submit"]:hover {
-    background-color: #22c6d8;
-    color: #ddd; }
+  .gform_wrapper form .gform_footer input:is([type="submit"], [type="button"], [type="reset"]) {
+    color: #ddd !important;
+    background-color: #c4822d !important; }
+  .gform_wrapper form .gform_footer input:is([type="submit"], [type="button"], [type="reset"]):hover {
+    background-color: #22c6d8 !important;
+    color: #ddd !important; }
 
 .gform_confirmation_message {
   color: #161616; }
 
-input[type="submit"] {
+input:is([type="submit"], [type="button"], [type="reset"]) {
   color: #22c6d8;
   background-color: #c4822d; }
-  input[type="submit"]:hover {
+  input:is([type="submit"], [type="button"], [type="reset"]):hover {
     background-color: #22c6d8;
     color: #ddd; }
 

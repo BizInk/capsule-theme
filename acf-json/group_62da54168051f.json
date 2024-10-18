@@ -888,12 +888,34 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
             "message": "",
             "default_value": 1,
+            "allow_in_bindings": 1,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_6711a9d035071",
+            "label": "Use Newsletter Styleing",
+            "name": "use_newsletter_styleing",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "66",
+                "class": "",
+                "id": ""
+            },
+            "message": "Changes the style of the form, when enabled it will round the email field and place the submit button at the end.",
+            "default_value": 0,
+            "allow_in_bindings": 1,
             "ui_on_text": "",
             "ui_off_text": "",
             "ui": 1
@@ -1020,5 +1042,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1719382812
+    "modified": 1729212320
 }

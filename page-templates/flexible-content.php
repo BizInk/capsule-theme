@@ -18,12 +18,6 @@ $scss = new scssc();
 $output_file =  get_stylesheet_directory().'/css/stylesheet.css';
 $path = get_stylesheet_directory().'/src/sass/settings.scss';
 
-// $compiled_css = $scss->compile('
-//  @import "variables"; 
-//  @import "normal";
-// ');
-
-
 $global_theme_color1 = get_field('global_theme_color1', 'option') ? get_field('global_theme_color1', 'option') : '#272343';
 $global_theme_color2 = get_field('global_theme_color2', 'option') ? get_field('global_theme_color2', 'option') : '#ffdf35';
 $global_theme_color3 = get_field('global_theme_color3', 'option') ? get_field('global_theme_color3', 'option') : '#ffffff';
@@ -44,13 +38,7 @@ $compiled_css = $scss->compile('
   @import "'.$path.'";
 ');
 
-  //echo '<pre>';
-  //echo $compiled_css;
-
 file_put_contents($output_file, $compiled_css);
-
- //echo 'File Compiled & Saved!';
-
 
 get_header();
 
