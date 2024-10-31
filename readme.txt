@@ -3,7 +3,7 @@ Contributors: Capsule,Jayden Major
 Tags: Bizink, Capsule
 Requires at least: 5.6
 Tested up to: 6.6.2
-Stable tag: 1.6
+Stable tag: 1.6.1
 Requires PHP: 7.4
 
 The Capsule theme
@@ -12,6 +12,9 @@ The Capsule theme
 The Capsule theme
 
 == Changelog ==
+
+= 1.6.1 =
+* Linkedin Icon Fix
 
 = 1.6 =
 * Bug Fix: Social Nav

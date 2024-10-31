@@ -50,7 +50,7 @@ $gravity_forms = get_field('gravity_forms', 'option');
 
                             if( !empty($member_linkedin) ){ ?>
 
-                                <li><a href="<?php echo esc_url($member_linkedin); ?>" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                                <li><a href="<?php echo esc_url($member_linkedin); ?>" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
                             <?php } ?>
                         </ul>
                     </div>

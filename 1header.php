@@ -101,7 +101,7 @@ $google_my_business = get_field('google_my_business', 'options');
 
 								if( !empty($linkedin) ){ ?>
 									
-									<li><a href="<?= esc_url($linkedin); ?>" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+									<li><a href="<?= esc_url($linkedin); ?>" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
 								<?php }
 
 								if( !empty($instagram) ){ ?>
