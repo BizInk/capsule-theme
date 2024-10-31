@@ -19,11 +19,22 @@
     ul.social-icons {      
         li{  
             a{  
-                color:#C8C8C8;
+                color:$white;
                 &:hover{
                     color:$yellow; 
                 }
-                                        
+                i{
+                    fill:$white;
+                    &:hover{
+                      fill:$dark;
+                    }
+                } 
+                svg{
+                    fill:$white;
+                    &:hover{
+                      fill:$dark;
+                    }
+                }                 
             }
         }
     }

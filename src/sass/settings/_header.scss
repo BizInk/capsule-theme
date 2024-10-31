@@ -20,11 +20,21 @@
         }
       }
     }       
-    .social-icons ul li{
-      a {
-        color:$white;       
-        &:hover{              
-          color:$dark;           
+    .social-icons ul li a{
+      color:$white;       
+      &:hover{              
+        color:$dark;           
+      }
+      i{
+        color:$white;
+        &:hover{
+          color:$dark;
+        }
+      }
+      svg{
+        fill:$white;
+        &:hover{
+          fill:$dark;
         }
       }
     }

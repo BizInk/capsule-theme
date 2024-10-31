@@ -28,6 +28,12 @@
 		}
 	}
 	.social-icons ul li a {
+		svg{
+			fill:$primary;
+			&:hover{
+				fill:$dark;
+			}
+		}
 		i{
 		  color:$primary;
 		  &:hover{
