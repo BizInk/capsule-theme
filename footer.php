@@ -158,7 +158,7 @@ if( $enable_newsletter_section == true || $enable_newsletter_section == 'yes' ){
 			</div>
 			<div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
 				<?php if(!empty($column_3_title)): echo '<h5>'.esc_html($column_3_title).'</h5>'; endif; ?>
-				<nav class="social-nav">
+				<nav class="social-icons">
 					<ul>
 						<?php if( !empty($facebook) ){ ?>
 							<li><a href="<?php echo esc_url($facebook); ?>" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>

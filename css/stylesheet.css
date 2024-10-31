@@ -108,9 +108,9 @@ h6 {
         .top-nav .container .client-area-wrap ul li a:hover {
           color: #ddd;
           background-color: #22c6d8; }
-    .top-nav .container .social-nav ul li a {
+    .top-nav .container .social-icons ul li a {
       color: #ddd; }
-      .top-nav .container .social-nav ul li a:hover {
+      .top-nav .container .social-icons ul li a:hover {
         color: #161616; }
     .top-nav .container .header-contact ul li a {
       color: #ddd; }
@@ -120,9 +120,9 @@ h6 {
         color: #161616; }
         .top-nav .container .header-contact ul li a:hover i {
           color: #161616; }
-  .top-nav .social-nav ul li a {
+  .top-nav .social-icons ul li a {
     color: #ddd; }
-    .top-nav .social-nav ul li a:hover {
+    .top-nav .social-icons ul li a:hover {
       color: #161616; }
 
 header.fixed {
@@ -202,9 +202,9 @@ header.fixed {
     color: #22c6d8; }
     .footer-wrap .contact-details ul li a i, .footer-wrap .contact-details ul li span i {
       color: #22c6d8; }
-  .footer-wrap .social-nav ul li a i {
+  .footer-wrap .social-icons ul li a i {
     color: #22c6d8; }
-    .footer-wrap .social-nav ul li a i:hover {
+    .footer-wrap .social-icons ul li a i:hover {
       color: #161616; }
 
 .social-wrap .container {
@@ -484,9 +484,9 @@ nav.contact-details ul li a:hover {
 
 .member-details-section h3 {
   color: #565656; }
-  .member-details-section ul.social-nav li a {
+  .member-details-section ul.social-icons li a {
     color: #c8c8c8; }
-  .member-details-section ul.social-nav li a:hover {
+  .member-details-section ul.social-icons li a:hover {
     color: #c4822d; }
   .member-details-section .address-wrpal a {
     color: #565656; }

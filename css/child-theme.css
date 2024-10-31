@@ -17629,16 +17629,16 @@ button:focus {
   text-decoration: underline;
 }
 @media (max-width: 767.98px) {
-  .top-nav .container .header-contact .social-nav {
+  .top-nav .container .header-contact .social-icons {
     position: absolute;
     right: 0;
     bottom: 5px;
   }
 }
-.top-nav .container .header-contact .social-nav ul {
+.top-nav .container .header-contact .social-icons ul {
   flex-direction: row;
 }
-.top-nav .container .social-nav ul li a {
+.top-nav .container .social-icons ul li a {
   font-size: 23px;
 }
 
@@ -18063,18 +18063,18 @@ footer .shape-color {
 .footer-wrap .contact-details ul li a i,.footer-wrap .contact-details ul li i {
   margin-right: 10px;
 }
-.footer-wrap .social-nav ul {
+.footer-wrap .social-icons ul {
   display: flex;
 }
-.footer-wrap .social-nav ul li {
+.footer-wrap .social-icons ul li {
   margin: 0 5px;
 }
-.footer-wrap .social-nav ul li a {
+.footer-wrap .social-icons ul li a {
   padding: 5px;
   font-size: 15px;
   text-decoration: none;
 }
-.footer-wrap .social-nav ul li a i {
+.footer-wrap .social-icons ul li a i {
   font-size: 27px;
   transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
@@ -20890,27 +20890,27 @@ section.infobox-section.resource-infobox {
   top: 0;
   left: 0;
 }
-.member-details-section ul.social-nav {
+.member-details-section ul.social-icons {
   display: flex;
   align-items: center;
 }
-.member-details-section ul.social-nav li {
+.member-details-section ul.social-icons li {
   padding-left: 0;
   margin: 0 5px;
 }
-.member-details-section ul.social-nav li:before {
+.member-details-section ul.social-icons li:before {
   background: none;
 }
-.member-details-section ul.social-nav li a {
+.member-details-section ul.social-icons li a {
   padding: 5px;
   font-size: 23px;
   text-decoration: none;
 }
-.member-details-section ul.social-nav li a img {
+.member-details-section ul.social-icons li a img {
   max-width: 25px;
   margin-right: 5px;
 }
-.member-details-section ul.social-nav li:before {
+.member-details-section ul.social-icons li:before {
   display: none;
 }
 .member-details-section .address-wrpal {

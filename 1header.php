@@ -87,7 +87,7 @@ $google_my_business = get_field('google_my_business', 'options');
 						</ul>
 
 						<!-- Social icons -->
-						<nav class="social-nav">
+						<nav class="social-icons">
 							<ul>
 								<?php if( !empty($facebook) ){ ?>
 									

@@ -3,7 +3,7 @@ Contributors: Capsule,Jayden Major
 Tags: Bizink, Capsule
 Requires at least: 5.6
 Tested up to: 6.6.2
-Stable tag: 1.5.9
+Stable tag: 1.6
 Requires PHP: 7.4
 
 The Capsule theme
@@ -13,8 +13,11 @@ The Capsule theme
 
 == Changelog ==
 
+= 1.6 =
+* Bug Fix: Social Nav
+
 = 1.5.9 =
-* Bug Fixe: Enable / Disable Newsletter Section
+* Bug Fix: Enable / Disable Newsletter Section
 
 = 1.5.8 =
 * Newsletter Form Area Fix

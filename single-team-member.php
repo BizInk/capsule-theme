@@ -36,7 +36,7 @@ $gravity_forms = get_field('gravity_forms', 'option');
                             <h3><?php echo esc_html($member_about_me_title); ?></h3>
                         <?php } ?>
                         
-                        <ul class="social-nav">
+                        <ul class="social-icons">
                             
                             <?php if( !empty($member_facebook) ){ ?>
 
