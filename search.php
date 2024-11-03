@@ -49,7 +49,9 @@ get_template_part('global-templates/inner-banner');
 
 					<?php endif; ?>			
 				<!-- The pagination component -->
-				<?php understrap_pagination(); ?>
+				<?php 
+				understrap_pagination();
+				?>
 
 				<!-- Do the right sidebar check -->				
 

@@ -424,11 +424,11 @@ function luca_excerpt_length( $length ) {
     return 30;
 }
 
-add_action('login_head', 'capsule_login_page_styles');
 /**
  * Show BizInk logo on login page
  */
-function login_page_styles() { 
+add_action('login_head', 'capsule_login_page_styles');
+function capsule_login_page_styles() { 
 	?>
 	<style>
 		#login h1 a {
@@ -442,6 +442,9 @@ function login_page_styles() {
 	<?php 
 }
 
+function understrap_posted_on(){
+	
+}
 
 // Theme Updater
 require 'plugin-update-checker/plugin-update-checker.php';

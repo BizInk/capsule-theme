@@ -3,12 +3,10 @@ $general_settings = get_sub_field('general_settings');
 $general_class = '';
 
 if( in_array('Add Common Padding', $general_settings) ){
-
     $general_class .= ' comman-padding';
 }
 
 if( in_array('Add Common Margin', $general_settings) ){
-
     $general_class .= ' comman-margin';
 }
 
@@ -30,12 +28,6 @@ $latest_posts_query = new WP_Query($latest_posts_args);
 if ( $latest_posts_query->have_posts() ) { ?>
 
     <section class="four-col-team-section<?= $general_class; ?>">
-        <!-- <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1226" class="shape-light-grey">
-            <g id="Mask_Group_2" data-name="Mask Group 2" transform="translate(0 -4941)" clip-path="url(#clip-path)">
-                <path id="Path_150" data-name="Path 150" d="M0,39.554S564.9-44.391,1127.7-44.391,2251.2,39.554,2251.2,39.554s375.088,1090.965,20.686,1386.133-826.348,31.227-1326.069,123.258S0,1425.688,0,1425.688Z" transform="translate(-252 4985.235)" fill="<?= $latest_posts_background_color; ?>"/>
-            </g>
-        </svg>
-        <div class="shape-color" style="background-color: <?= $latest_posts_background_color; ?>;"></div> -->
 
         <div class="full-width-wysiwyg text-center">
             <div class="container">

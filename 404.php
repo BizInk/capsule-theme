@@ -26,27 +26,29 @@ get_template_part( 'global-templates/inner-banner');
                     <section class="page-not-found text-center">
                         <div class="container">
 
-                            <?php if(get_field('404_title','option')) { ?>
+                            <?php
+                            if(function_exists('get_field')):
+                            
+                            if(get_field('404_title','option')) { 
+                                echo '<h1>'.get_field('404_title','option').'</h1>';
+                            }
 
-                                <h1><?php echo get_field('404_title','option'); ?></h1>
-                            <?php }
+                            if(get_field('404_sub_title','option')) { 
+                                echo '<h2>'.get_field('404_sub_title','option').'</h2>';
+                            }
 
-                            if(get_field('404_sub_title','option')) { ?>
+                            if(get_field('404_description','option')) { 
+                                echo '<p>'.get_field('404_description','option').'</p>';
+                            }
 
-                                <h2><?php echo get_field('404_sub_title','option'); ?></h2>
-                            <?php }
+                            $error_button = get_field('error_button','option') ?? false;
 
-                            if(get_field('404_description','option')) { ?>
-
-                                <p><?php echo get_field('404_description','option'); ?></p>
-                            <?php }
-
-                            $error_button = get_field('error_button','option');
-
-                            if($error_button['title']) { ?>
-                                
+                            if(!empty($error_button) && !empty($error_button['title']) && !empty($error_button['url'])) { ?>
                                 <a href="<?php echo $error_button['url']; ?>" class="btn btn-outline-primary mt-4"><?php echo $error_button['title']; ?></a>
-                            <?php } ?>
+                            <?php }
+                            
+                            endif;
+                            ?>
 
                         </div>
                     </section>

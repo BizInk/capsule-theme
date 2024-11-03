@@ -46,8 +46,7 @@ if (have_posts()) {
 			?>
 			</div>
 		</div>
-		<?php
-      /**blog-posts-cont <a href="<?php the_permalink(); ?>" class="readmore"><?php _e('Read More', 'tab-theme'); ?></a>*/
+	 <?php
       wp_reset_postdata();
       ?>
       <div class="post-navigation">

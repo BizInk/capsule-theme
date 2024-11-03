@@ -20,15 +20,16 @@ defined( 'ABSPATH' ) || exit;
 		);
 		?>
 
-		<?php if ( 'post' === get_post_type() ) : ?>
-
-			<div class="entry-meta">
-
-				<?php understrap_posted_on(); ?>
-
-			</div><!-- .entry-meta -->
-
-		<?php endif; ?>
+		<?php if ( 'post' === get_post_type() ) : 
+		if(function_exists('get_field')) {
+			$show_date_on_posts = get_field('show_date_on_posts', 'option');
+			if($show_date_on_posts == true){
+				echo '<div class="entry-meta">';
+				understrap_posted_on();
+				echo '</div><!-- .entry-meta -->';
+			}
+		}
+		endif; ?>
 
 	</header><!-- .entry-header -->
 

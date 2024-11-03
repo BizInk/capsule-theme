@@ -20,9 +20,11 @@
     if(empty($inner_banner_title)){
         $inner_banner_title = get_the_title();
     }
-    $inner_banner_content = '<p class="post-meta">
-            <span>'. get_the_author_meta('display_name', $author_id) .'</span> | <span>'. get_the_date('d M, Y') .'</span>
-        </p>';
+    $inner_banner_content = '<p class="post-meta"><span>'. get_the_author_meta('display_name', $author_id) .'</span> | <span>'. get_the_date('d M, Y') .'</span></p>';
+    $show_date_on_posts = get_field('show_date_on_posts', 'option') ?? false;
+    if( $show_date_on_posts == false ){
+        $inner_banner_content = '<p class="post-meta"><span></span></p>';
+    }
 }
 else if( is_home() ){
     $inner_banner_title = get_the_title( get_option('page_for_posts', true) );
