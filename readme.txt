@@ -1,10 +1,10 @@
 === Capsule ===
 Contributors: Capsule,Jayden Major
 Tags: Bizink, Capsule
-Requires at least: 5.6
-Tested up to: 6.6.2
-Stable tag: 1.6.2
+Tested up to: 6.7.1
+Stable tag: 1.6.3
 Requires PHP: 7.4
+Requires at least: 6.0
 
 The Capsule theme
 
@@ -12,6 +12,12 @@ The Capsule theme
 The Capsule theme
 
 == Changelog ==
+
+= 1.6.3 =
+* Update Updater
+* More Options
+* Icons Grid
+* Scss Updater
 
 = 1.6.2 =
 * Bug Fix: Login Logo

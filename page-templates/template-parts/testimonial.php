@@ -17,6 +17,9 @@ $testimonial_section_small_title = get_sub_field('testimonial_section_small_titl
 $testimonial_section_title = get_sub_field('testimonial_section_title');
 $testimonial_section_content = get_sub_field('testimonial_section_content');
 
+$disable_testimonial_stars = get_field('disable_testimonial_stars', 'option') ?: false;
+$disable_testimonial_links = get_field('disable_testimonial_links', 'option') ?: false;
+
 if ( !empty($tesimonials_post_obj) ) { ?>
 
 	<section class="testimonial-list<?= $general_class; ?>">
@@ -49,11 +52,18 @@ if ( !empty($tesimonials_post_obj) ) { ?>
 					$rating_count = get_field('rating_count', $tesimonial); ?>
 			        
 			        <div class="col-md-6 col-lg-4 our-word">
-						<a href="<?php echo get_permalink($tesimonial);?>" class="card-wrap text-decoration-none d-block">
+						<?php 
+						if(!$disable_testimonial_links):
+							?><a href="<?php echo get_permalink($tesimonial);?>" class="card-wrap text-decoration-none d-block"><?php
+						else:
+							?><div class="card-wrap text-decoration-none d-block"><?php
+						endif;
+						if(!$disable_testimonial_stars): ?>
 							<div class="star-wrap">
 								<?php luca_star_rating($rating_count); ?>
 							</div>
-							<?php 
+						<?php 
+						endif;
 
 							if( !empty($review_content) ){ ?>
 
@@ -76,7 +86,13 @@ if ( !empty($tesimonials_post_obj) ) { ?>
 									<?php } ?>
 								</div>
 							</div>
-						</a>
+						<?php
+						if(!$disable_testimonial_links):
+							?></a><?php
+						else:
+							?></div><?php
+						endif;
+						?>
 					</div>
 			    <?php } ?>			
 			</div>

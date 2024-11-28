@@ -288,6 +288,86 @@
             "new_lines": ""
         },
         {
+            "key": "field_6746b863015cf",
+            "label": "Theme Options",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_655f51ae3547d",
+            "label": "Show Main Search",
+            "name": "enable_search",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "On",
+            "ui_off_text": "Off",
+            "ui": 1
+        },
+        {
+            "key": "field_6746b3355ecb9",
+            "label": "Disable Testimonial Links",
+            "name": "disable_testimonial_links",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_6746b90053d6b",
+            "label": "Disable Testimonial Stars",
+            "name": "disable_testimonial_stars",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
             "key": "field_655f50c535485",
             "label": "Enable Features",
             "name": "",
@@ -481,26 +561,6 @@
             },
             "message": "",
             "default_value": 1,
-            "ui_on_text": "On",
-            "ui_off_text": "Off",
-            "ui": 1
-        },
-        {
-            "key": "field_655f51ae3547d",
-            "label": "Show Main Search",
-            "name": "enable_search",
-            "aria-label": "",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "25",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
             "ui_on_text": "On",
             "ui_off_text": "Off",
             "ui": 1

@@ -11,6 +11,7 @@ defined( 'ABSPATH' ) || exit;
 define('DEFAULT_IMG', get_stylesheet_directory_uri().'/images/default.jpg');
 
 require_once 'inc/cpt.php';
+include 'inc/savecss.php';
 
 /**
  * Removes the parent themes stylesheet and scripts from inc/enqueue.php
@@ -26,10 +27,10 @@ add_action( 'wp_enqueue_scripts', 'understrap_remove_scripts', 20 );
 
 
 /** Force Showing of ACF Meta Boxes */
-function my_acf_init() {
+function capsule_acf_init() {
     acf_update_setting('remove_wp_meta_box', false);
 }
-add_action('acf/init', 'my_acf_init');
+add_action('acf/init', 'capsule_acf_init');
 
 /**
  * Enqueue our stylesheet and javascript file
@@ -57,10 +58,10 @@ add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 /**
  * Load the child theme's text domain
  */
-function add_child_theme_textdomain() {
+function capsule_child_theme_textdomain() {
 	load_child_theme_textdomain( 'understrap-child', get_stylesheet_directory() . '/languages' );
 }
-add_action( 'after_setup_theme', 'add_child_theme_textdomain' );
+add_action( 'after_setup_theme', 'capsule_child_theme_textdomain' );
 
 /**
  * Overrides the theme_mod to default to Bootstrap 5
@@ -120,145 +121,23 @@ register_nav_menus( array(
 ));
 
 
-/**
- * Add a new dashboard widget.
- */
-function wpdocs_add_dashboard_widgets() {
-    wp_add_dashboard_widget( 'dashboard_widget', 'Bizink News', 'dashboard_widget_function' );
-}
-add_action( 'wp_dashboard_setup', 'wpdocs_add_dashboard_widgets' );
-
-
-  /*
-*	Re-usable RSS feed reader with shortcode
-*/
-if ( !function_exists('base_rss_feed') ) {
-	function base_rss_feed($size = 5, $date = false, $cache_time = 1800)
-	{
-		$feed = 'https://bizinkonline.com/feed/';
-		// Include SimplePie RSS parsing engine
-		include_once ABSPATH . WPINC . '/feed.php';
- 
-		// Set the cache time for SimplePie
-		add_filter( 'wp_feed_cache_transient_lifetime' , 'bizink_feed_cachetime' );
- 
-		// Build the SimplePie object
-		$rss = fetch_feed($feed);
-
-		// Check for errors in the RSS XML
-		if ( !is_wp_error( $rss ) ) {
- 
-			// Set a limit for the number of items to parse
-			$maxitems = $rss->get_item_quantity($size);
-			$rss_items = $rss->get_items(0, $maxitems);
- 
-			// Store the total number of items found in the feed
-			$i = 0;
-			$total_entries = count($rss_items);
-            
-			// Output HTML
-			$html = "<ul class='rss-widget'>";
-            // echo '<ul class="rss-widget">';
-			foreach ($rss_items as $item) {
-				 
-				$i++;
- 
-				// Add a class of "last" to the last item in the list
-				if( $total_entries == $i ) {
-					$last = " class='last'";
-				} else {
-					$last = "";
-				}
- 
-				// Store the data we need from the feed
-				$title = $item->get_title();
-				$link = $item->get_permalink();
-				$desc = $item->get_description();
-				$date_posted = $item->get_date('F j, Y');
- 
-				// Output
-				$html .= "";
-				$html .= '<li class="rss-widget-title"><a href="'.$link.'"><b>'."$title".'</b></a><span clas="rss-date">&nbsp;'.$date_posted.'</span></li>';
-				// if( $date == true ) $html .= "$date_posted";
-				// $html .= '<li class="rss-widget-description">'."$desc".'</li>';
-				$html .= '<li class="rss-widget-description">'.wp_trim_words( $desc, 50, '&nbsp[...]' ).'</li>';
-				$html .= "";
-			 
-			}
-			// echo '</ul>';
-           
-            $html .= "</ul>";
-
-             
-
-		} else {
- 
-			$html = "An error occurred while parsing your RSS feed. Check that it's a valid XML file.";
- 
-		}
- 
-
-		return $html;
-
-	}
-}
-function bizink_feed_cachetime($seconds){
-	return 7200;
-}
-
-/** Define [rss] shortcode */
-if( function_exists('base_rss_feed') && !function_exists('base_rss_shortcode') ) {
-
-	function base_rss_shortcode($atts) {
-		extract(shortcode_atts(array(
-			'size' => '3',
-			'feed' => 'https://bizinkonline.com/feed/',
-			'date' => false,
-		), $atts));
-		
-		$content = base_rss_feed($size, $date);
-		return $content;
-	}
-	add_shortcode("rss", "base_rss_shortcode");
-}
-
-/**
- * Output the contents of the dashboard widget
- */
-function dashboard_widget_function( $post, $callback_args ) {
-    // esc_html_e( "Hello World, this is my first Dashboard Widget!", "textdomain" );
-   if( function_exists('base_rss_feed') ) echo base_rss_feed(3, true);
-
-}
-
 add_filter( 'gform_enable_password_field', '__return_true' );
-add_filter('acf/settings/save_json', 'my_acf_json_save_point');
+add_filter('acf/settings/save_json', 'capsule_acf_json_save_point');
  
-function my_acf_json_save_point( $path ) {
-    // update path
+function capsule_acf_json_save_point( $path ) {
     $path = get_stylesheet_directory() . '/acf-json';
-    // return
     return $path;
 }
 
-add_filter('acf/settings/load_json', 'my_acf_json_load_point');
-
-function my_acf_json_load_point( $paths ) {
-    
-    // remove original path (optional)
+add_filter('acf/settings/load_json', 'capsule_acf_json_load_point');
+function capsule_acf_json_load_point( $paths ) {
     unset($paths[0]);
-    
-    // append path
     $paths[] = get_stylesheet_directory() . '/acf-json';
-
-    // return
     return $paths;
-    
 }
 
-add_action( 'init', 'wpdocs_custom_init' );
-function wpdocs_custom_init() {
-	remove_post_type_support('post','excerpt');
+add_action( 'init', 'cupsule_custom_init' );
+function cupsule_custom_init() {
 	remove_post_type_support('fixed-price-packages','excerpt');
 	remove_post_type_support('testimonial','excerpt');
 	remove_post_type_support('team-member','excerpt');
@@ -270,9 +149,7 @@ function wpdocs_custom_init() {
 
         $page_id = $_GET['post'];
 		$template = get_post_meta($page_id, '_wp_page_template', true);
-		
 		if( $template == 'page-templates/flexible-content.php' ){	
-
 	        remove_post_type_support('page', 'editor');
 		}
 	}
@@ -329,8 +206,6 @@ add_shortcode('current-year', 'current_year_cb');
 function current_year_cb(){
     return date('Y');
 }
-
-
 
 // Ajax callback function to fetch and load more posts on blog page
 add_action("wp_ajax_fetch_blog_posts", "fetch_blog_posts");
@@ -442,15 +317,9 @@ function capsule_login_page_styles() {
 	<?php 
 }
 
-function understrap_posted_on(){
-	
-}
-
 // Theme Updater
 require 'plugin-update-checker/plugin-update-checker.php';
 use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 $myUpdateChecker = PucFactory::buildUpdateChecker('https://github.com/BizInk/capsule-theme',__FILE__,'capsule-theme');
-// Set the branch that contains the stable release.
 $myUpdateChecker->setBranch('master');
-// Using a private repository, specify the access token 
 $myUpdateChecker->setAuthentication('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');
