@@ -6,18 +6,16 @@ $logo_layout = get_sub_field('logo_layout');
 $general_class = '';
 
 if( in_array('Add Common Padding', $general_settings) ){
-  
   $general_class .= ' comman-padding';
 }
 
 if( in_array('Add Common Margin', $general_settings) ){
-  
   $general_class .= ' comman-margin';
 }
 
 $logo_title = get_sub_field('logo_title');
 
-if( have_rows('logos') ): ?>
+if( have_rows('logo') ): ?>
 
     <section class="logo-section text-center<?php echo $general_class; ?>">
         <?php if( !empty($logo_title) ){ ?>
@@ -35,7 +33,7 @@ if( have_rows('logos') ): ?>
             <?php if( $logo_style == 'slider' ){ ?>
 
                 <div class="logo-slider">
-                    <?php while( have_rows('logos') ):
+                    <?php while( have_rows('logo') ):
                         the_row();
 
                         $slider_image = get_sub_field('slider_image');
@@ -65,7 +63,7 @@ if( have_rows('logos') ): ?>
             ?>
 
                 <div class="row g-5 grid-section">
-                    <?php while( have_rows('logos') ):
+                    <?php while( have_rows('logo') ):
                         the_row();
 
                         $slider_image = get_sub_field('slider_image');
