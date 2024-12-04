@@ -36,7 +36,9 @@ $four_col_vid_bg = get_sub_field('four_col_vid_bg');
 			<?php } ?>
 		</div>
 
-		<?php $columns = count( get_sub_field('four_col_vid_images') );
+		<?php 
+		$vid_images = get_sub_field('four_col_vid_images') ?: [];
+		$columns = count( $vid_images );
 		$column_class = ' video-common-col';
 		
 		if( $columns == 3 ){

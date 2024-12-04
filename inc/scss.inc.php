@@ -3790,8 +3790,7 @@ class scss_parser {
 		if (count($parts) == 0) return false;
 
 		// match comment hack
-		if (preg_match(self::$whitePattern,
-			$this->buffer, $m, null, $this->count))
+		if (preg_match(self::$whitePattern,$this->buffer, $m, 0, $this->count))
 		{
 			if (!empty($m[0])) {
 				$parts[] = $m[0];
@@ -4121,7 +4120,7 @@ class scss_parser {
 		if (!isset($eatWhitespace)) $eatWhitespace = $this->eatWhiteDefault;
 
 		$r = '/'.$regex.'/Ais';
-		if (preg_match($r, $this->buffer, $out, null, $this->count)) {
+		if (preg_match($r, $this->buffer, $out, 0, $this->count)) {
 			$this->count += strlen($out[0]);
 			if ($eatWhitespace) $this->whitespace();
 			return true;
@@ -4132,7 +4131,7 @@ class scss_parser {
 	// match some whitespace
 	protected function whitespace() {
 		$gotWhite = false;
-		while (preg_match(self::$whitePattern, $this->buffer, $m, null, $this->count)) {
+		while (preg_match(self::$whitePattern, $this->buffer, $m, 0, $this->count)) {
 			if ($this->insertComments) {
 				if (isset($m[1]) && empty($this->commentsSeen[$this->count])) {
 					$this->append(array("comment", $m[1]));
@@ -4149,7 +4148,7 @@ class scss_parser {
 		if (!isset($from)) $from = $this->count;
 
 		$r = '/'.$regex.'/Ais';
-		$result = preg_match($r, $this->buffer, $out, null, $from);
+		$result = preg_match($r, $this->buffer, $out, 0, $from);
 
 		return $result;
 	}
