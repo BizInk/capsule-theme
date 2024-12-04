@@ -18701,6 +18701,10 @@ footer .shape-color {
   }
 }
 
+.newsletter_styleing .gform-theme--foundation .gfield input.medium, .newsletter_styleing .gform_wrapper.gravity-theme .gfield input.medium, .newsletter_styleing .gform_wrapper.gravity-theme .gfield select.medium{
+  width: 100% !important;
+}
+
 .gform_wrapper .gform_heading .gform_title {
   display: none;
 }
@@ -18726,7 +18730,7 @@ footer .shape-color {
 .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container textarea {
   border: 1px solid #C3CAD9;
   line-height: 1.2;
-  padding: 2.2rem 1rem;
+  padding: 1.8rem 1rem;
   font-size: 1.8rem;
   border-radius: 8px;
   text-align: left;
