@@ -15,6 +15,7 @@ The Capsule theme
 
 = 1.6.7 =
 * Team Member Column Options
+* Update Updater
 
 = 1.6.6 =
 * Bug Fix: 4 Col Videos
