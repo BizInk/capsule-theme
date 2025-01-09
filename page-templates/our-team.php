@@ -13,7 +13,7 @@ get_header();
 get_template_part('global-templates/inner-banner');
 
 $team_members = get_field('team_members');
-$team_layout = get_field('team_layout') ?: '3';
+$team_layout = get_field('team_layout') ?: '4';
 $team_layout = intval($team_layout);
 if( !empty($team_members) ){ ?>
 

@@ -12,6 +12,8 @@ $general_class .= ' comman-margin';
 $team_members = get_sub_field('team_members');
 $get_to_know_title = get_sub_field('get_to_know_title');
 $get_to_know_subtitle = get_sub_field('get_to_know_subtitle');
+$team_layout = get_sub_field('team_layout') ?: '4';
+$team_layout = intval($team_layout);
 ?>
 <section class="teamlist-section<?= $general_class; ?>">   
     <div class="full-width-wysiwyg text-center">
@@ -36,7 +38,7 @@ $get_to_know_subtitle = get_sub_field('get_to_know_subtitle');
                 }else{
                     $get_to_know_member_image = get_stylesheet_directory_uri().'/images/team4.jpg';
                 } ?>
-                <div class="col-md-4 col-lg-3 team-member">
+                <div class="<?php if($team_layout == 3): echo 'col-md-6 col-lg-4'; elseif($team_layout == 4): echo 'col-md-6 col-lg-3'; endif;?> team-member">
                     <a href="<?php echo get_permalink($team_member); ?>" class="team-member-link">
                         <div class="team-member-wrap">
                             <div class="member-img">
