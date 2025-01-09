@@ -13,7 +13,8 @@ get_header();
 get_template_part('global-templates/inner-banner');
 
 $team_members = get_field('team_members');
-
+$team_layout = get_field('team_layout') ?: '3';
+$team_layout = intval($team_layout);
 if( !empty($team_members) ){ ?>
 
     <section class="teamlist-section comman-margin">
@@ -25,21 +26,17 @@ if( !empty($team_members) ){ ?>
                     $member_position = get_field('member_position', $team_member);
                     $member_company = get_field('member_company', $team_member); ?>
 
-                    <div class="col-md-6 col-lg-3 team-member">
+                    <div class="<?php if($team_layout == 3): echo 'col-md-6 col-lg-4'; elseif($team_layout == 4): echo 'col-md-6 col-lg-3'; endif;?> team-member">
                         <a href="<?php echo get_permalink($team_member); ?>" class="team-member-wrap">
                             <div class="member-img">
                                 <img src="<?php echo $member_image; ?>" class="img-fluid" alt="<?php echo $team_member->post_title; ?>" title="<?php echo $team_member->post_title; ?>">
                             </div>
                             <div class="member-details">
                                 <h4><?php echo $team_member->post_title; ?></h4>
-                                
                                 <?php if( !empty($member_position) ){ ?>
-                                    
                                     <h6><?= $member_position; ?></h6>
                                 <?php }
-
                                 if( !empty($member_company) ){ ?>
-                                    
                                     <p><?= $member_company; ?></p>
                                 <?php } ?>
                             </div>

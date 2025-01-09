@@ -3,6 +3,33 @@
     "title": "Select Team Members",
     "fields": [
         {
+            "key": "field_677f61a03ce21",
+            "label": "Team Layout",
+            "name": "team_layout",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "3": "3 Columns",
+                "4": "4 Columns"
+            },
+            "default_value": "4",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
             "key": "field_64880c166512f",
             "label": "Team Members",
             "name": "team_members",
@@ -26,7 +53,8 @@
             "return_format": "object",
             "multiple": 1,
             "allow_null": 0,
-            "ui": 1
+            "ui": 1,
+            "bidirectional_target": []
         }
     ],
     "location": [
@@ -47,5 +75,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1686637622
+    "modified": 1736401395
 }

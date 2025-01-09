@@ -215,6 +215,9 @@ function wave_custompost_type() {
 		"singular_name" => esc_html__( "Team Member", "capsule" ),
 		"menu_name" => esc_html__( "Team Members", "capsule" ),
 		"add_new" => esc_html__( "Add New Team Member", "capsule" ),
+		"add_new_item" => esc_html__( "Add New Team Member", "capsule" ),
+		"edit_item" => esc_html__( "Edit Team Member", "capsule" ),
+		"new_item" => esc_html__( "New Team Member", "capsule" )
 	];
 
 	$args = [

@@ -42,10 +42,9 @@ $four_col_vid_bg = get_sub_field('four_col_vid_bg');
 		$column_class = ' video-common-col';
 		
 		if( $columns == 3 ){
-		
 			$column_class = ' video-three-col';
-		}else if( $columns == 4 ){
-
+		}
+		else if( $columns == 4 ){
 			$column_class = ' video-four-col';
 		}
 
