@@ -6,9 +6,9 @@
         $inner_banner_title = get_the_title();
     }
 }else if( is_singular('team-member') ){
-
 	$inner_banner_title = get_the_title();
-	$inner_banner_content = '<p>'.get_field('member_position').'</p>';
+	$inner_banner_content = '<p class="position">'.get_field('member_position').'</p><p class="credentials">'.get_field('member_credentials').'</p>';
+
 }else if( is_singular('testimonial') ){
 
     $inner_banner_title = get_the_title();

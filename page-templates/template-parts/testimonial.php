@@ -51,7 +51,7 @@ if ( !empty($tesimonials_post_obj) ) { ?>
 					$review_content = get_field('review_content', $tesimonial);
 					$rating_count = get_field('rating_count', $tesimonial); ?>
 			        
-			        <div class="col-md-6 col-lg-4 our-word">
+			        <div class="col-12 col-md-6 col-lg-4 our-word">
 						<?php 
 						if(!$disable_testimonial_links):
 							?><a href="<?php echo get_permalink($tesimonial);?>" class="card-wrap text-decoration-none d-block"><?php

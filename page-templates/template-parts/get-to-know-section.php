@@ -33,6 +33,8 @@ $team_layout = intval($team_layout);
                 <?php foreach( $team_members as $team_member  ):
                 $member_image = get_field('member_image', $team_member);
                 $member_position = get_field('member_position', $team_member);
+                $member_credentials = get_field('member_credentials', $team_member);
+                
                 if( $member_image ){
                     $get_to_know_member_image = $member_image;
                 }else{
@@ -46,7 +48,8 @@ $team_layout = intval($team_layout);
                             </div>
                             <div class="member-details">
                                 <h4 class="member-name"><?php echo esc_html($team_member->post_title); ?></h4>
-                                <h6 class="designation"><?php echo $member_position ? esc_html($member_position) : ''; ?></h6>
+                                <?php if(!empty($member_position)): ?><h6 class="designation"><?php echo $member_position ? esc_html($member_position) : ''; ?></h6><?php endif; ?>
+                                <?php if(!empty($member_credentials)): ?><p class="credentials"><?php echo $member_credentials ? esc_html($member_credentials) : ''; ?></p><?php endif; ?>
                             </div>
                         </div>
                     </a>

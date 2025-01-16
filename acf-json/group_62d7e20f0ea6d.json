@@ -64,6 +64,27 @@
             "selected": 0
         },
         {
+            "key": "field_678867df1630d",
+            "label": "Credentials",
+            "name": "member_credentials",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_62d7e2415e29b",
             "label": "Position",
             "name": "member_position",
@@ -312,5 +333,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1719383078
+    "modified": 1737008411
 }
