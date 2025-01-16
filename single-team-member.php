@@ -23,12 +23,12 @@ $gravity_forms = get_field('gravity_forms', 'option');
 <section class="member-details-section comman-margin">
     <div class="container">
         <div class="row align-items-start">
-            <div class="col-md-5">
+            <div class="col-12 col-md-5">
                 <div class="member-img">
                     <img src="<?php echo $member_image; ?>" class="img-fluid" alt="<?php echo $member_about_me_title ? esc_html($member_about_me_title) : esc_html($member_about_me_title); ?>">
                 </div>
             </div>
-            <div class="col-md-7">
+            <div class="col-12 col-md-7">
                 <div class="editor-design">
                     <div class="d-flex justify-content-between mb-4">
                         <?php if( !empty($member_about_me_title) ){ ?>
