@@ -17210,7 +17210,7 @@ a:focus {
   width: 10px;
 }
 .slick-dots li button:before {
-  font-size: 25px;
+  font-size: 16px;
 }
 @media (max-width: 991.98px) {
   .slick-dots li button:before {
@@ -19080,6 +19080,9 @@ footer .shape-color {
 @media (max-width: 991.98px) {
   .infobox-section .info-box .info-description {
     font-size: 1.6rem;
+  }
+  .infobox-section .info-box{
+    padding: 10px;
   }
 }
 .infobox-section .info-box .btn, .infobox-section .info-box .woocommerce-notices-wrapper .woocommerce-message a.button, .woocommerce-notices-wrapper .woocommerce-message .infobox-section .info-box a.button, .infobox-section .info-box .woocommerce-info a.button, .woocommerce-info .infobox-section .info-box a.button, .infobox-section .info-box .wpcf7 input[type=submit], .wpcf7 .infobox-section .info-box input[type=submit] {
