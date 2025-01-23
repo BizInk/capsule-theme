@@ -368,6 +368,27 @@
             "ui": 1
         },
         {
+            "key": "field_6790f80bb272d",
+            "label": "Disable Team Member Links",
+            "name": "disable_teammember_links",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
             "key": "field_655f50c535485",
             "label": "Enable Features",
             "name": "",
@@ -584,5 +605,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1719382729
+    "modified": 1737554005
 }

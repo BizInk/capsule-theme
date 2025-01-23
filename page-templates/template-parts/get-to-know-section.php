@@ -14,6 +14,7 @@ $get_to_know_title = get_sub_field('get_to_know_title');
 $get_to_know_subtitle = get_sub_field('get_to_know_subtitle');
 $team_layout = get_sub_field('team_layout') ?: '4';
 $team_layout = intval($team_layout);
+$team_links = get_field('disable_teammember_links', 'option') ?? false;
 ?>
 <section class="teamlist-section<?= $general_class; ?>">   
     <div class="full-width-wysiwyg text-center">
@@ -41,7 +42,11 @@ $team_layout = intval($team_layout);
                     $get_to_know_member_image = get_stylesheet_directory_uri().'/images/team4.jpg';
                 } ?>
                 <div class="<?php if($team_layout == 3): echo 'col-md-6 col-lg-4'; elseif($team_layout == 4): echo 'col-md-6 col-lg-3'; endif;?> team-member">
+                    <?php if(!$team_links): ?>
                     <a href="<?php echo get_permalink($team_member); ?>" class="team-member-link">
+                    <?php else: ?>
+                    <div class="team-member-link">
+                    <?php endif; ?>
                         <div class="team-member-wrap">
                             <div class="member-img">
                                 <img src="<?php echo $get_to_know_member_image; ?>" alt="<?php echo esc_html($team_member->post_title); ?>">
@@ -52,7 +57,11 @@ $team_layout = intval($team_layout);
                                 <?php if(!empty($member_credentials)): ?><p class="credentials"><?php echo $member_credentials ? esc_html($member_credentials) : ''; ?></p><?php endif; ?>
                             </div>
                         </div>
+                    <?php if(!$team_links): ?>
                     </a>
+                    <?php else: ?>
+                    </div>
+                    <?php endif; ?>
                 </div>
                 <?php endforeach; ?>
             </div>

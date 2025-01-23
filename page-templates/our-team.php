@@ -11,7 +11,7 @@ defined( 'ABSPATH' ) || exit;
 get_header();
 
 get_template_part('global-templates/inner-banner');
-
+$team_links = get_field('disable_teammember_links', 'option') ?? false;
 $team_members = get_field('team_members');
 $team_layout = get_field('team_layout') ?: '4';
 $team_layout = intval($team_layout);
@@ -29,7 +29,11 @@ if( !empty($team_members) ){ ?>
                     ?>
 
                     <div class="<?php if($team_layout == 3): echo 'col-md-6 col-lg-4'; elseif($team_layout == 4): echo 'col-md-6 col-lg-3'; endif;?> team-member">
+                        <?php if(!$team_links): ?>
                         <a href="<?php echo get_permalink($team_member); ?>" class="team-member-wrap">
+                        <?php else: ?>
+                        <div class="team-member-wrap">
+                        <?php endif; ?>
                             <div class="member-img">
                                 <img src="<?php echo $member_image; ?>" class="img-fluid" alt="<?php echo $team_member->post_title; ?>" title="<?php echo $team_member->post_title; ?>">
                             </div>
@@ -45,7 +49,11 @@ if( !empty($team_members) ){ ?>
                                     <p><?= $member_company; ?></p>
                                 <?php } ?>
                             </div>
+                        <?php if(!$team_links): ?>
                         </a>
+                        <?php else: ?>
+                        </div>
+                        <?php endif; ?>
                     </div>
                 <?php } ?>
             </div>
