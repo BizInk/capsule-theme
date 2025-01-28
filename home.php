@@ -28,7 +28,7 @@ if (have_posts()) {
 				the_post();
 				$post_image = has_post_thumbnail() ? get_the_post_thumbnail_url() : get_stylesheet_directory_uri() . '/images/default.jpg';
 				?>
-				<div class="col-4 col-md-6 col-xl-4 team-member weekly-digest">
+				<div class="col-12 col-md-6 col-xl-4 team-member weekly-digest">
 					<div class="team-member-wrap">
 						<a href="<?php the_permalink(); ?>" class="member-img">
 						<img src="<?= $post_image; ?>" alt="<?php the_title(); ?>">
