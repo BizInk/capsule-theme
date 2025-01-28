@@ -28,7 +28,7 @@ if( !empty($team_members) ){ ?>
                     $member_credentials = get_field('member_credentials', $team_member);
                     ?>
 
-                    <div class="<?php if($team_layout == 3): echo 'col-md-6 col-lg-4'; elseif($team_layout == 4): echo 'col-md-6 col-lg-3'; endif;?> team-member">
+                    <div class="<?php if($team_layout == 3): echo 'col-12 col-md-6 col-lg-4'; elseif($team_layout == 4): echo 'col-12 col-md-6 col-lg-3'; endif;?> team-member">
                         <?php if(!$team_links): ?>
                         <a href="<?php echo get_permalink($team_member); ?>" class="team-member-wrap">
                         <?php else: ?>
