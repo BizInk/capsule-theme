@@ -132,7 +132,7 @@ if( !empty($career_positions_jobs) ){ ?>
                 <div class="row gy-5 g-md-5">
                     <?php foreach( $career_positions_jobs as $career_positions_job ){ ?>
 
-                        <div class="col-md-6 col-lg-4">
+                        <div class="col-12 col-md-6 col-lg-4">
                             <div class="info-box h-100 text-center">
                                 <h5><?php echo $career_positions_job->post_title; ?></h5>
                                 <?php if( !empty($career_positions_job->post_content) ){ ?>
@@ -142,7 +142,7 @@ if( !empty($career_positions_jobs) ){ ?>
                                     </div>
                                 <?php } ?>
                                 
-                                <a href="<?php echo get_permalink($career_positions_job); ?>" class="btn">Apply Now</a>
+                                <a href="<?php echo get_permalink($career_positions_job); ?>" class="btn"><?php _e('Apply Now','capsule-theme'); ?></a>
                             </div>
                         </div>
                     <?php } ?>

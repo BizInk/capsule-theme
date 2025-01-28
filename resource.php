@@ -144,7 +144,7 @@ if( !empty($content_types) ){ ?>
                                         <p><?= do_shortcode($content_type->description); ?></p>
                                     <?php } ?>
                                 </div>
-                                <a href="<?= get_term_link($content_type); ?>" class="btn"><?php _e('View more','wave-theme');?></a>
+                                <a href="<?= get_term_link($content_type); ?>" class="btn"><?php _e('View more','capsule-theme');?></a>
                             </div>
                         </div>
                     <?php $types_counter++;
@@ -152,7 +152,7 @@ if( !empty($content_types) ){ ?>
                 </div>
 
                 <?php if( count($content_types) > $ppp ){ ?>
-                    <a href="javascript:void(0);" class="btn red-btn types-load-more" data-pagenumber="1"><?php _e('Load More','wave-theme'); ?></a>
+                    <a href="javascript:void(0);" class="btn red-btn types-load-more" data-pagenumber="1"><?php _e('Load More','capsule-theme'); ?></a>
                 <?php } ?>
 
                 <script>

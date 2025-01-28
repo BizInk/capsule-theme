@@ -56,7 +56,7 @@ if ( $latest_posts_query->have_posts() ) { ?>
                         $excerpt = get_the_excerpt();
                         $latest_posts_image = has_post_thumbnail() ? get_the_post_thumbnail_url() : DEFAULT_IMG; ?>
 
-                        <div class="col-md-6 col-xl-4 team-member">
+                        <div class="col-12 col-md-6 col-xl-4 team-member">
                             <div class="team-member-wrap">
                                 <a href="<?php the_permalink(); ?>" class="member-img">
                                     <img src="<?= $latest_posts_image; ?>" alt="<?php the_title(); ?>">

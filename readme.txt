@@ -2,7 +2,7 @@
 Contributors: Capsule,Jayden Major
 Tags: Bizink, Capsule
 Tested up to: 6.7.1
-Stable tag: 1.7.1
+Stable tag: 1.7.2
 Requires PHP: 7.4
 Requires at least: 6.0
 
@@ -12,6 +12,9 @@ The Capsule theme
 The Capsule theme
 
 == Changelog ==
+
+= 1.7.2 =
+* Update Blogs on Mobile
 
 = 1.7.1 =
 * Option to disable team member links

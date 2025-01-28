@@ -60,7 +60,7 @@ $four_col_vid_bg = get_sub_field('four_col_vid_bg');
 
 					if( !empty($four_col_vid_image['url']) ){ ?>
 
-						<div class="col-md-6 col-lg-3">
+						<div class="col-12 col-md-6 col-lg-3">
 							<div class="video-img-wrap">	
 								<?= !empty($four_col_vid_link) ? '<a href="'. $four_col_vid_link .'">' : null; ?>
 									
