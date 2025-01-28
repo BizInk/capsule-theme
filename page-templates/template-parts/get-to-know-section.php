@@ -2,12 +2,10 @@
 $general_settings = get_sub_field('general_settings');
 $general_class = '';
 if( in_array('Add Common Padding', $general_settings) ){
-
-$general_class .= ' comman-padding';
+    $general_class .= ' comman-padding';
 }
 if( in_array('Add Common Margin', $general_settings) ){
-
-$general_class .= ' comman-margin';
+    $general_class .= ' comman-margin';
 }
 $team_members = get_sub_field('team_members');
 $get_to_know_title = get_sub_field('get_to_know_title');
@@ -20,13 +18,11 @@ $team_links = get_field('disable_teammember_links', 'option') ?? false;
     <div class="full-width-wysiwyg text-center">
         <div class="container">
             <div class="editor-design">
-               <!-- <h6>our team</h6>  Note for developer: add option in backend to add content -->
                 <h2><?php echo $get_to_know_title ? $get_to_know_title : 'Get to know us'; ?></h2>
                 <p><?php echo $get_to_know_subtitle ? $get_to_know_subtitle : ''; ?></p>
             </div>
         </div>
     </div>
-    
     <?php if( !empty($team_members) ): ?>
     <div class="container">
         <div class="team-wrap">
