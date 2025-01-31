@@ -26,7 +26,7 @@ if (have_rows('column_section')):
 		$column_hero_image = get_sub_field('column_hero_image');
 		$column_hero_button = get_sub_field('column_hero_button');
 
-		if (!empty($gravity_forms) && !empty($column_small_title) && !empty($column_hero_title) && !empty($column_hero_description)):
+		if (!empty($column_small_title) || !empty($column_hero_title) || !empty($column_hero_description)):
 ?>
 			<section class="two-col-section<?= $general_class; ?>">
 				<div class="container">
@@ -67,9 +67,7 @@ if (have_rows('column_section')):
 						</div>
 						<div class="col col-md-6 col-right mb-5 mb-md-0">
 							<?php
-
 							if (!empty($column_hero_image)) { ?>
-
 								<img src="<?php echo esc_url($column_hero_image['url']); ?>" class="img-fluid" alt="<?php echo $column_hero_image['alt'] ? esc_attr($column_hero_image['alt']) : get_sub_field('column_hero_title'); ?>">
 							<?php } ?>
 						</div>
