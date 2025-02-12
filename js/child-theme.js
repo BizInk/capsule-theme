@@ -11624,6 +11624,17 @@
 	    jQuery(".client-area-cont").slideToggle();
 	  });
 	  jQuery(".navbar-toggler").click(function () {
+		var headerHeight = jQuery('#wrapper-navbar').height();
+		if(jQuery('#wrapper-navbar').hasClass('fixed')){
+			jQuery('.navbar .navbar-collapse').css('top',headerHeight);
+		}
+		else{
+			if(jQuery('body').hasClass('admin-bar')){
+				headerHeight = headerHeight + jQuery('#wpadminbar').height();
+			}
+			jQuery('.navbar .navbar-collapse').css('top',headerHeight);
+		}
+		
 	    jQuery("body").toggleClass("menu-open");
 	  });
 

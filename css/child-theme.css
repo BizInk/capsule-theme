@@ -660,6 +660,11 @@ progress {
     max-width: 1320px;
   }
 }
+@media (min-width: 1800px) {
+  .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
+    max-width: 1500px;
+  }
+}
 .row {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
@@ -17493,6 +17498,8 @@ h6, .h6 {
     padding: 0.9rem 1.9rem;
     font-size: 1.5rem;
     min-width: auto;
+    display:block;
+    text-align: center;
   }
 }
 .btn-sm, .btn-group-sm > .btn, .woocommerce-notices-wrapper .woocommerce-message .btn-group-sm > a.button, .woocommerce-info .btn-group-sm > a.button, .wpcf7 .btn-group-sm > input[type=submit] {
