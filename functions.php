@@ -290,7 +290,6 @@ function luca_excerpt_more( $more ) {
 
 add_filter('get_the_excerpt', 'luca_change_excerpt');
 function luca_change_excerpt( $text ){
-
     return rtrim( str_replace(array('[', ']'), array('', ''), $text));
 }
 

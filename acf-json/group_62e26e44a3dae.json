@@ -940,7 +940,8 @@
                             "choices": {
                                 "col-md-6": "Two Columns",
                                 "col-md-6 col-lg-4": "Three Columns",
-                                "col-md-6 col-lg-4 col-xl-3": "Four Columns"
+                                "col-md-6 col-lg-4 col-xl-3": "Four Columns",
+                                "col-md-6 col-lg-3 col-xl-3": "Five Columns"
                             },
                             "default_value": "col-md-6 col-lg-4 col-xl-3",
                             "return_format": "value",
@@ -951,8 +952,8 @@
                             "placeholder": ""
                         },
                         {
-                            "key": "field_6369d2408ccc0",
-                            "label": "Title",
+                            "key": "field_62e3a06a27269",
+                            "label": "Logo Section",
                             "name": "",
                             "aria-label": "",
                             "type": "tab",
@@ -964,7 +965,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "placement": "top",
+                            "placement": "left",
                             "endpoint": 0,
                             "selected": 0
                         },
@@ -987,24 +988,6 @@
                             "prepend": "",
                             "append": "",
                             "maxlength": ""
-                        },
-                        {
-                            "key": "field_62e3a06a27269",
-                            "label": "Logo Section",
-                            "name": "",
-                            "aria-label": "",
-                            "type": "tab",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "placement": "left",
-                            "endpoint": 0,
-                            "selected": 0
                         },
                         {
                             "key": "field_62e3a0772726a",
