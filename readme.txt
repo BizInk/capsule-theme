@@ -2,7 +2,7 @@
 Contributors: Capsule,Jayden Major
 Tags: Bizink, Capsule
 Tested up to: 6.7.2
-Stable tag: 1.8.3
+Stable tag: 1.8.4
 Requires PHP: 7.4
 Requires at least: 6.0
 
@@ -12,6 +12,9 @@ The Capsule theme
 The Capsule theme
 
 == Changelog ==
+
+= 1.8.4 =
+* HTML Page Template
 
 = 1.8.3 =
 * Password Protect Page
