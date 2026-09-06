@@ -43,7 +43,7 @@
   "homepage": "https://understrap.com",
   "dependencies": {},
   "devDependencies": {
-    "@babel/core": "^7.19.6",
+    "@babel/core": "^7.29.6",
     "@babel/preset-env": "^7.19.4",
     "@popperjs/core": "^2.11.6",
     "@rollup/plugin-babel": "^6.0.2",
@@ -60,7 +60,7 @@
     "font-awesome": "^4.7.0",
     "nodemon": "^2.0.20",
     "npm-run-all": "^4.1.5",
-    "postcss": "^8.5.2",
+    "postcss": "^8.5.23",
     "postcss-cli": "^10.0.0",
     "postcss-understrap-palette-generator": "git+https://github.com/understrap/postcss-understrap-palette-generator.git",
     "rollup": "^3.30.0",
