@@ -11800,23 +11800,19 @@
 
 	  if (jQuery(window).width() > 767) {
 	    jQuery(window).on('load resize', function () {
-	      var clientword = 0; //for the description section
-	      //Calculating the description new height
+	    //   var clientword = 0; //for the description section
+	    //   //Calculating the description new height
 
-	      jQuery('.client-word-wrap').each(function () {
-	        if (clientword < jQuery(this).outerHeight()) {
-	          clientword = jQuery(this).outerHeight();
-	        }
-	      }); //Calculating the description new height
+	    //   jQuery('.client-word-wrap').each(function () {
+	    //     if (clientword < jQuery(this).outerHeight()) {
+	    //       clientword = jQuery(this).outerHeight();
+	    //     }
+	    //   }); //Calculating the description new height
 
-	      jQuery('.client-word-wrap').css({
-	        'min-height': clientword
-	      });
-	    });
-	  }
+	    //   jQuery('.client-word-wrap').css({
+	    //     'min-height': clientword
+	    //   });
 
-	  if (jQuery(window).width() > 767) {
-	    jQuery(window).on('load resize', function () {
 	      var infoboxDescription = 0; //for the description section
 
 	      var checklistDescription = 0; //Calculating the description new height

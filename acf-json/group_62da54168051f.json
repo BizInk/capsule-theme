@@ -100,26 +100,6 @@
             "append": ""
         },
         {
-            "key": "field_62da545f55268",
-            "label": "Copyright",
-            "name": "copyright",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "Enter copyright information. The current year will be prepended automatically.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
             "key": "field_62da5489cb2b0",
             "label": "Footer Settings",
             "name": "",
@@ -153,7 +133,10 @@
             },
             "default_value": "#272343",
             "enable_opacity": 0,
-            "return_format": "string"
+            "return_format": "string",
+            "custom_palette_source": "",
+            "palette_colors": "",
+            "show_color_wheel": true
         },
         {
             "key": "field_63d7716435257",
@@ -171,7 +154,10 @@
             },
             "default_value": "#ffd803",
             "enable_opacity": 0,
-            "return_format": "string"
+            "return_format": "string",
+            "custom_palette_source": "",
+            "palette_colors": "",
+            "show_color_wheel": true
         },
         {
             "key": "field_62da54a6cb2b1",
@@ -670,7 +656,9 @@
             "allow_in_bindings": 1,
             "ui": 1,
             "ajax": 0,
-            "placeholder": ""
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
         },
         {
             "key": "field_672471e4fcea8",
@@ -812,7 +800,9 @@
             "allow_in_bindings": 1,
             "ui": 0,
             "ajax": 0,
-            "placeholder": ""
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
         },
         {
             "key": "field_645b82d6cde62",
@@ -1064,5 +1054,8 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1732836722
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1788748664
 }

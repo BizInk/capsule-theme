@@ -753,7 +753,9 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "choices": [],
+                                    "choices": {
+                                        "1": "Contact"
+                                    },
                                     "default_value": false,
                                     "return_format": "value",
                                     "multiple": 0,
@@ -761,7 +763,9 @@
                                     "ui": 0,
                                     "ajax": 0,
                                     "placeholder": "",
-                                    "parent_repeater": "field_62e387c1bcd2a"
+                                    "parent_repeater": "field_62e387c1bcd2a",
+                                    "create_options": 0,
+                                    "save_options": 0
                                 },
                                 {
                                     "key": "field_62e387c1bcd31",
@@ -949,7 +953,9 @@
                             "allow_null": 0,
                             "ui": 0,
                             "ajax": 0,
-                            "placeholder": ""
+                            "placeholder": "",
+                            "create_options": 0,
+                            "save_options": 0
                         },
                         {
                             "key": "field_62e3a06a27269",
@@ -1155,7 +1161,9 @@
                             "allow_in_bindings": 0,
                             "ui": 0,
                             "ajax": 0,
-                            "placeholder": ""
+                            "placeholder": "",
+                            "create_options": 0,
+                            "save_options": 0
                         },
                         {
                             "key": "field_6747a61bab5e6",
@@ -1690,14 +1698,18 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "choices": [],
+                            "choices": {
+                                "1": "Contact"
+                            },
                             "default_value": false,
                             "allow_null": 0,
                             "multiple": 0,
                             "ui": 0,
                             "return_format": "value",
                             "ajax": 0,
-                            "placeholder": ""
+                            "placeholder": "",
+                            "create_options": 0,
+                            "save_options": 0
                         },
                         {
                             "key": "field_636cdffc7c7e6",
@@ -1965,7 +1977,10 @@
                             },
                             "default_value": "#d1dbe3",
                             "enable_opacity": 0,
-                            "return_format": "string"
+                            "return_format": "string",
+                            "custom_palette_source": "",
+                            "palette_colors": "",
+                            "show_color_wheel": true
                         }
                     ],
                     "min": "",
@@ -2127,6 +2142,209 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_6a9e17942ce6a": {
+                    "key": "layout_6a9e17942ce6a",
+                    "name": "faq",
+                    "label": "FAQ",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6a9e17c02ce6d",
+                            "label": "General Settings",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0,
+                            "selected": 0
+                        },
+                        {
+                            "key": "field_6a9e17d92ce6e",
+                            "label": "General Settings",
+                            "name": "general_settings",
+                            "aria-label": "",
+                            "type": "checkbox",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "Add Common Padding": "Add Common Padding",
+                                "Add Common Margin": "Add Common Margin"
+                            },
+                            "default_value": [],
+                            "return_format": "value",
+                            "allow_custom": 0,
+                            "allow_in_bindings": 1,
+                            "layout": "horizontal",
+                            "toggle": 0,
+                            "save_custom": 0,
+                            "custom_choice_button_text": "Add new choice"
+                        },
+                        {
+                            "key": "field_6a9e17ec2ce6f",
+                            "label": "Title & Content",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0,
+                            "selected": 0
+                        },
+                        {
+                            "key": "field_6a9e17a52ce6c",
+                            "label": "Title",
+                            "name": "faq_title",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "FAQ",
+                            "maxlength": "",
+                            "allow_in_bindings": 0,
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_6a9e25962ee0a",
+                            "label": "Small Title",
+                            "name": "faq_small_title",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "allow_in_bindings": 1,
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_6a9e18032ce70",
+                            "label": "Description",
+                            "name": "faq_description",
+                            "aria-label": "",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "allow_in_bindings": 1,
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0
+                        },
+                        {
+                            "key": "field_6a9e181e2ce71",
+                            "label": "FAQ Questions",
+                            "name": "faq_questions",
+                            "aria-label": "",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "table",
+                            "min": 0,
+                            "max": 0,
+                            "collapsed": "",
+                            "button_label": "Add Row",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_6a9e18392ce72",
+                                    "label": "Question",
+                                    "name": "question",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "55",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "allow_in_bindings": 0,
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_6a9e181e2ce71"
+                                },
+                                {
+                                    "key": "field_6a9e18432ce73",
+                                    "label": "Answer",
+                                    "name": "answer",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "allow_in_bindings": 0,
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_6a9e181e2ce71"
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_62e8fb991ada2": {
                     "key": "layout_62e8fb991ada2",
                     "name": "pricing",
@@ -2280,7 +2498,9 @@
                             "ui": 0,
                             "return_format": "value",
                             "ajax": 0,
-                            "placeholder": ""
+                            "placeholder": "",
+                            "create_options": 0,
+                            "save_options": 0
                         },
                         {
                             "key": "field_6401c9cf69625",
@@ -2402,7 +2622,9 @@
                             "allow_null": 0,
                             "ui": 0,
                             "ajax": 0,
-                            "placeholder": ""
+                            "placeholder": "",
+                            "create_options": 0,
+                            "save_options": 0
                         },
                         {
                             "key": "field_65cc289b6c668",
@@ -2442,7 +2664,9 @@
                             "allow_null": 0,
                             "ui": 0,
                             "ajax": 0,
-                            "placeholder": ""
+                            "placeholder": "",
+                            "create_options": 0,
+                            "save_options": 0
                         }
                     ],
                     "min": "",
@@ -2764,14 +2988,16 @@
                                 "3": "3 Columns",
                                 "4": "4 Columns"
                             },
-                            "default_value": "4",
+                            "default_value": 4,
                             "return_format": "value",
                             "multiple": 0,
                             "allow_null": 0,
                             "allow_in_bindings": 0,
                             "ui": 0,
                             "ajax": 0,
-                            "placeholder": ""
+                            "placeholder": "",
+                            "create_options": 0,
+                            "save_options": 0
                         },
                         {
                             "key": "field_636ccfddcf54f",
@@ -3060,7 +3286,10 @@
                             },
                             "default_value": "#f9f9f9",
                             "enable_opacity": 0,
-                            "return_format": "string"
+                            "return_format": "string",
+                            "custom_palette_source": "",
+                            "palette_colors": "",
+                            "show_color_wheel": true
                         },
                         {
                             "key": "field_63be9844da27b",
@@ -3182,7 +3411,10 @@
                             },
                             "default_value": "#f9f9f9",
                             "enable_opacity": 0,
-                            "return_format": "string"
+                            "return_format": "string",
+                            "custom_palette_source": "",
+                            "palette_colors": "",
+                            "show_color_wheel": true
                         },
                         {
                             "key": "field_63d8eff7392df",
@@ -3238,14 +3470,18 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "choices": [],
+                            "choices": {
+                                "1": "Contact"
+                            },
                             "default_value": false,
                             "return_format": "value",
                             "multiple": 0,
                             "allow_null": 0,
                             "ui": 0,
                             "ajax": 0,
-                            "placeholder": ""
+                            "placeholder": "",
+                            "create_options": 0,
+                            "save_options": 0
                         }
                     ],
                     "min": "",
@@ -3273,7 +3509,10 @@
                             },
                             "default_value": "#000000",
                             "enable_opacity": 0,
-                            "return_format": "string"
+                            "return_format": "string",
+                            "custom_palette_source": "",
+                            "palette_colors": "",
+                            "show_color_wheel": true
                         },
                         {
                             "key": "field_6482d10b217ee",
@@ -3291,7 +3530,10 @@
                             },
                             "default_value": "#000000",
                             "enable_opacity": 0,
-                            "return_format": "string"
+                            "return_format": "string",
+                            "custom_palette_source": "",
+                            "palette_colors": "",
+                            "show_color_wheel": true
                         },
                         {
                             "key": "field_6458d9e97c3d4",
@@ -3520,5 +3762,8 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1732840506
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1788761039
 }

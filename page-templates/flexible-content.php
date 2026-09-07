@@ -79,6 +79,9 @@ if (have_rows('page_flexible_content')) {
       case 'logo_content':
         get_template_part('page-templates/template-parts/logo-content');
         break;
+      case 'faq':
+        get_template_part('page-templates/template-parts/faq');
+        break;
     }
   }
 }
