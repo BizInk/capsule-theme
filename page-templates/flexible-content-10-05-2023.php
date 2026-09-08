@@ -98,6 +98,8 @@ if( have_rows('page_flexible_content') ):
           get_template_part('page-templates/template-parts/full-width-contents');
       elseif( get_row_layout() == 'four_column_videos' ):
           get_template_part('page-templates/template-parts/four-col-videos');
+      elseif( get_row_layout() == 'faq' ):
+          get_template_part('page-templates/template-parts/faq');
       
     endif;  
   endwhile;
