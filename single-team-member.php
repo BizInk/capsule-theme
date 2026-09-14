@@ -40,18 +40,23 @@ $gravity_forms = get_field('gravity_forms', 'option');
                             
                             <?php if( !empty($member_facebook) ){ ?>
 
-                                <li><a href="<?php echo esc_url($member_facebook); ?>" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+                                <li><a href="<?php echo esc_url($member_facebook); ?>" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
                             <?php }
 
                             if( !empty($member_twitter) ){ ?>
 
-                                <li><a href="<?php echo esc_url($member_twitter); ?>" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href="<?php echo esc_url($member_twitter); ?>" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li>
                             <?php }
 
                             if( !empty($member_linkedin) ){ ?>
 
-                                <li><a href="<?php echo esc_url($member_linkedin); ?>" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                            <?php } ?>
+                                <li><a href="<?php echo esc_url($member_linkedin); ?>" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                            <?php }
+                            if( !empty($threads) ){ ?>
+							    <li><a href="<?= $threads; ?>" target="_blank"><i class="fa-brands fa-threads"></i></a></li>
+						    <?php }
+                            
+                            ?>
                         </ul>
                     </div>
                     <?php echo $member_full_profile; ?>                    

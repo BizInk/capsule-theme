@@ -91,27 +91,26 @@ $google_my_business = get_field('google_my_business', 'options');
 							<ul>
 								<?php if( !empty($facebook) ){ ?>
 									
-									<li><a href="<?= esc_url($facebook); ?>" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+									<li><a href="<?= esc_url($facebook); ?>" target="_blank"><i class="fa-brands fa-square-facebook"></i></a></li>
 								<?php }
 
 								if( !empty($twitter) ){ ?>
-									
-									<li><a href="<?= esc_url($twitter); ?>" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+									<li><a href="<?= esc_url($twitter); ?>" target="_blank"><i class="fa fa-brands fa-x-twitter" aria-hidden="true"></i></a></li>
 								<?php }
 
 								if( !empty($linkedin) ){ ?>
 									
-									<li><a href="<?= esc_url($linkedin); ?>" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+									<li><a href="<?= esc_url($linkedin); ?>" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
 								<?php }
 
 								if( !empty($instagram) ){ ?>
 									
-									<li><a href="<?= esc_url($instagram); ?>" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+									<li><a href="<?= esc_url($instagram); ?>" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
 								<?php } 
 
 								if( !empty($youtube) ){ ?>
 									
-									<li><a href="<?= esc_url($youtube); ?>" target="_blank"><i class="fa fa-youtube-square" aria-hidden="true"></i></a></li>
+									<li><a href="<?= esc_url($youtube); ?>" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
 								<?php }
 
 								if( !empty($google_my_business) ){ ?>

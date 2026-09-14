@@ -52,6 +52,7 @@ function theme_enqueue_styles() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+	wp_enqueue_script( 'fontawsome', get_stylesheet_directory_uri() . '/js/fontawesome.min.js', array(), '7.3.1', true );
 }
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 
