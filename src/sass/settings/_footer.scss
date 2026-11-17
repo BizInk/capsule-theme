@@ -73,3 +73,11 @@ nav.contact-details ul li a{
  .video-wrap:before {
     background: rgba($dark, 0.50);
 }
+
+.footer-cta-section{
+	background-color: $dark;
+	color:$white;
+	h1,h2,h3,h4,h5,h6,p{
+		color:$white;
+	}
+}

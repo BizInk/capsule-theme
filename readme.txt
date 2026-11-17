@@ -1,8 +1,8 @@
 === Capsule ===
 Contributors: Capsule,Jayden Major
 Tags: Bizink, Capsule
-Tested up to: 7.1
-Stable tag: 1.8.6
+Tested up to: 7.1.4
+Stable tag: 1.9
 Requires PHP: 7.4
 Requires at least: 6.0
 
@@ -12,6 +12,10 @@ The Capsule theme
 The Capsule theme
 
 == Changelog ==
+
+= 1.9 =
+* Optional Footer Call to Action
+* CSS Fixes
 
 = 1.8.6 =
 * Replace Twiter Icon

@@ -34,7 +34,6 @@ $compiled_css = $scss->compile('
   $light-blue: '.$global_theme_color6.';
   $neutral-light-blue: '.$global_theme_color7.';
   
-
   @import "'.$path.'";
 ');
 

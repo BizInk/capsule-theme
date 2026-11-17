@@ -44,6 +44,7 @@ function process_scss(){
             $dark: '.$global_theme_color4.';
             $neutral-blue: '.$global_theme_color5.';
             $light-gray: '.$global_theme_color6.';
+            $light-blue: '.$global_theme_color6.';
             $neutral-light-blue: '.$global_theme_color7.';  
             @import "'.$path.'";
         ');

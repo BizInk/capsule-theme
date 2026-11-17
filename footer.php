@@ -124,6 +124,11 @@ $enable_newsletter_section = get_field('enable_newsletter_section', 'options');
 if( $enable_newsletter_section == true || $enable_newsletter_section == 'yes' ){
 	get_template_part('global-templates/newsletter');
 }
+
+$enable_footer_cta_section = get_field('enable_footer_cta_section', 'options');
+if( $enable_footer_cta_section == true || $enable_footer_cta_section == 'yes' ){
+	get_template_part('global-templates/footer_cta');
+}
 ?>
 <footer>
 	<div class="container">

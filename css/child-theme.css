@@ -18529,3 +18529,6 @@ header + .video-banner-section.comman-margin {
   font-size: 1.5rem;
   margin-top: 2rem;
 }
+.footer-cta-section{
+  padding:2rem;
+}
