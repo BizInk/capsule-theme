@@ -2,7 +2,7 @@
 Contributors: Capsule,Jayden Major
 Tags: Bizink, Capsule
 Tested up to: 7.1.4
-Stable tag: 1.9.1
+Stable tag: 1.9.2
 Requires PHP: 7.4
 Requires at least: 6.0
 
@@ -12,6 +12,9 @@ The Capsule theme
 The Capsule theme
 
 == Changelog ==
+
+= 1.9.2=
+* Second Header Button
 
 = 1.9.1 =
 * Bug Fix - Footer CTA Links
